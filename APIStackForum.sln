@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIStackForum", "APIStackForum\APIStackForum.csproj", "{53CA3C23-9BA9-475F-9240-98DF010EAF3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{01608BF8-5D36-4D63-B1C5-AAF783269D23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLLS", "BLLS\BLLS.csproj", "{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53CA3C23-9BA9-475F-9240-98DF010EAF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53CA3C23-9BA9-475F-9240-98DF010EAF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53CA3C23-9BA9-475F-9240-98DF010EAF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53CA3C23-9BA9-475F-9240-98DF010EAF3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01608BF8-5D36-4D63-B1C5-AAF783269D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01608BF8-5D36-4D63-B1C5-AAF783269D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01608BF8-5D36-4D63-B1C5-AAF783269D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01608BF8-5D36-4D63-B1C5-AAF783269D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30AA346D-1BC7-457D-94F2-145FB1B54F53}
+	EndGlobalSection
+EndGlobal
