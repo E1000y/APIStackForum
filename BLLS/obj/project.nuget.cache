@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yJwB9X1FT7RKPbT5GRx51bPJBCIopupm6cTWeAOaaf7hJKGsDtmeQYA3afU+cNcCqc2H5WN1uodFcj+1nd7uNQ==",
+  "dgSpecHash": "3UADkL/HOy4l5TSAHKlyM1mAJstF/6/TCr1cJa9DZZyZYpFOxb9OcbDJAmrFlBU5zJR03Gg/X1VqSGZP4BtiHQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\BLLS\\BLLS.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
