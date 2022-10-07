@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.UOW;
 using Domain.Entities;
+using Microsoft.Extensions.Configuration;
 
 namespace BLLS
 {
@@ -54,6 +56,16 @@ namespace BLLS
                 Id = 5, Title = "Category5"
             },
         };
+
+        private readonly IUnitOfWork _uow;
+        private readonly IConfiguration _config;
+
+        
+        public ForumService(IUnitOfWork uow, IConfiguration config)
+        {
+            _uow = uow;
+            _config = config;
+        }
 
 
         public async Task<IEnumerable<Subject>> GetSubjectsAsync()
@@ -137,7 +149,7 @@ namespace BLLS
         public async Task<IEnumerable<Answer>> GetAnswersAsync()
         {
             await Task.Delay(0);
-            return answers;
+            return await _uow.Answer.GetAllAsync();
         }
 
         public async Task<Answer> GetAnswerByIdAsync(int id)
@@ -212,13 +224,13 @@ namespace BLLS
         public async Task<IEnumerable<Category>> GetCategories()
         {
             await Task.Delay(0);
-            return categories;
+            return await _uow.Category.GetAllAsync() ;
         }
 
         public async Task<Category> GetCategoryById(int id)
         {
-            await Task.Delay(0);
-            return categories.Find(c => c.Id == id);
+
+            return await _uow.Category.GetByIdAsync(id) ;
         }
     }
 

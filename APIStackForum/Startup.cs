@@ -29,8 +29,9 @@ namespace APIStackForum
             //Scoped => toute la durée de vie de la requête d'un client
             //Transient => A chaque fois que je demande le service, j'ai une nouvelle instance.
 
-            BLLExtension.AddBLL(services);
-            
+            // BLLExtension.AddBLL(services);
+
+            services.AddBLLExtension();
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;
                 });

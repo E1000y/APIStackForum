@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIStackForum", "APIStackForum\APIStackForum.csproj", "{53CA3C23-9BA9-475F-9240-98DF010EAF3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIStackForum", "APIStackForum\APIStackForum.csproj", "{53CA3C23-9BA9-475F-9240-98DF010EAF3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{01608BF8-5D36-4D63-B1C5-AAF783269D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{01608BF8-5D36-4D63-B1C5-AAF783269D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLLS", "BLLS\BLLS.csproj", "{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLLS", "BLLS\BLLS.csproj", "{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{446611FC-2049-407E-9449-71FC2E7D25EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72F6C53B-30A9-4536-8FC7-1ABAEBD3743E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{446611FC-2049-407E-9449-71FC2E7D25EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446611FC-2049-407E-9449-71FC2E7D25EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{446611FC-2049-407E-9449-71FC2E7D25EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446611FC-2049-407E-9449-71FC2E7D25EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
