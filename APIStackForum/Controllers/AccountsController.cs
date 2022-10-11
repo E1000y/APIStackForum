@@ -39,7 +39,9 @@ namespace APIStackForum.Controllers
                     Id = writer.Id,
                     FirstName = writer.FirstName,
                     LastName = writer.LastName,
-                    IsModerator = writer.IsModerator
+                    IsModerator = writer.IsModerator,
+                    Login = writer.Login,
+                    Password = writer.Password
                 });
             }
 
@@ -70,7 +72,9 @@ namespace APIStackForum.Controllers
                 Id = writer.Id,
                 FirstName = writer.FirstName,
                 LastName = writer.LastName,
-                IsModerator = writer.IsModerator
+                IsModerator = writer.IsModerator,
+                Login = writer.Login,
+                Password = writer.Password
             };
 
 
@@ -91,7 +95,9 @@ namespace APIStackForum.Controllers
                 Id = modifiedWriterDTO.Id,
                 FirstName = modifiedWriterDTO.FirstName,
                 LastName = modifiedWriterDTO.LastName,
-                IsModerator = modifiedWriterDTO.IsModerator
+                IsModerator = modifiedWriterDTO.IsModerator,
+                Login = modifiedWriterDTO.Login,
+                Password = modifiedWriterDTO.Password
             };
 
 
@@ -106,7 +112,9 @@ namespace APIStackForum.Controllers
                 Id = writer.Id,
                 FirstName = writer.FirstName,
                 LastName = writer.LastName,
-                IsModerator = writer.IsModerator
+                IsModerator = writer.IsModerator,
+                Login = writer.Login,
+                Password = writer.Password
             };
 
 
@@ -126,7 +134,9 @@ namespace APIStackForum.Controllers
             {
                 FirstName = createWriterRequestDTO.FirstName,
                 LastName = createWriterRequestDTO.LastName,
-                IsModerator = createWriterRequestDTO.isModerator
+                IsModerator = createWriterRequestDTO.isModerator,
+                Login = createWriterRequestDTO.Login,
+                Password = createWriterRequestDTO.Password
             };
 
 
@@ -143,7 +153,9 @@ namespace APIStackForum.Controllers
                     Id = writer.Id,
                     FirstName = writer.FirstName,
                     LastName = writer.LastName,
-                    IsModerator = writer.IsModerator
+                    IsModerator = writer.IsModerator,
+                    Login = writer.Login,
+                    Password = writer.Password
                 });
             }
             else

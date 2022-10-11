@@ -10,5 +10,6 @@ namespace DAL.UOW.Repositories
 {
     public interface IAnswerRepository : IGenericRepository<Answer>
     {
+        Task<bool> DeleteBySubjectIdAsync(int id);
     }
 }

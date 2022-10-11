@@ -14,5 +14,9 @@ namespace Domain.Entities
 
         public bool IsModerator { get; set; }
 
+        public string Login { get; set; }
+
+        public string Password { get; set; }
+
     }
 }

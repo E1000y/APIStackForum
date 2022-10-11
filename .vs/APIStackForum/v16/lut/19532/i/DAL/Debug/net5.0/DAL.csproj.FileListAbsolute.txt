@@ -1,0 +1,10 @@
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\DAL\Debug\net5.0\DAL.deps.json
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\DAL\Debug\net5.0\DAL.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\DAL\Debug\net5.0\ref\DAL.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\DAL\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\DAL\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\DAL\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\DAL\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\DAL\Debug\net5.0\DAL.csproj.CopyComplete
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\DAL\Debug\net5.0\DAL.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\DAL\Debug\net5.0\ref\DAL.dll

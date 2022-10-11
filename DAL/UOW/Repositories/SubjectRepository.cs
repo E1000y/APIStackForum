@@ -1,4 +1,6 @@
-﻿using Domain.Entities;
+﻿using Dapper;
+using Domain.Entities;
+using Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,29 +19,70 @@ namespace DAL.UOW.Repositories
             _dbsession = dbsession;
         }
 
-        public Task<Subject> AddAsync(Subject entity)
+        public async Task<Subject> AddAsync(Subject entity)
         {
-            throw new NotImplementedException();
+            string query = @"INSERT INTO Subject (Name, description, creationDate, writerId, categoryId)
+                OUTPUT INSERTED.ID
+                VALUES(@name, @description, @creationDate, @writerId, @categoryId) ";
+
+            int? idInserted = await _dbsession.Connection.ExecuteScalarAsync<int?>(query, new
+            {
+                Name = entity.Name,
+                description = entity.Description,
+                creationDate = entity.CreationDate,
+                writerId = entity.writerId,
+                categoryId = entity.categoryId
+            });
+
+            if (!idInserted.HasValue) throw new InsertSQLFailureException(entity);
+            entity.Id = idInserted.GetValueOrDefault();
+            return entity;
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+
+
+            string query = @"DELETE FROM Subject WHERE id = @id";
+
+            int nblinesaffected = await _dbsession.Connection.ExecuteAsync(query, new { id = id }, transaction: _dbsession.Transaction);
+
+            return nblinesaffected == 1;
         }
 
-        public Task<IEnumerable<Subject>> GetAllAsync()
+        public async Task<IEnumerable<Subject>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            string query = @"SELECT * FROM Subject";
+
+            IEnumerable<Subject> result = await _dbsession.Connection.QueryAsync<Subject>(query, transaction: _dbsession.Transaction);
+            return result;
         }
 
-        public Task<Subject> GetByIdAsync(int id)
+        public async Task<Subject> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            string query = @"SELECT * FROM Subject WHERE id = @id";
+
+            Subject subject = await _dbsession.Connection.QueryFirstOrDefaultAsync<Subject>(query, new { id = id }, transaction: _dbsession.Transaction);
+
+            return subject;
         }
 
-        public Task<Subject> UpdateAsync(Subject entity)
+        public async Task<Subject> UpdateAsync(Subject entity)
         {
-            throw new NotImplementedException();
+            string query = @"UPDATE Subject SET Name = @name, description = @description, creationDate = @creationDate, writerId = @writerId, categoryId = @categoryId where id = @id";
+
+            int nbLinesModified = await _dbsession.Connection.ExecuteAsync(query, new
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Description = entity.Description,
+                creationDate = entity.CreationDate,
+                writerId = entity.writerId,
+                categoryId = entity.categoryId
+            }, transaction: _dbsession.Transaction);
+
+            if (nbLinesModified != 1) throw new UpdateSQLFailureException(entity);
+            return await GetByIdAsync(entity.Id);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Domain.Entities;
+﻿using Dapper;
+using Domain.Entities;
+using Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,29 +19,69 @@ namespace DAL.UOW.Repositories
             _dbsession = dbsession;
         }
 
-        public Task<Writer> AddAsync(Writer entity)
+        public async Task<Writer> AddAsync(Writer entity)
         {
-            throw new NotImplementedException();
+            string query = @"INSERT INTO Writer (firstname, lastname, isModerator, login, password)
+                            OUTPUT INSERTED.ID
+                            VALUES(@firstname, @lastname, @isModerator, @login, @password)";
+
+            int? idInserted = await _dbsession.Connection.ExecuteScalarAsync<int?>(query,
+                new
+                {
+                    firstname = entity.FirstName,
+                    lastname = entity.LastName,
+                    isModerator = entity.IsModerator,
+                    login = entity.Login,
+                    password = entity.Password
+                }, transaction: _dbsession.Transaction);
+
+            if (!idInserted.HasValue) throw new InsertSQLFailureException(entity);
+            entity.Id = idInserted.GetValueOrDefault();
+            return entity;
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            string query = @"DELETE FROM Writer WHERE id = @id";
+
+            int nblinesaffected = await _dbsession.Connection.ExecuteAsync(query, new { id = id }, transaction: _dbsession.Transaction);
+
+            return nblinesaffected == 1;
         }
 
-        public Task<IEnumerable<Writer>> GetAllAsync()
+        public async Task<IEnumerable<Writer>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            string query = @"SELECT * FROM Writer";
+            IEnumerable<Writer> result = await _dbsession.Connection.QueryAsync<Writer>(query, transaction: _dbsession.Transaction);
+            return result;
         }
 
-        public Task<Writer> GetByIdAsync(int id)
+        public async Task<Writer> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            string query = @"SELECT * FROM Writer where id= @id";
+            Writer writerbyId = await _dbsession.Connection.QueryFirstOrDefaultAsync<Writer>(query, new { id = id }, transaction: _dbsession.Transaction);
+            return writerbyId;
+
         }
 
-        public Task<Writer> UpdateAsync(Writer entity)
+        public async Task<Writer> UpdateAsync(Writer entity)
         {
-            throw new NotImplementedException();
+            string query = @"UPDATE Writer SET firstname = @firstname, lastname =@lastname, isModerator = @isModerator, login=@login, password =@password where id = @id";
+
+            int nblinesmodified = await _dbsession.Connection.ExecuteAsync(query, new
+            {
+                id = entity.Id,
+                firstname = entity.FirstName,
+                lastname = entity.LastName,
+                isModerator = entity.IsModerator,
+                login = entity.Login,
+                password = entity.Password
+            }, transaction: _dbsession.Transaction);
+
+            if (nblinesmodified != 1) throw new UpdateSQLFailureException(entity);
+            return await GetByIdAsync(entity.Id);
+
+
         }
     }
 }

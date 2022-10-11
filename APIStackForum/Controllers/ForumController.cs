@@ -201,6 +201,7 @@ namespace APIStackForum.Controllers
 
             Answer newAnswer = new Answer()
             {
+                
                 Body = createdAnswer.Body,
                 CreationDate = createdAnswer.CreationDate,
                 subjectId = createdAnswer.subjectId,

@@ -12,5 +12,8 @@ namespace Domain.DTO.Requests
         public string LastName { get; set; }
         public bool isModerator { get; set; }
 
+        public string Login { get; set; }
+        public string Password { get; set; }
+
     }
 }
