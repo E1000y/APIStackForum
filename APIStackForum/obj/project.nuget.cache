@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "r2WODOaj6PE8vHi7GAOAOj1dulrGqbSTXD5XITYRjVVLJBaNKu2GrqAbkHJ3ybvTJ/KmFMtDDrdqKOQpp1QiBQ==",
+  "dgSpecHash": "Fob6byGls6JMbQx4meXWrvXsG2sqOKhOFuHpSje8X7lD0Cys9EqIvPWv+GvrNIBZjjfnqMnZnyD283RRnfWW7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\APIStackForum\\APIStackForum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cda5pani\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.0\\microsoft.data.sqlclient.5.0.0.nupkg.sha512",

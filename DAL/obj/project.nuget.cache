@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "pN65WcOS1LHKuruJ+TXxzydY2iZ2gJUItkbrxZffVdGtW6jTd61snKbBDr4H6VP+ZSbvUSXT5jMi3tHDPv6FxA==",
+  "dgSpecHash": "gwk0ge1Jer692ppMNna5lUxzXl5RMO4hL7xK9snOutAEcdOjw5JTXxL97PRwqSq2c/GJBhp3CXOssu2ulbpm9A==",
   "success": true,
   "projectFilePath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cda5pani\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.0\\microsoft.data.sqlclient.5.0.0.nupkg.sha512",

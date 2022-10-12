@@ -1,5 +1,6 @@
 using APIStackForum.Controllers;
 using BLLS;
+using Domain.DTO.Requests;
 using Domain.DTO.Responses;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -50,6 +51,164 @@ namespace UnitTests
             Assert.Equal(result.Value as List<WriterResponseDTO> , expectedContentResult.ToList());
 
 
+
+        }
+
+        [Fact]
+
+        public async void GetWritersByIdShouldBeNotFound()
+        {
+            //Arrange = organiser les données
+            IAccountService accountservice = Mock.Of<IAccountService>();
+
+            Mock.Get(accountservice)
+                .Setup(a => a.GetWriterByIdAsync(1))
+                .ReturnsAsync(null as Writer);
+            
+            AccountsController accountsController = new AccountsController(accountservice);
+            //Act = action
+            IActionResult okResult = await accountsController.GetWriterByIdAsync(1);
+
+            //Assert : comparer les valeurs
+            NotFoundResult notFoundResult = okResult as NotFoundResult;
+            Assert.NotNull(notFoundResult);
+
+
+        }
+
+        [Fact]
+
+        public async void GetWritersByIdShouldBeOk()
+        {
+            //Arrange = organiser les données
+            IAccountService accountservice = Mock.Of<IAccountService>();
+
+            Mock.Get(accountservice)
+                .Setup(a => a.GetWriterByIdAsync(1))
+                .ReturnsAsync(new Writer()
+                {
+                    Id = 1,
+                    FirstName = "",
+                    LastName = "",
+                    IsModerator = false,
+                    Login = "",
+                    Password = ""
+                }
+                );
+            AccountsController accountscontroller = new AccountsController(accountservice);
+
+            //Act
+            IActionResult okResult = await accountscontroller.GetWriterByIdAsync(1);
+
+            //Assert
+            OkObjectResult result = okResult as OkObjectResult;
+            Assert.NotNull(result);
+            Assert.Equal(result.Value as WriterResponseDTO, new WriterResponseDTO
+            {
+                Id = 1,
+                FirstName = "",
+                LastName = "",
+                IsModerator = false,
+                Login = "",
+                Password = ""
+
+            });
+        }
+        [Fact]
+        public async void ModifyWriterAsyncShouldBeBadRequest()
+        {
+            //Arrange
+            IAccountService accountService = Mock.Of<IAccountService>();
+            AccountsController accountsController = new AccountsController(accountService);
+
+            ModifyWriterRequestDTO modifyWriterRequest = new ModifyWriterRequestDTO()
+            {
+                Id = 5
+            };
+
+            //Act
+            IActionResult result = await accountsController.ModifyWriterAsync(1, modifyWriterRequest);
+
+            //Assert
+            Assert.NotNull(result as BadRequestResult);
+            Assert.True(result is BadRequestResult);
+
+        }
+
+        [Fact]
+        public async void ModifyWriterAsyncShouldBeNotFound()
+        {
+            IAccountService accountService = Mock.Of<IAccountService>();
+
+            Mock.Get(accountService)
+                .Setup(a => a.ModifyWriterAsync(It.IsAny<Writer>()))
+                .ReturnsAsync(null as Writer);
+
+            AccountsController accountsController = new AccountsController(accountService);
+
+            ModifyWriterRequestDTO modifywriterdto = new ModifyWriterRequestDTO()
+            {
+                Id = 5,
+            };
+
+            //Act
+
+            IActionResult result = await accountsController.ModifyWriterAsync(5, modifywriterdto);
+
+            //Assert
+            Assert.NotNull(result as NotFoundResult);
+            Assert.True(result is NotFoundResult);
+        }
+
+        [Fact]
+        public async void ModifyWriterAsyncShouldBeOk()
+        {
+            IAccountService accountService = Mock.Of<IAccountService>();
+
+            ModifyWriterRequestDTO  writerdto   = new ()
+            {
+                Id = 5,
+                FirstName = "toto",
+                LastName = "machin",
+                IsModerator = true,
+                Login = "login",
+                Password = "pwd"
+            };
+
+
+
+            Writer writer = new Writer()
+            {
+                Id = 5,
+                FirstName = "toto",
+                LastName = "machin",
+                IsModerator = true,
+                Login = "login",
+                Password = "pwd"
+            };
+
+            Mock.Get(accountService)
+                .Setup(a => a.ModifyWriterAsync(writer))
+                .ReturnsAsync(writer);
+
+            AccountsController accountsController = new AccountsController(accountService);
+
+            //Act
+            IActionResult result = await accountsController.ModifyWriterAsync(5, writerdto);
+
+            //Assert
+
+            OkObjectResult okResult = result as OkObjectResult;
+            Assert.NotNull(okResult);
+            Assert.Equal(okResult.Value as WriterResponseDTO, new WriterResponseDTO
+            {
+                Id = 5,
+                FirstName = "toto",
+                LastName = "machin",
+                IsModerator = true,
+                Login = "login",
+                Password = "pwd"
+            });
 
         }
     }
