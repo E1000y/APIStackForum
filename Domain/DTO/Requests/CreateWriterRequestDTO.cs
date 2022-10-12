@@ -24,7 +24,8 @@ namespace Domain.DTO.Requests
         {
             RuleFor(x => x.FirstName).NotEmpty().NotNull().MaximumLength(250);
             RuleFor(x => x.LastName).NotEmpty().NotNull().MaximumLength(250);
-
+            RuleFor(x => x.Login).NotEmpty().NotNull().MaximumLength(250);
+            RuleFor(x => x.Password).NotEmpty().NotNull().MaximumLength(250);
         }
     }
 }
