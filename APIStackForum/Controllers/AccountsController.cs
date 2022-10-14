@@ -182,7 +182,14 @@ namespace APIStackForum.Controllers
             return (await _accountService.DeleteWriterAsync(id)) ? NoContent() : NotFound();
         }
 
+        [HttpPut("password/{id}")]
 
+        public async Task<bool> ModifyPasswordAsync([FromRoute] int id, [FromBody] ModifyPasswordDTO modifyPasswordDTO)
+        {
+            bool OkPasswordModified = await _securityService.ModifyPasswordAsync(id, modifyPasswordDTO);
+
+            return OkPasswordModified;
+        }
 
     }
 }

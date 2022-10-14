@@ -11,6 +11,7 @@ namespace DAL.UOW.Repositories
     {
 
         Task<Writer> GetByUserNameAndPasswordAsync(string username, string password);
+        Task<bool> ModifyWriterPasswordAsync(int id, string password);
 
     }
 }

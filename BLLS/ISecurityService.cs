@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿
+using Domain.Entities;
 using System.Threading.Tasks;
 
 namespace BLLS
@@ -14,5 +15,6 @@ namespace BLLS
 
         Task<string> SigningAsync(string username, string password);
         Task<Writer> CreateWriterAsync(Writer newWriter);
+        Task<bool> ModifyPasswordAsync(int id,string OldPassword, string NewPassword);
     }
 }

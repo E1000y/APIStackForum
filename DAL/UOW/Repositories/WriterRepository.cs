@@ -96,5 +96,19 @@ namespace DAL.UOW.Repositories
 
             return writer;
         }
+
+        public async Task<bool> ModifyWriterPasswordAsync(int id, string password)
+        {
+            string query = @"UPDATE Writer SET password = @password WHERE id = @id";
+
+            int nblinesmodified = await _dbsession.Connection.ExecuteAsync(query, new
+            {
+                id = id,
+                password = password
+            }, transaction: _dbsession.Transaction);
+
+            return nblinesmodified == 1;
+            
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace BLLS
 
 
 
-   public class SecurityService : ISecurityService
+    public class SecurityService : ISecurityService
     {
 
         private readonly IConfiguration _configuration;
@@ -46,10 +46,10 @@ namespace BLLS
             Writer writer = await GetWriterAsync(username, await HashPasswordAsync(password));
 
             if (writer is null) throw new AuthenticationFailException();
-            
-            
-            
-            
+
+
+
+
             if (writer.IsModerator)
             {
                 return GenerateJwtToken(writer.Id.ToString(), new List<string>() { "MOD", "USER" });
@@ -155,6 +155,20 @@ namespace BLLS
 
 
             return result;
+        }
+
+        public async Task<bool> ModifyPasswordAsync(int id, string OldPassword, string NewPassword)
+        {
+            Writer writer = await _uow.Writer.GetByIdAsync(id);
+
+            if (!(await VerifyPasswordAsync(OldPassword, writer.Password)))
+            {
+                throw new AuthenticationFailException();
+            }
+
+            return await _uow.Writer.ModifyWriterPasswordAsync(id, await HashPasswordAsync(NewPassword));
+            
+
         }
     }
 }
