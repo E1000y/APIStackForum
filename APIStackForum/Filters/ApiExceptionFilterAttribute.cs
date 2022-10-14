@@ -21,7 +21,7 @@ namespace API.Filters
             {
                 { typeof(NotFoundException), HandleNotFoundException },
                 { typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException },
-                { typeof(ForbiddenAccessException), HandleForbiddenAccessException },
+           //     { typeof(ForbiddenAccessException), HandleForbiddenAccessException },
 
             };
         }

@@ -60,7 +60,7 @@ namespace DAL.UOW.Repositories
         {
             string query = @"SELECT * FROM Writer where id= @id";
             Writer writerbyId = await _dbsession.Connection.QueryFirstOrDefaultAsync<Writer>(query, new { id = id }, transaction: _dbsession.Transaction);
-            if(writerbyId == null) { throw new NotFoundException(new { Id = id }); }
+            if(writerbyId == null) { throw new NotFoundException(id); }
             return writerbyId;
 
         }

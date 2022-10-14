@@ -1,3 +1,4 @@
+using API.Filters;
 using BLLS;
 using Domain;
 using FluentValidation.AspNetCore;
@@ -37,6 +38,7 @@ namespace APIStackForum
             services.AddDomain();
             services.AddControllers(options => {
                 options.SuppressAsyncSuffixInActionNames = false;
+                options.Filters.Add(new ApiExceptionFilterAttribute());
                 }).AddFluentValidation();
         }
 
