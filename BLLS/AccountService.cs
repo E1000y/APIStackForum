@@ -44,32 +44,7 @@ namespace BLLS
             return await _uow.Writer.GetByIdAsync(id);
         }
 
-        public async Task<Writer> CreateWriterAsync(Writer newWriter)
-        {
-
-            //await Task.Delay(0);
-            //int lastId = 0;
-            //foreach (Writer writer in writers)
-            //{
-            //    if (lastId < writer.Id) lastId = writer.Id;
-            //}
-            //lastId++;
-
-            //newWriter.Id = lastId;
-
-            //try
-            //{
-            //    writers.Add(newWriter);
-            //    return newWriter;
-            //}
-            //catch (Exception e)
-            //{
-            //    return null;
-            //}
-
-            return await _uow.Writer.AddAsync(newWriter);
-
-        }
+       
 
         public async Task<Writer> ModifyWriterAsync(Writer modifiedWriter)
         {

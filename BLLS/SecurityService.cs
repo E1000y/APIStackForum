@@ -8,6 +8,9 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Exceptions;
+using Domain.Entities;
+using DAL.UOW;
+using System.Security.Cryptography;
 
 namespace BLLS
 {
@@ -18,9 +21,11 @@ namespace BLLS
     {
 
         private readonly IConfiguration _configuration;
-        public SecurityService(IConfiguration configuration)
+        private readonly IUnitOfWork _uow;
+        public SecurityService(IConfiguration configuration, IUnitOfWork uow)
         {
             _configuration = configuration;
+            _uow = uow;
 
         }
 
@@ -31,16 +36,27 @@ namespace BLLS
         /// <param name="password"></param>
         /// <returns></returns>
 
-        public string Signing(string username, string password)
+        public async Task<string> SigningAsync(string username, string password)
         {
             // Vérifier si l'utilisateur existe ou non
-            if (username == "admin" && password == "admin")
+
+
+
+
+            Writer writer = await GetWriterAsync(username, await HashPasswordAsync(password));
+
+            if (writer is null) throw new AuthenticationFailException();
+            
+            
+            
+            
+            if (writer.IsModerator)
             {
-                return GenerateJwtToken("admin", new List<string>() { "ADMIN", "USER" });
+                return GenerateJwtToken(writer.Id.ToString(), new List<string>() { "MOD", "USER" });
             }
-            else if (username == "user" && password == "user")
+            else
             {
-                return GenerateJwtToken("user", new List<string>() { "USER" });
+                return GenerateJwtToken(writer.Id.ToString(), new List<string>() { "USER" });
             }
 
             // Générer le token avec les bons rôles
@@ -50,13 +66,13 @@ namespace BLLS
 
         }
 
-        private string GenerateJwtToken(string username, List<string> roles)
+        private string GenerateJwtToken(string id, List<string> roles)
         {
             //Add User Infos
             var claims = new List<Claim>(){
-                         new Claim(JwtRegisteredClaimNames.Sub, username),
+                         new Claim(JwtRegisteredClaimNames.Sub, id),
                          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                         new Claim(ClaimTypes.NameIdentifier, username)
+                         new Claim(ClaimTypes.NameIdentifier, id)
  };
             //Add Roles
             roles.ForEach(role =>
@@ -78,6 +94,67 @@ namespace BLLS
             );
             //Serializes a JwtSecurityToken into a JWT in Compact Serialization Format.
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public async Task<Writer> GetWriterAsync(string username, string password)
+        {
+            return await _uow.Writer.GetByUserNameAndPasswordAsync(username, password);
+        }
+
+        public async Task<Writer> CreateWriterAsync(Writer newWriter)
+        {
+            //Hasher le mot de passe
+            newWriter.Password = await HashPasswordAsync(newWriter.Password);
+
+            return await _uow.Writer.AddAsync(newWriter);
+
+        }
+
+        private async Task<string> HashPasswordAsync(string password)
+        {
+            // Create the salt value with a cryptographic PRNG:
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+
+
+
+            // Create the Rfc2898DeriveBytes and get the hash value:
+            var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
+            byte[] hash = pbkdf2.GetBytes(20);
+
+
+
+            // Combine the salt and password bytes for later use:
+            byte[] hashBytes = new byte[36];
+            Array.Copy(salt, 0, hashBytes, 0, 16);
+            Array.Copy(hash, 0, hashBytes, 16, 20);
+
+
+
+            // Turn the combined salt+hash into a string for storage
+            string savedPasswordHash = Convert.ToBase64String(hashBytes);
+            return savedPasswordHash;
+        }
+
+        private async Task<bool> VerifyPasswordAsync(string givenPassword, string savedPassword)
+        {
+            /* Extract the bytes */
+            byte[] hashBytes = Convert.FromBase64String(savedPassword);
+            /* Get the salt */
+            byte[] salt = new byte[16];
+            Array.Copy(hashBytes, 0, salt, 0, 16);
+            /* Compute the hash on the password the user entered */
+            var pbkdf2 = new Rfc2898DeriveBytes(givenPassword, salt, 10000);
+            byte[] hash = pbkdf2.GetBytes(20);
+            /* Compare the results */
+            bool result = true;
+            for (int i = 0; i < 20; i++)
+                if (hashBytes[i + 16] != hash[i])
+                    result = false;
+
+
+
+            return result;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace UnitTests
 
             };
             IAccountService accountservice = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
 
             IEnumerable<WriterResponseDTO> expectedContentResult = listWriters.Select(w => new WriterResponseDTO()
             {
@@ -32,8 +33,7 @@ namespace UnitTests
                 FirstName = w.FirstName,
                 LastName = w.LastName,
                 IsModerator = w.IsModerator,
-                Login = w.Login,
-                Password = w.Password
+                Login = w.Login
             });
 
 
@@ -41,7 +41,7 @@ namespace UnitTests
                 .Setup(a => a.GetWritersAsync())
                 .ReturnsAsync(listWriters);
 
-            AccountsController accountsController = new AccountsController(accountservice);
+            AccountsController accountsController = new AccountsController(accountservice, securityService);
 
 
             IActionResult okResult = await accountsController.GetWritersAsync();
@@ -60,12 +60,13 @@ namespace UnitTests
         {
             //Arrange = organiser les données
             IAccountService accountservice = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
 
             Mock.Get(accountservice)
                 .Setup(a => a.GetWriterByIdAsync(1))
                 .ReturnsAsync(null as Writer);
             
-            AccountsController accountsController = new AccountsController(accountservice);
+            AccountsController accountsController = new AccountsController(accountservice, securityService);
             //Act = action
             IActionResult okResult = await accountsController.GetWriterByIdAsync(1);
 
@@ -82,6 +83,7 @@ namespace UnitTests
         {
             //Arrange = organiser les données
             IAccountService accountservice = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
 
             Mock.Get(accountservice)
                 .Setup(a => a.GetWriterByIdAsync(1))
@@ -95,7 +97,7 @@ namespace UnitTests
                     Password = ""
                 }
                 );
-            AccountsController accountscontroller = new AccountsController(accountservice);
+            AccountsController accountscontroller = new AccountsController(accountservice, securityService);
 
             //Act
             IActionResult okResult = await accountscontroller.GetWriterByIdAsync(1);
@@ -110,7 +112,7 @@ namespace UnitTests
                 LastName = "",
                 IsModerator = false,
                 Login = "",
-                Password = ""
+
 
             });
         }
@@ -119,7 +121,9 @@ namespace UnitTests
         {
             //Arrange
             IAccountService accountService = Mock.Of<IAccountService>();
-            AccountsController accountsController = new AccountsController(accountService);
+            ISecurityService securityService = Mock.Of<ISecurityService>();
+
+            AccountsController accountsController = new AccountsController(accountService, securityService);
 
             ModifyWriterRequestDTO modifyWriterRequest = new ModifyWriterRequestDTO()
             {
@@ -139,12 +143,13 @@ namespace UnitTests
         public async void ModifyWriterAsyncShouldBeNotFound()
         {
             IAccountService accountService = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
 
             Mock.Get(accountService)
                 .Setup(a => a.ModifyWriterAsync(It.IsAny<Writer>()))
                 .ReturnsAsync(null as Writer);
 
-            AccountsController accountsController = new AccountsController(accountService);
+            AccountsController accountsController = new AccountsController(accountService, securityService);
 
             ModifyWriterRequestDTO modifywriterdto = new ModifyWriterRequestDTO()
             {
@@ -164,6 +169,7 @@ namespace UnitTests
         public async void ModifyWriterAsyncShouldBeOk()
         {
             IAccountService accountService = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
 
             ModifyWriterRequestDTO  writerdto   = new ()
             {
@@ -171,8 +177,7 @@ namespace UnitTests
                 FirstName = "toto",
                 LastName = "machin",
                 IsModerator = true,
-                Login = "login",
-                Password = "pwd"
+                Login = "login"
             };
 
 
@@ -183,15 +188,14 @@ namespace UnitTests
                 FirstName = "toto",
                 LastName = "machin",
                 IsModerator = true,
-                Login = "login",
-                Password = "pwd"
+                Login = "login"
             };
 
             Mock.Get(accountService)
                 .Setup(a => a.ModifyWriterAsync(writer))
                 .ReturnsAsync(writer);
 
-            AccountsController accountsController = new AccountsController(accountService);
+            AccountsController accountsController = new AccountsController(accountService, securityService);
 
             //Act
             IActionResult result = await accountsController.ModifyWriterAsync(5, writerdto);
@@ -206,8 +210,7 @@ namespace UnitTests
                 FirstName = "toto",
                 LastName = "machin",
                 IsModerator = true,
-                Login = "login",
-                Password = "pwd"
+                Login = "login"
             });
 
         }

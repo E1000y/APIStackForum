@@ -15,7 +15,6 @@ namespace Domain.DTO.Responses
 
         public string Login { get; set; }
 
-        public string Password { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -24,8 +23,7 @@ namespace Domain.DTO.Responses
                    FirstName == dTO.FirstName &&
                    LastName == dTO.LastName &&
                    IsModerator == dTO.IsModerator &&
-                   Login == dTO.Login &&
-                   Password == dTO.Password;
+                   Login == dTO.Login;
         }
     }
 }

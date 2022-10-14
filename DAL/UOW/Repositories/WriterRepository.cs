@@ -67,7 +67,7 @@ namespace DAL.UOW.Repositories
 
         public async Task<Writer> UpdateAsync(Writer entity)
         {
-            string query = @"UPDATE Writer SET firstname = @firstname, lastname =@lastname, isModerator = @isModerator, login=@login, password =@password where id = @id";
+            string query = @"UPDATE Writer SET firstname = @firstname, lastname =@lastname, isModerator = @isModerator, login=@login where id = @id";
 
             int nblinesmodified = await _dbsession.Connection.ExecuteAsync(query, new
             {
@@ -75,14 +75,26 @@ namespace DAL.UOW.Repositories
                 firstname = entity.FirstName,
                 lastname = entity.LastName,
                 isModerator = entity.IsModerator,
-                login = entity.Login,
-                password = entity.Password
+                login = entity.Login
             }, transaction: _dbsession.Transaction);
 
             if (nblinesmodified != 1) throw new UpdateSQLFailureException(entity);
             return await GetByIdAsync(entity.Id);
 
 
+        }
+
+        public async Task<Writer> GetByUserNameAndPasswordAsync(string username, string password)
+        {
+            string query = @"SELECT * FROM Writer where login = @username AND password =@password";
+
+            Writer writer = await _dbsession.Connection.QueryFirstOrDefaultAsync(query, new
+            {
+                username = username,
+                password = password
+            }, transaction: _dbsession.Transaction);
+
+            return writer;
         }
     }
 }

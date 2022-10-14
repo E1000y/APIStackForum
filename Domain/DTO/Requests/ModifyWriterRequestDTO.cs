@@ -16,7 +16,7 @@ namespace Domain.DTO.Requests
         public bool IsModerator { get; set; }
 
         public string Login { get; set; }
-        public string Password { get; set; }
+
     }
 
     public class ModifyWriterRequestDTOValidator : AbstractValidator<ModifyWriterRequestDTO>
@@ -27,7 +27,7 @@ namespace Domain.DTO.Requests
             RuleFor(x => x.FirstName).NotEmpty().NotNull().MaximumLength(250);
             RuleFor(x => x.LastName).NotEmpty().NotNull().MaximumLength(250);
             RuleFor(x => x.Login).NotEmpty().NotNull().MaximumLength(250);
-            RuleFor(x => x.Password).NotEmpty().NotNull().MaximumLength(250);
+
         }
     }
 

@@ -16,6 +16,7 @@ namespace BLLS
         public static void AddBLLExtension( this IServiceCollection services)
         {
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<ISecurityService, SecurityService>();
             services.AddTransient<IForumService, ForumService>();
             services.AddDALExtension();
         }

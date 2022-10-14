@@ -11,18 +11,29 @@ using Domain.DTO.Responses;
 namespace APIStackForum.Controllers
 {
     [ApiController]
-    [Route("api/writers")]
+    [Route("api/[controller]")]
     public class AccountsController : ControllerBase
     {
 
         public static IAccountService _accountService;
+        public static ISecurityService _securityService;
 
 
-        public AccountsController(IAccountService accountService)
+        public AccountsController(IAccountService accountService, ISecurityService securityService)
         {
             _accountService = accountService;
-
+            _securityService = securityService;
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> LoginAsync([FromBody] AuthentificationRequestDTO authentificationRequestDTO)
+        {
+            string token = await _securityService.SigningAsync(authentificationRequestDTO.Login, authentificationRequestDTO.Password);
+
+            return Ok(new { Token = token });
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> GetWritersAsync()
@@ -40,8 +51,8 @@ namespace APIStackForum.Controllers
                     FirstName = writer.FirstName,
                     LastName = writer.LastName,
                     IsModerator = writer.IsModerator,
-                    Login = writer.Login,
-                    Password = writer.Password
+                    Login = writer.Login
+                 
                 });
             }
 
@@ -73,8 +84,7 @@ namespace APIStackForum.Controllers
                 FirstName = writer.FirstName,
                 LastName = writer.LastName,
                 IsModerator = writer.IsModerator,
-                Login = writer.Login,
-                Password = writer.Password
+                Login = writer.Login
             };
 
 
@@ -96,8 +106,7 @@ namespace APIStackForum.Controllers
                 FirstName = modifiedWriterDTO.FirstName,
                 LastName = modifiedWriterDTO.LastName,
                 IsModerator = modifiedWriterDTO.IsModerator,
-                Login = modifiedWriterDTO.Login,
-                Password = modifiedWriterDTO.Password
+                Login = modifiedWriterDTO.Login
             };
 
 
@@ -113,8 +122,7 @@ namespace APIStackForum.Controllers
                 FirstName = writer.FirstName,
                 LastName = writer.LastName,
                 IsModerator = writer.IsModerator,
-                Login = writer.Login,
-                Password = writer.Password
+                Login = writer.Login
             };
 
 
@@ -142,7 +150,7 @@ namespace APIStackForum.Controllers
 
             // Délègue à la couche inférieure la création de l'auteur
 
-            var writer = await _accountService.CreateWriterAsync(newWriter);
+            var writer = await _securityService.CreateWriterAsync(newWriter);
 
 
             //Renvoie la réponse sous forme de DTO de réponse
@@ -154,8 +162,7 @@ namespace APIStackForum.Controllers
                     FirstName = writer.FirstName,
                     LastName = writer.LastName,
                     IsModerator = writer.IsModerator,
-                    Login = writer.Login,
-                    Password = writer.Password
+                    Login = writer.Login
                 });
             }
             else

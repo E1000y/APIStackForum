@@ -6,7 +6,7 @@ namespace BLLS
 {
     public interface IAccountService
     {
-        Task<Writer> CreateWriterAsync(Writer newWriter);
+        
         Task<bool> DeleteWriterAsync(int id);
         Task<Writer> GetWriterByIdAsync(int id);
         Task<IEnumerable<Writer>> GetWritersAsync();
