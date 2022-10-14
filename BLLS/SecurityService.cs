@@ -43,10 +43,10 @@ namespace BLLS
 
 
 
-            Writer writer = await GetWriterAsync(username, await HashPasswordAsync(password));
+            Writer writer = await GetWriterAsync(username);
 
-            if (writer is null) throw new AuthenticationFailException();
-
+            if (writer is null ||!(await VerifyPasswordAsync(password, writer.Password))) throw new AuthenticationFailException();
+           
 
 
 
@@ -96,9 +96,9 @@ namespace BLLS
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public async Task<Writer> GetWriterAsync(string username, string password)
+        public async Task<Writer> GetWriterAsync(string username)
         {
-            return await _uow.Writer.GetByUserNameAndPasswordAsync(username, password);
+            return await _uow.Writer.GetByUserNameAsync(username);
         }
 
         public async Task<Writer> CreateWriterAsync(Writer newWriter)

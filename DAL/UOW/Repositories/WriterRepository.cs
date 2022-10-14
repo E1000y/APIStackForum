@@ -84,14 +84,13 @@ namespace DAL.UOW.Repositories
 
         }
 
-        public async Task<Writer> GetByUserNameAndPasswordAsync(string username, string password)
+        public async Task<Writer> GetByUserNameAsync(string username)
         {
-            string query = @"SELECT * FROM Writer where login = @username AND password =@password";
+            string query = @"SELECT * FROM Writer where login = @username";
 
-            Writer writer = await _dbsession.Connection.QueryFirstOrDefaultAsync(query, new
+            Writer writer = await _dbsession.Connection.QueryFirstOrDefaultAsync<Writer>(query, new
             {
-                username = username,
-                password = password
+                username = username
             }, transaction: _dbsession.Transaction);
 
             return writer;

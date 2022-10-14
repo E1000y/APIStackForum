@@ -10,7 +10,7 @@ namespace DAL.UOW.Repositories
    public interface IWriterRepository : IGenericRepository<Writer>
     {
 
-        Task<Writer> GetByUserNameAndPasswordAsync(string username, string password);
+        Task<Writer> GetByUserNameAsync(string username);
         Task<bool> ModifyWriterPasswordAsync(int id, string password);
 
     }
