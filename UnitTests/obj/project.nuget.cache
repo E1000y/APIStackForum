@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lqnR5dj54V87NHNYXH9Bl2F4eviCgKttwc36ycqTf35u/2/rHw+roJfIKO7Y1fiEwGzwCy6XbSrh+CZUvDazuQ==",
+  "dgSpecHash": "1N/JHgRjjxpUMNtobBdU5/UnhHBFQXScYe95gveEH64BpdW3Zf2yAtcGVjcB5zwe+R0zDIO+FCwcXYaj5w1Klw==",
   "success": true,
   "projectFilePath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
+    "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\cda5pani\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -5,8 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using BLLS;
 using Domain.Entities;
+using Domain.Exceptions;
 using Domain.DTO.Requests;
 using Domain.DTO.Responses;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace APIStackForum.Controllers
 {
@@ -146,9 +149,16 @@ namespace APIStackForum.Controllers
 
         }
         [HttpDelete("subjects/{id}")]
+        [Authorize(Roles = "MOD,USER")]
 
         public async Task<IActionResult> DeleteSubjectAsync([FromRoute] int id)
         {
+            int InTokenId = Int32.Parse((HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value));
+
+            Subject enquiredSubject = await _forumService.GetSubjectByIdAsync(id);
+
+            if (!HttpContext.User.IsInRole("MOD") && enquiredSubject.writerId != InTokenId) throw new InvalidUserRequestException();
+
             return (await _forumService.DeleteSubjectAsync(id)) ? NoContent() : NotFound();
         }
 
