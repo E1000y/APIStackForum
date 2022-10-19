@@ -14,6 +14,44 @@ namespace UnitTests
 {
     public class AccountControllerTest
     {
+        
+        [Fact]
+
+        public async void LoginShouldBeOk()
+        {
+            //Arrange
+            ISecurityService securityService = Mock.Of<ISecurityService>();
+            IAccountService accountService = Mock.Of<IAccountService>();
+
+
+
+            AuthentificationRequestDTO authentificationRequestDTO = new AuthentificationRequestDTO()
+            {
+                Login = "login",
+                Password = "password"
+            };
+
+            string result = null;
+
+            Mock.Get(securityService)
+                .Setup(s => s.SigningAsync(authentificationRequestDTO.Login, authentificationRequestDTO.Password))
+                .Returns(result );
+
+            AccountsController accountsController = new AccountsController(accountService, securityService);
+
+            //Act
+
+            IActionResult actionResult = await accountsController.LoginAsync(authentificationRequestDTO);
+
+
+            //Assert
+
+
+        }
+        
+
+
+
         [Fact]
         public async void GetWritersShouldBeOk()
         {
