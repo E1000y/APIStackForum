@@ -25,7 +25,7 @@ namespace ClientWinforms {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:5000/api/accounts/login")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:5000/api")]
         public string ConnectionStringLocal {
             get {
                 return ((string)(this["ConnectionStringLocal"]));

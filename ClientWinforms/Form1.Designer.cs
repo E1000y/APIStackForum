@@ -36,8 +36,10 @@ namespace ClientWinforms
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TxtToken = new System.Windows.Forms.TextBox();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // labelLogin
@@ -86,21 +88,31 @@ namespace ClientWinforms
             // 
             this.bsUsers.CurrentChanged += new System.EventHandler(this.bsUsers_CurrentChanged);
             // 
-            // richTextBox1
+            // TxtToken
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(484, 40);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(197, 127);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.TxtToken.Location = new System.Drawing.Point(515, 47);
+            this.TxtToken.Multiline = true;
+            this.TxtToken.Name = "TxtToken";
+            this.TxtToken.ReadOnly = true;
+            this.TxtToken.Size = new System.Drawing.Size(163, 87);
+            this.TxtToken.TabIndex = 5;
+            // 
+            // dgvUsers
+            // 
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsers.Location = new System.Drawing.Point(103, 194);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.RowTemplate.Height = 25;
+            this.dgvUsers.Size = new System.Drawing.Size(549, 114);
+            this.dgvUsers.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.dgvUsers);
+            this.Controls.Add(this.TxtToken);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
@@ -110,6 +122,7 @@ namespace ClientWinforms
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +136,8 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.BindingSource bsUsers;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox TxtToken;
+        private System.Windows.Forms.DataGridView dgvUsers;
     }
 }
 

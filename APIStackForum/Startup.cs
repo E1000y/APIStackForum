@@ -35,6 +35,14 @@ namespace APIStackForum
             //Scoped => toute la durée de vie de la requête d'un client
             //Transient => A chaque fois que je demande le service, j'ai une nouvelle instance.
 
+            // API REST
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.IgnoreNullValues = true; // On ne sérialise pas les propriétés à null
+                options.JsonSerializerOptions.PropertyNamingPolicy = null; // Pas de CamelCase sur les noms des propriétés
+            });
+
+
             // BLLExtension.AddBLL(services);
 
             services.AddBLLExtension();
@@ -43,6 +51,7 @@ namespace APIStackForum
                 options.SuppressAsyncSuffixInActionNames = false;
                 options.Filters.Add(new ApiExceptionFilterAttribute());
                 }).AddFluentValidation();
+
 
 
             //JWT Authentication

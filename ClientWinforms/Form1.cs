@@ -15,20 +15,21 @@ namespace ClientWinforms
 
     {
         DAL _dal = new DAL();
-        List<Subject> _lstUtilisateurs;
+        List<Writer> _lstUtilisateurs;
 
         public Form1()
         {
             InitializeComponent();
+            
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-
+        
         }
 
         private void bsUsers_CurrentChanged(object sender, EventArgs e)
         {
-            var util = (Subject)bsUsers.Current;
+            var util = (Writer)bsUsers.Current;
         }
 
        
@@ -49,15 +50,28 @@ namespace ClientWinforms
         {
             var jwt = await _dal.Login(txtLogin.Text, txtPassword.Text);
 
+            TxtToken.Text = jwt;
+
 
 
             if (jwt != null)
             {
-                DevelopmentForm developmentForm = new DevelopmentForm();
-                developmentForm.Show();
-                this.Hide();
+                await RefreshAsync(0);
+                InitializeBinding();
+                //    DevelopmentForm developmentForm = new DevelopmentForm();
+                //    developmentForm.Show();
+                //    this.Hide();
+
+
             }
-           
+        }
+        private void InitializeBinding()
+        {
+            if(_lstUtilisateurs != null && _lstUtilisateurs.Count > 0)
+            {
+                dgvUsers.DataSource = bsUsers;
+                this.dgvUsers.Columns["Password"].Visible = false;
+            }
         }
     }
 }

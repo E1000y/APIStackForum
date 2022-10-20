@@ -24,7 +24,7 @@ namespace ClientWinforms
 
 
 
-            var res = await _client.PostAsync($"{Settings1.Default.ConnectionStringLocal}", jsonBodyParameter);
+            var res = await _client.PostAsync($"{Settings1.Default.ConnectionStringLocal}/accounts/login", jsonBodyParameter);
 
 
 
@@ -40,16 +40,16 @@ namespace ClientWinforms
             return null;
         }
 
-        public async Task<List<Subject>> GetAllUtilisateursAsync()
+        public async Task<List<Writer>> GetAllUtilisateursAsync()
         {
-            var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}");
+            var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/accounts/");
 
             if (res.IsSuccessStatusCode)
             {
                 string content = await res.Content.ReadAsStringAsync();
-                var lstDTO = JsonSerializer.Deserialize<List<SubjectResponseDTO>>(content);
+                var lstDTO = JsonSerializer.Deserialize<List<WriterResponseDTO>>(content);
 
-                return lstDTO.ConvertAll(u => new Subject { Id = u.Id, Name = u.Name, Description = u.Description });
+                return lstDTO.ConvertAll(u => new Writer { Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, IsModerator = u.IsModerator, Login = u.Login }) ;
             }
             else
                 return null;
