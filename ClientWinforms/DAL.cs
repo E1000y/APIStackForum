@@ -49,10 +49,27 @@ namespace ClientWinforms
                 string content = await res.Content.ReadAsStringAsync();
                 var lstDTO = JsonSerializer.Deserialize<List<WriterResponseDTO>>(content);
 
-                return lstDTO.ConvertAll(u => new Writer { Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, IsModerator = u.IsModerator, Login = u.Login }) ;
+                return lstDTO.ConvertAll(u => new Writer { Id = u.Id, FirstName = u.FirstName, LastName = u.LastName, IsModerator = u.IsModerator, Login = u.Login });
             }
             else
                 return null;
+        }
+
+        public async Task<List<Category>> GetAllCategoriesAsync()
+        {
+            var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/forum/categories");
+
+            if (res.IsSuccessStatusCode)
+            {
+                string content = await res.Content.ReadAsStringAsync();
+                var lstCategoriesDTO = JsonSerializer.Deserialize<List<CategoriesResponseDTO>>(content);
+
+                return lstCategoriesDTO.ConvertAll(u => new Category { Id = u.Id, Title = u.Title });
+            }
+            else
+                return null;
+
+
         }
     }
 }
