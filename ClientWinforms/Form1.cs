@@ -16,7 +16,6 @@ namespace ClientWinforms
     {
         DAL _dal = new DAL();
         List<Writer> _lstUtilisateurs;
-        List<Category> _lstCategories;
 
         public Form1()
         {
@@ -45,23 +44,11 @@ namespace ClientWinforms
                 bsUsers.ResetBindings(false);
                 bsUsers.Position = _lstUtilisateurs.FindIndex(u => u.Id == id);
             }
-
-            _lstCategories = await _dal.GetAllCategoriesAsync();
-
-            if(_lstCategories != null)
-            {
-                bsCategories.DataSource = _lstCategories;
-                bsCategories.ResetBindings(false);
-                bsCategories.Position = _lstCategories.FindIndex(u => u.Id == id);
-            }
-
-
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
-            
-           var jwt = await _dal.Login(txtLogin.Text, txtPassword.Text);
+            var jwt = await _dal.Login(txtLogin.Text, txtPassword.Text);
 
             TxtToken.Text = jwt;
 
@@ -84,13 +71,6 @@ namespace ClientWinforms
             {
                 dgvUsers.DataSource = bsUsers;
                 this.dgvUsers.Columns["Password"].Visible = false;
-            }
-
-            if(_lstCategories !=null && _lstCategories.Count > 0)
-            {
-                dgvCategories.DataSource = bsCategories;
-                this.dgvCategories.Columns["Id"].Visible = false;
-                
             }
         }
     }
