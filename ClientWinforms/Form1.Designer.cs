@@ -38,8 +38,12 @@ namespace ClientWinforms
             this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
             this.TxtToken = new System.Windows.Forms.TextBox();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.dgvCategories = new System.Windows.Forms.DataGridView();
+            this.bsCategories = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // labelLogin
@@ -90,7 +94,7 @@ namespace ClientWinforms
             // 
             // TxtToken
             // 
-            this.TxtToken.Location = new System.Drawing.Point(515, 47);
+            this.TxtToken.Location = new System.Drawing.Point(451, 30);
             this.TxtToken.Multiline = true;
             this.TxtToken.Name = "TxtToken";
             this.TxtToken.ReadOnly = true;
@@ -100,17 +104,30 @@ namespace ClientWinforms
             // dgvUsers
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(103, 194);
+            this.dgvUsers.Location = new System.Drawing.Point(78, 132);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowTemplate.Height = 25;
-            this.dgvUsers.Size = new System.Drawing.Size(549, 114);
+            this.dgvUsers.Size = new System.Drawing.Size(599, 102);
             this.dgvUsers.TabIndex = 6;
+            // 
+            // dgvCategories
+            // 
+            this.dgvCategories.AllowUserToAddRows = false;
+            this.dgvCategories.AllowUserToDeleteRows = false;
+            this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategories.Location = new System.Drawing.Point(78, 302);
+            this.dgvCategories.Name = "dgvCategories";
+            this.dgvCategories.ReadOnly = true;
+            this.dgvCategories.RowTemplate.Height = 25;
+            this.dgvCategories.Size = new System.Drawing.Size(589, 63);
+            this.dgvCategories.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(841, 518);
+            this.Controls.Add(this.dgvCategories);
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.TxtToken);
             this.Controls.Add(this.btnLogin);
@@ -119,10 +136,12 @@ namespace ClientWinforms
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "bsCategories";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCategories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,6 +157,8 @@ namespace ClientWinforms
         private System.Windows.Forms.BindingSource bsUsers;
         private System.Windows.Forms.TextBox TxtToken;
         private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.DataGridView dgvCategories;
+        private System.Windows.Forms.BindingSource bsCategories;
     }
 }
 
