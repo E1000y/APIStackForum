@@ -69,6 +69,29 @@ namespace APIStackForum.Controllers
             return Ok(response);
         }
 
+        [HttpGet("subjects/{SubjectId}/Answers")]
+
+        public async Task<IActionResult> GetAnswersBySubjectIdAsync([FromRoute] int SubjectId)
+        {
+            var answers = await _forumService.GetAnswersBySubjectIdAsync(SubjectId);
+            if (answers == null) return NotFound();
+
+            List<AnswerResponseDTO> response = new List<AnswerResponseDTO>();
+
+            foreach(Answer ans in answers)
+            {
+                response.Add(new AnswerResponseDTO
+                {
+                    Id = ans.Id,
+                    Body = ans.Body,
+                    CreationDate = ans.CreationDate,
+                    SubjectId = ans.subjectId,
+                    WriterId = ans.writerId
+                });
+            }
+            return Ok(response);
+        }
+
         [HttpGet("Categories/{CategoryId}/subjects")]
 
         public async Task<IActionResult> GetSubjectsByCategoryIdAsync([FromRoute] int CategoryId)

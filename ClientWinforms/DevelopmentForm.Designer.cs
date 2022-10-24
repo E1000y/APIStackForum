@@ -43,11 +43,13 @@ namespace ClientWinforms
             this.dgvAnswers = new System.Windows.Forms.DataGridView();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
             this.bsSubjects = new System.Windows.Forms.BindingSource(this.components);
+            this.bsAnswers = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSubjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAnswers)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -173,6 +175,7 @@ namespace ClientWinforms
             this.dgvSubjects.RowTemplate.Height = 25;
             this.dgvSubjects.Size = new System.Drawing.Size(658, 155);
             this.dgvSubjects.TabIndex = 0;
+            this.dgvSubjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellClick);
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
             // DevelopmentForm
@@ -193,6 +196,7 @@ namespace ClientWinforms
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSubjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsAnswers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +217,6 @@ namespace ClientWinforms
         private System.Windows.Forms.DataGridView dgvAnswers;
         private System.Windows.Forms.DataGridView dgvSubjects;
         private System.Windows.Forms.BindingSource bsSubjects;
+        private System.Windows.Forms.BindingSource bsAnswers;
     }
 }

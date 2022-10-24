@@ -34,6 +34,7 @@ namespace ClientWinforms
 
         private void btnDev_Click(object sender, EventArgs e)
         {
+            dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             RefreshAsync(1);
         }
@@ -62,24 +63,28 @@ namespace ClientWinforms
 
         private void btnEmploi_Click(object sender, EventArgs e)
         {
+            dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             RefreshAsync(2);
         }
 
         private void btnFormation_Click(object sender, EventArgs e)
         {
+            dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             RefreshAsync(3);
         }
 
         private void btnFun_Click(object sender, EventArgs e)
         {
+            dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             RefreshAsync(4);
         }
 
         private void btnDivers_Click(object sender, EventArgs e)
         {
+            dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             RefreshAsync(5);
         }
@@ -87,8 +92,29 @@ namespace ClientWinforms
         private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Subject subject = (Subject)bsSubjects.Current;
-           
-           _lstAnswers = 
+
+            RefreshAnswersAsync(subject);
+
+        }
+
+        private async void RefreshAnswersAsync(Subject subject)
+        {
+            _lstAnswers = await _dal.GetAnswersBySubjectIdAsync(subject.Id);
+
+            if (_lstAnswers != null)
+            {
+                bsAnswers.DataSource = _lstAnswers;
+                dgvAnswers.DataSource = bsAnswers;
+               /* bsAnswers.ResetBindings(false);
+                bsAnswers.Position = _lstAnswers.FindIndex(u => u.Id == subject.Id);*/
+            }
+        }
+
+        private void dgvSubjects_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Subject subject = (Subject)bsSubjects.Current;
+
+            RefreshAnswersAsync(subject);
         }
     }
 }

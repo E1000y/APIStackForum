@@ -11,7 +11,7 @@ namespace Domain.DTO.Responses
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int writerId { get; set; }
+        public int WriterId { get; set; }
 
 
 

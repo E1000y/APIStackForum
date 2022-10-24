@@ -20,5 +20,7 @@ namespace BLLS
         Task<Subject> ModifySubjectAsync(Subject modifiedSubject);
 
         Task<IEnumerable<Subject>> GetSubjectsByCategoryId(int categoryId);
+
+        Task<IEnumerable<Answer>> GetAnswersBySubjectIdAsync(int SubjectId);
     }
 }

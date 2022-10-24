@@ -76,6 +76,14 @@ namespace DAL.UOW.Repositories
             return Answer;
         }
 
+       public async Task<IEnumerable<Answer>> GetAnswersBySubjectIdAsync(int subjectId)
+        {
+            string query = @"SELECT * FROM Answer WHERE subjectId = @subjectId";
+            IEnumerable<Answer> answers = await _dbsession.Connection.QueryAsync<Answer>(query, new { subjectId = @subjectId }, transaction: _dbsession.Transaction);
+
+            return answers;
+        }
+
         public async Task<Answer> UpdateAsync(Answer entity)
         {
             string query = @"UPDATE Answer SET body = @body, subjectId = @subjectId, writerId= @writerId  where id = @id";

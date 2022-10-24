@@ -229,6 +229,12 @@ namespace BLLS
 
             return await _uow.Category.GetByIdAsync(id) ;
         }
+
+
+        public async Task<IEnumerable<Answer>> GetAnswersBySubjectIdAsync(int SubjectId)
+        {
+            return await _uow.Answer.GetAnswersBySubjectIdAsync(SubjectId);
+        }
     }
 
 
