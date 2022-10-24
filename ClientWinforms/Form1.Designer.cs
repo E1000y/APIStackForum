@@ -36,7 +36,6 @@ namespace ClientWinforms
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
-            this.TxtToken = new System.Windows.Forms.TextBox();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -88,15 +87,6 @@ namespace ClientWinforms
             // 
             this.bsUsers.CurrentChanged += new System.EventHandler(this.bsUsers_CurrentChanged);
             // 
-            // TxtToken
-            // 
-            this.TxtToken.Location = new System.Drawing.Point(515, 47);
-            this.TxtToken.Multiline = true;
-            this.TxtToken.Name = "TxtToken";
-            this.TxtToken.ReadOnly = true;
-            this.TxtToken.Size = new System.Drawing.Size(163, 87);
-            this.TxtToken.TabIndex = 5;
-            // 
             // dgvUsers
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -112,7 +102,6 @@ namespace ClientWinforms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvUsers);
-            this.Controls.Add(this.TxtToken);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
@@ -136,7 +125,6 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.BindingSource bsUsers;
-        private System.Windows.Forms.TextBox TxtToken;
         private System.Windows.Forms.DataGridView dgvUsers;
     }
 }

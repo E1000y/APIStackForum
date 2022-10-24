@@ -1,3 +1,0 @@
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\Domain\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\Domain\Debug\net5.0\Domain.AssemblyInfoInputs.cache
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\Domain\Debug\net5.0\Domain.AssemblyInfo.cs

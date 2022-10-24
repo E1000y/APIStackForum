@@ -50,7 +50,7 @@ namespace ClientWinforms
         {
             var jwt = await _dal.Login(txtLogin.Text, txtPassword.Text);
 
-            TxtToken.Text = jwt;
+    
 
 
 
@@ -58,9 +58,9 @@ namespace ClientWinforms
             {
                 await RefreshAsync(0);
                 InitializeBinding();
-                //    DevelopmentForm developmentForm = new DevelopmentForm();
-                //    developmentForm.Show();
-                //    this.Hide();
+                DevelopmentForm developmentForm = new DevelopmentForm(jwt);
+                developmentForm.Show();
+                this.Hide();
 
 
             }

@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace ClientWinforms
 {
-    public partial class DevelopmentForm : Form
+    public partial class Form2 : Form
     {
-
-        string _jwt;
-        public DevelopmentForm(string jwt)
+        public Form2()
         {
-            _jwt = jwt;
             InitializeComponent();
-        }
-
-        private void DevelopmentForm_Load(object sender, EventArgs e)
-        {
-            TxtToken.Text = _jwt;
         }
     }
 }
