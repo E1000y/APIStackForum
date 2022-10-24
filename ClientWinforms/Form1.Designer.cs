@@ -36,9 +36,7 @@ namespace ClientWinforms
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvUsers = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // labelLogin
@@ -87,21 +85,11 @@ namespace ClientWinforms
             // 
             this.bsUsers.CurrentChanged += new System.EventHandler(this.bsUsers_CurrentChanged);
             // 
-            // dgvUsers
-            // 
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(103, 194);
-            this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.RowTemplate.Height = 25;
-            this.dgvUsers.Size = new System.Drawing.Size(549, 114);
-            this.dgvUsers.TabIndex = 6;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgvUsers);
+            this.ClientSize = new System.Drawing.Size(501, 169);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
@@ -111,7 +99,6 @@ namespace ClientWinforms
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,7 +112,6 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.BindingSource bsUsers;
-        private System.Windows.Forms.DataGridView dgvUsers;
     }
 }
 

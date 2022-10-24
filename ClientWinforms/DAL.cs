@@ -54,5 +54,41 @@ namespace ClientWinforms
             else
                 return null;
         }
+
+        public async Task<List<Subject>> GetAllSubjectsAsync()
+        {
+            var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/Forum/Subjects");
+
+            if (res.IsSuccessStatusCode)
+            {
+                string content = await res.Content.ReadAsStringAsync();
+                var lstDTO = JsonSerializer.Deserialize<List<SubjectResponseDTO>>(content);
+                return lstDTO.ConvertAll(s => new Subject { Id = s.Id, Name = s.Name, Description = s.Description, categoryId = s.CategoryId, CreationDate = s.CreationDate, writerId = s.WriterId });
+            }
+            else return null;
+        }
+
+        public async Task<List<Subject>> GetSubjectsByCategoryId(int id)
+        {
+            var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/Forum/Subjects");
+
+
+
+
+            if (res.IsSuccessStatusCode)
+            {
+                string content = await res.Content.ReadAsStringAsync();
+                List<SubjectResponseDTO> lstDTO = JsonSerializer.Deserialize<List<SubjectResponseDTO>>(content);
+
+
+                var ConvertedLstDTO = lstDTO.ConvertAll(s => new Subject { Id = s.Id, Name = s.Name, Description = s.Description, categoryId = s.CategoryId, CreationDate = s.CreationDate, writerId = s.WriterId });
+
+                var FilteredConvertedLstDTO = ConvertedLstDTO.FindAll(s => s.categoryId == id);
+
+                return FilteredConvertedLstDTO;
+
+            }
+            else return null;
+        }
     }
 }

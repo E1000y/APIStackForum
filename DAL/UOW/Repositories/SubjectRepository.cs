@@ -84,5 +84,7 @@ namespace DAL.UOW.Repositories
             if (nbLinesModified != 1) throw new UpdateSQLFailureException(entity);
             return await GetByIdAsync(entity.Id);
         }
+
+        
     }
 }

@@ -34,17 +34,7 @@ namespace ClientWinforms
 
        
         
-        private async Task RefreshAsync(int id = 0)
-        {
-            _lstUtilisateurs = await _dal.GetAllUtilisateursAsync();
-
-            if (_lstUtilisateurs != null)
-            {
-                bsUsers.DataSource = _lstUtilisateurs;
-                bsUsers.ResetBindings(false);
-                bsUsers.Position = _lstUtilisateurs.FindIndex(u => u.Id == id);
-            }
-        }
+        
 
         private async void btnLogin_Click(object sender, EventArgs e)
         {
@@ -56,8 +46,8 @@ namespace ClientWinforms
 
             if (jwt != null)
             {
-                await RefreshAsync(0);
-                InitializeBinding();
+                
+        
                 DevelopmentForm developmentForm = new DevelopmentForm(jwt);
                 developmentForm.Show();
                 this.Hide();
@@ -65,13 +55,6 @@ namespace ClientWinforms
 
             }
         }
-        private void InitializeBinding()
-        {
-            if(_lstUtilisateurs != null && _lstUtilisateurs.Count > 0)
-            {
-                dgvUsers.DataSource = bsUsers;
-                this.dgvUsers.Columns["Password"].Visible = false;
-            }
-        }
+        
     }
 }
