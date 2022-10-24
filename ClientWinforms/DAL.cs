@@ -70,22 +70,27 @@ namespace ClientWinforms
 
         public async Task<List<Subject>> GetSubjectsByCategoryId(int id)
         {
-            var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/Forum/Subjects");
+            /*var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/Forum/Subjects");
+            if (res.IsSuccessStatusCode)
+            {
+                string content = await res.Content.ReadAsStringAsync();
+                List<SubjectResponseDTO> lstDTO = JsonSerializer.Deserialize<List<SubjectResponseDTO>>(content);
+                var ConvertedLstDTO = lstDTO.ConvertAll(s => new Subject { Id = s.Id, Name = s.Name, Description = s.Description, categoryId = s.CategoryId, CreationDate = s.CreationDate, writerId = s.WriterId });
+                var FilteredConvertedLstDTO = ConvertedLstDTO.FindAll(s => s.categoryId == id);
+                return FilteredConvertedLstDTO;
+            }
+            else return null;*/
 
 
-
+            var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/forum/categories/{id}/subjects");
 
             if (res.IsSuccessStatusCode)
             {
                 string content = await res.Content.ReadAsStringAsync();
                 List<SubjectResponseDTO> lstDTO = JsonSerializer.Deserialize<List<SubjectResponseDTO>>(content);
-
-
                 var ConvertedLstDTO = lstDTO.ConvertAll(s => new Subject { Id = s.Id, Name = s.Name, Description = s.Description, categoryId = s.CategoryId, CreationDate = s.CreationDate, writerId = s.WriterId });
 
-                var FilteredConvertedLstDTO = ConvertedLstDTO.FindAll(s => s.categoryId == id);
-
-                return FilteredConvertedLstDTO;
+                return ConvertedLstDTO;
 
             }
             else return null;

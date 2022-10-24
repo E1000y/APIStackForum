@@ -16,17 +16,20 @@ namespace ClientWinforms
         DAL _dal = new DAL();
 
         List<Subject> _lstSubjects;
+        List<Answer> _lstAnswers;
 
         string _jwt;
         public DevelopmentForm(string jwt)
         {
             _jwt = jwt;
             InitializeComponent();
+            
         }
 
         private void DevelopmentForm_Load(object sender, EventArgs e)
         {
             TxtToken.Text = _jwt;
+            btnDev_Click(sender, e);
         }
 
         private void btnDev_Click(object sender, EventArgs e)
@@ -40,6 +43,7 @@ namespace ClientWinforms
             if(_lstSubjects != null && _lstSubjects.Count > 0)
             {
             dgvSubjects.DataSource = bsSubjects;
+                dgvSubjects.Columns["id"].Visible = false;
 
             }
         }
@@ -78,6 +82,13 @@ namespace ClientWinforms
         {
             initializeBindingSubjects();
             RefreshAsync(5);
+        }
+
+        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Subject subject = (Subject)bsSubjects.Current;
+           
+           _lstAnswers = 
         }
     }
 }

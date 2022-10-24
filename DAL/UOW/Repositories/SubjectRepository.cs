@@ -67,6 +67,17 @@ namespace DAL.UOW.Repositories
             return subject;
         }
 
+        public async Task<IEnumerable<Subject>> GetByCategoryIdAsync(int categoryId)
+        {
+            string query = @"SELECT * FROM Subject WHERE categoryId = @categoryId";
+
+            IEnumerable<Subject> subjects = await _dbsession.Connection.QueryAsync<Subject>(query, new { categoryId = categoryId }, transaction: _dbsession.Transaction);
+
+            return subjects;
+        }
+
+   
+
         public async Task<Subject> UpdateAsync(Subject entity)
         {
             string query = @"UPDATE Subject SET Name = @name, description = @description, creationDate = @creationDate, writerId = @writerId, categoryId = @categoryId where id = @id";

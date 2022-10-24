@@ -173,6 +173,7 @@ namespace ClientWinforms
             this.dgvSubjects.RowTemplate.Height = 25;
             this.dgvSubjects.Size = new System.Drawing.Size(658, 155);
             this.dgvSubjects.TabIndex = 0;
+            this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
             // DevelopmentForm
             // 

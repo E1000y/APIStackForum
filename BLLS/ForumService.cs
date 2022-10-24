@@ -80,10 +80,17 @@ namespace BLLS
         {
             return await _uow.Subject.GetByIdAsync(id);
         }
+
+        public async Task<IEnumerable<Subject>> GetSubjectsByCategoryId(int categoryId)
+        {
+            return await _uow.Subject.GetByCategoryIdAsync(categoryId);
+        }
         public async Task<Subject> CreateSubjectAsync(Subject newSubject)
         {
             return await _uow.Subject.AddAsync(newSubject);
         }
+
+       
 
         public async Task<Subject> ModifySubjectAsync(Subject modifiedSubject)
         {

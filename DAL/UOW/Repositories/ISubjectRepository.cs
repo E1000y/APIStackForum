@@ -9,5 +9,7 @@ namespace DAL.UOW.Repositories
 {
     public interface ISubjectRepository : IGenericRepository<Subject>
     {
+
+        public  Task<IEnumerable<Subject>> GetByCategoryIdAsync(int categoryId);
     }
 }
