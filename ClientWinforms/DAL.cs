@@ -3,9 +3,11 @@ using Domain.DTO.Responses;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -14,6 +16,28 @@ namespace ClientWinforms
 {
     public class DAL
     {
+        static DAL _dal = null;
+
+        private List<String> roles = new();
+
+        private string userId = "";
+
+        public int getUserId()
+        {
+            return Int32.Parse(userId); 
+        }
+
+
+        private DAL() { }
+
+        public static DAL getDAL()
+        {
+            if (_dal == null)
+                _dal = new DAL();
+            return _dal;
+        }
+
+
         HttpClient _client = new HttpClient();
         string _token;
 
@@ -33,6 +57,26 @@ namespace ClientWinforms
                 string content = await res.Content.ReadAsStringAsync();
                 _token = content;
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
+
+                var handler = new JwtSecurityTokenHandler();
+                var tokenDecoded = handler.ReadJwtToken(_token);
+
+                foreach (var item in tokenDecoded.Claims)
+                {
+                    switch (item.Type)
+                    {
+                        case ClaimTypes.Role:
+                            roles.Add(item.Value);
+                            break;
+                        case ClaimTypes.NameIdentifier:
+                            userId = item.Value;
+                            break;
+                    }
+                }
+
+
+
+
 
                 return _token;
             }
@@ -111,6 +155,16 @@ namespace ClientWinforms
 
             }
             else return null;
+        }
+
+        public async Task<bool> deleteSubjectAsync(int id)
+        {
+            var res = await _client.DeleteAsync($"{Settings1.Default.ConnectionStringLocal}/forum/subjects/{id}");
+            if (res.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace ClientWinforms
 {
     public partial class DevelopmentForm : Form
     {
-        DAL _dal = new DAL();
+        DAL _dal = DAL.getDAL();
 
         List<Subject> _lstSubjects;
         List<Answer> _lstAnswers;
@@ -24,6 +24,14 @@ namespace ClientWinforms
             _jwt = jwt;
             InitializeComponent();
             
+        }
+        void ButtonClickOneEvent(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.BackColor = (btn.BackColor == Color.White) ? Color.Red : Color.White;
+            }
         }
 
         private void DevelopmentForm_Load(object sender, EventArgs e)
@@ -37,7 +45,7 @@ namespace ClientWinforms
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             RefreshAsync(1);
-        }
+         }
 
         private void initializeBindingSubjects()
         {
@@ -49,7 +57,7 @@ namespace ClientWinforms
             }
         }
 
-        private async Task RefreshAsync(int id)
+        private async Task RefreshAsync(int id, int idsubject = 0)
         {
             _lstSubjects = await _dal.GetSubjectsByCategoryId(id);
 
@@ -57,7 +65,7 @@ namespace ClientWinforms
             {
                 bsSubjects.DataSource = _lstSubjects;
                 bsSubjects.ResetBindings(false);
-                bsSubjects.Position = _lstSubjects.FindIndex(u => u.Id == id);
+                bsSubjects.Position = _lstSubjects.FindIndex(u => u.Id == idsubject);
             }
         }
 
@@ -115,6 +123,32 @@ namespace ClientWinforms
             Subject subject = (Subject)bsSubjects.Current;
 
             RefreshAnswersAsync(subject);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Delete pending subject
+
+            //throw new NotImplementedException();
+
+            Subject subject = (Subject)bsSubjects.Current;
+
+            DeleteSubjectAsync(subject);
+
+            RefreshAsync(subject.categoryId);
+
+        }
+
+        private async void DeleteSubjectAsync(Subject subject)
+        {
+
+            bool result = await _dal.deleteSubjectAsync(subject.Id);
+            
+        }
+
+        private void btnDev_MouseHover(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,7 +30,7 @@ namespace APIStackForum.Controllers
         {
             string token = await _securityService.SigningAsync(authentificationRequestDTO.Login, authentificationRequestDTO.Password);
 
-            return Ok(new { Token = token });
+            return Ok(token);
         }
 
 

@@ -40,12 +40,26 @@ namespace ClientWinforms
             this.label2 = new System.Windows.Forms.Label();
             this.btnDev = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.dgvAnswers = new System.Windows.Forms.DataGridView();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
             this.bsSubjects = new System.Windows.Forms.BindingSource(this.components);
             this.bsAnswers = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSubjects)).BeginInit();
@@ -81,7 +95,7 @@ namespace ClientWinforms
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 557);
+            this.panel1.Size = new System.Drawing.Size(200, 732);
             this.panel1.TabIndex = 7;
             // 
             // btnDivers
@@ -145,21 +159,129 @@ namespace ClientWinforms
             this.btnDev.Text = "Dev";
             this.btnDev.UseVisualStyleBackColor = true;
             this.btnDev.Click += new System.EventHandler(this.btnDev_Click);
+            this.btnDev.MouseHover += new System.EventHandler(this.btnDev_MouseHover);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tabControl2);
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.dgvAnswers);
             this.panel2.Controls.Add(this.dgvSubjects);
             this.panel2.Location = new System.Drawing.Point(200, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(680, 429);
+            this.panel2.Size = new System.Drawing.Size(858, 661);
             this.panel2.TabIndex = 8;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Location = new System.Drawing.Point(27, 531);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(636, 100);
+            this.tabControl2.TabIndex = 4;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(628, 72);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "Ajouter";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(628, 72);
+            this.tabPage5.TabIndex = 1;
+            this.tabPage5.Text = "Modifier";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 24);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(628, 72);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "Supprimer";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(27, 183);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(640, 122);
+            this.tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(632, 94);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Ajouter";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(632, 94);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Modifier";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(632, 94);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Supprimer";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(131, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 308);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Réponses au sujet sélectionné";
             // 
             // dgvAnswers
             // 
+            this.dgvAnswers.AllowUserToAddRows = false;
+            this.dgvAnswers.AllowUserToDeleteRows = false;
             this.dgvAnswers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnswers.Location = new System.Drawing.Point(9, 206);
+            this.dgvAnswers.Location = new System.Drawing.Point(10, 326);
             this.dgvAnswers.Name = "dgvAnswers";
+            this.dgvAnswers.ReadOnly = true;
             this.dgvAnswers.RowTemplate.Height = 25;
             this.dgvAnswers.Size = new System.Drawing.Size(657, 170);
             this.dgvAnswers.TabIndex = 1;
@@ -169,7 +291,7 @@ namespace ClientWinforms
             this.dgvSubjects.AllowUserToAddRows = false;
             this.dgvSubjects.AllowUserToDeleteRows = false;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubjects.Location = new System.Drawing.Point(9, 14);
+            this.dgvSubjects.Location = new System.Drawing.Point(9, 3);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
             this.dgvSubjects.RowTemplate.Height = 25;
@@ -178,11 +300,21 @@ namespace ClientWinforms
             this.dgvSubjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellClick);
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(210, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Sujets";
+            // 
             // DevelopmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 557);
+            this.ClientSize = new System.Drawing.Size(1057, 732);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TxtToken);
@@ -193,6 +325,10 @@ namespace ClientWinforms
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSubjects)).EndInit();
@@ -218,5 +354,16 @@ namespace ClientWinforms
         private System.Windows.Forms.DataGridView dgvSubjects;
         private System.Windows.Forms.BindingSource bsSubjects;
         private System.Windows.Forms.BindingSource bsAnswers;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button1;
     }
 }

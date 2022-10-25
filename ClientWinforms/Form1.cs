@@ -14,7 +14,7 @@ namespace ClientWinforms
     public partial class Form1 : Form
 
     {
-        DAL _dal = new DAL();
+        DAL _dal = DAL.getDAL();
         List<Writer> _lstUtilisateurs;
 
         public Form1()
