@@ -55,10 +55,14 @@ namespace ClientWinforms
             this.bsSubjects = new System.Windows.Forms.BindingSource(this.components);
             this.bsAnswers = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.txtSubjectName = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.btnAddSubject = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
@@ -226,6 +230,9 @@ namespace ClientWinforms
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnAddSubject);
+            this.tabPage1.Controls.Add(this.txtDescription);
+            this.tabPage1.Controls.Add(this.txtSubjectName);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -257,11 +264,11 @@ namespace ClientWinforms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(131, 31);
+            this.button1.Location = new System.Drawing.Point(242, 31);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(135, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Supprimer le sujet";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -309,6 +316,31 @@ namespace ClientWinforms
             this.label3.TabIndex = 9;
             this.label3.Text = "Sujets";
             // 
+            // txtSubjectName
+            // 
+            this.txtSubjectName.Location = new System.Drawing.Point(15, 7);
+            this.txtSubjectName.Name = "txtSubjectName";
+            this.txtSubjectName.Size = new System.Drawing.Size(100, 23);
+            this.txtSubjectName.TabIndex = 0;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(15, 36);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(167, 37);
+            this.txtDescription.TabIndex = 1;
+            // 
+            // btnAddSubject
+            // 
+            this.btnAddSubject.Location = new System.Drawing.Point(271, 43);
+            this.btnAddSubject.Name = "btnAddSubject";
+            this.btnAddSubject.Size = new System.Drawing.Size(225, 29);
+            this.btnAddSubject.TabIndex = 2;
+            this.btnAddSubject.Text = "Ajouter un sujet";
+            this.btnAddSubject.UseVisualStyleBackColor = true;
+            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
+            // 
             // DevelopmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -328,6 +360,8 @@ namespace ClientWinforms
             this.panel2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
@@ -365,5 +399,8 @@ namespace ClientWinforms
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtSubjectName;
+        private System.Windows.Forms.Button btnAddSubject;
     }
 }

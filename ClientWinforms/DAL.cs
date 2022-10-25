@@ -157,6 +157,28 @@ namespace ClientWinforms
             else return null;
         }
 
+        internal async Task<Subject> createSubjectAsync(string subjectName, string subjectDescription, int categoryId)
+        {
+            int writerId = getUserId();
+            CreateSubjectRequestDTO DTONewSubject = new() { Name = subjectName, Description = subjectDescription, CategoryId = categoryId, WriterId = writerId };
+
+            var jsonBodyParameter = new StringContent(JsonSerializer.Serialize(DTONewSubject), Encoding.UTF8, "application/json");
+
+            var res = await _client.PostAsync($"{Settings1.Default.ConnectionStringLocal}/forum/subjects", jsonBodyParameter);
+
+            if (res.IsSuccessStatusCode)
+            {
+                string content = await res.Content.ReadAsStringAsync();
+                var DTOSubject = JsonSerializer.Deserialize<SubjectResponseDTO>(content);
+
+                return new Subject() { Id = DTOSubject.Id, Name = DTOSubject.Name, Description = DTOSubject.Description, CreationDate = DTOSubject.CreationDate, writerId = DTOSubject.WriterId, categoryId = DTOSubject.CategoryId };
+
+            }
+            else return null;
+
+
+        }
+
         public async Task<bool> deleteSubjectAsync(int id)
         {
             var res = await _client.DeleteAsync($"{Settings1.Default.ConnectionStringLocal}/forum/subjects/{id}");

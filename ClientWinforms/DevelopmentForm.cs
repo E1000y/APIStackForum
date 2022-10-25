@@ -18,6 +18,8 @@ namespace ClientWinforms
         List<Subject> _lstSubjects;
         List<Answer> _lstAnswers;
 
+        int activeCategory = 0;
+
         string _jwt;
         public DevelopmentForm(string jwt)
         {
@@ -44,7 +46,8 @@ namespace ClientWinforms
         {
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
-            RefreshAsync(1);
+            activeCategory = 1;
+            RefreshAsync(activeCategory);
          }
 
         private void initializeBindingSubjects()
@@ -73,28 +76,33 @@ namespace ClientWinforms
         {
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
-            RefreshAsync(2);
+            activeCategory = 2;
+            RefreshAsync(activeCategory);
         }
 
         private void btnFormation_Click(object sender, EventArgs e)
         {
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
-            RefreshAsync(3);
+            activeCategory = 3;
+            RefreshAsync(activeCategory);
         }
 
         private void btnFun_Click(object sender, EventArgs e)
         {
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
-            RefreshAsync(4);
+            activeCategory = 4;
+            RefreshAsync(activeCategory);
         }
 
         private void btnDivers_Click(object sender, EventArgs e)
         {
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
-            RefreshAsync(5);
+            activeCategory = 5;
+
+            RefreshAsync(activeCategory);
         }
 
         private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -149,6 +157,21 @@ namespace ClientWinforms
         private void btnDev_MouseHover(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddSubject_Click(object sender, EventArgs e)
+        {
+            String subjectName = txtSubjectName.Text;
+            String subjectDescription = txtDescription.Text;
+
+            CreateSubjectAsync(subjectName, subjectDescription, activeCategory);
+
+        }
+
+        private async void CreateSubjectAsync(string subjectName, string subjectDescription, int categoryId)
+        {
+            await _dal.createSubjectAsync(subjectName, subjectDescription, categoryId);
+            RefreshAsync(categoryId);
         }
     }
 }
