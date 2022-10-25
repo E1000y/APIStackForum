@@ -111,6 +111,9 @@ namespace ClientWinforms
 
             RefreshAnswersAsync(subject);
 
+            TxtModifySubjectName.Text = subject.Name;
+            txtModifySubjectDescription.Text = subject.Description;
+
         }
 
         private async void RefreshAnswersAsync(Subject subject)
@@ -172,6 +175,20 @@ namespace ClientWinforms
         {
             await _dal.createSubjectAsync(subjectName, subjectDescription, categoryId);
             RefreshAsync(categoryId);
+        }
+
+        private void ModifyButton_Click(object sender, EventArgs e)
+        {
+            String modifiedSubjectName = TxtModifySubjectName.Text;
+            String modifiedSubjectDescription = txtModifySubjectDescription.Text;
+            Subject subject = (Subject)bsSubjects.Current;
+            ModifySubjectAsync(subject.Id,modifiedSubjectName, modifiedSubjectDescription, activeCategory);
+        }
+
+        private async void ModifySubjectAsync(int subjectId, string modifiedSubjectName, string modifiedSubjectDescription, int activeCategory)
+        {
+            await _dal.modifySubjectAsync(subjectId, modifiedSubjectName, modifiedSubjectDescription, activeCategory);
+            
         }
     }
 }

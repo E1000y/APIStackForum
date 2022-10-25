@@ -46,7 +46,13 @@ namespace ClientWinforms
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnAddSubject = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtSubjectName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ModifySubject = new System.Windows.Forms.Button();
+            this.txtModifySubjectDescription = new System.Windows.Forms.TextBox();
+            this.TxtModifySubjectName = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,14 +61,12 @@ namespace ClientWinforms
             this.bsSubjects = new System.Windows.Forms.BindingSource(this.components);
             this.bsAnswers = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSubjectName = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.btnAddSubject = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
@@ -241,8 +245,36 @@ namespace ClientWinforms
             this.tabPage1.Text = "Ajouter";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnAddSubject
+            // 
+            this.btnAddSubject.Location = new System.Drawing.Point(271, 43);
+            this.btnAddSubject.Name = "btnAddSubject";
+            this.btnAddSubject.Size = new System.Drawing.Size(225, 29);
+            this.btnAddSubject.TabIndex = 2;
+            this.btnAddSubject.Text = "Ajouter un sujet";
+            this.btnAddSubject.UseVisualStyleBackColor = true;
+            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(15, 36);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(222, 52);
+            this.txtDescription.TabIndex = 1;
+            // 
+            // txtSubjectName
+            // 
+            this.txtSubjectName.Location = new System.Drawing.Point(15, 7);
+            this.txtSubjectName.Name = "txtSubjectName";
+            this.txtSubjectName.Size = new System.Drawing.Size(104, 23);
+            this.txtSubjectName.TabIndex = 0;
+            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.ModifySubject);
+            this.tabPage2.Controls.Add(this.txtModifySubjectDescription);
+            this.tabPage2.Controls.Add(this.TxtModifySubjectName);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -250,6 +282,31 @@ namespace ClientWinforms
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modifier";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ModifySubject
+            // 
+            this.ModifySubject.Location = new System.Drawing.Point(280, 46);
+            this.ModifySubject.Name = "ModifySubject";
+            this.ModifySubject.Size = new System.Drawing.Size(122, 30);
+            this.ModifySubject.TabIndex = 2;
+            this.ModifySubject.Text = "Modifier";
+            this.ModifySubject.UseVisualStyleBackColor = true;
+            this.ModifySubject.Click += new System.EventHandler(this.ModifyButton_Click);
+            // 
+            // txtModifySubjectDescription
+            // 
+            this.txtModifySubjectDescription.Location = new System.Drawing.Point(15, 36);
+            this.txtModifySubjectDescription.Multiline = true;
+            this.txtModifySubjectDescription.Name = "txtModifySubjectDescription";
+            this.txtModifySubjectDescription.Size = new System.Drawing.Size(225, 52);
+            this.txtModifySubjectDescription.TabIndex = 1;
+            // 
+            // TxtModifySubjectName
+            // 
+            this.TxtModifySubjectName.Location = new System.Drawing.Point(15, 7);
+            this.TxtModifySubjectName.Name = "TxtModifySubjectName";
+            this.TxtModifySubjectName.Size = new System.Drawing.Size(102, 23);
+            this.TxtModifySubjectName.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -316,31 +373,6 @@ namespace ClientWinforms
             this.label3.TabIndex = 9;
             this.label3.Text = "Sujets";
             // 
-            // txtSubjectName
-            // 
-            this.txtSubjectName.Location = new System.Drawing.Point(15, 7);
-            this.txtSubjectName.Name = "txtSubjectName";
-            this.txtSubjectName.Size = new System.Drawing.Size(100, 23);
-            this.txtSubjectName.TabIndex = 0;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(15, 36);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(167, 37);
-            this.txtDescription.TabIndex = 1;
-            // 
-            // btnAddSubject
-            // 
-            this.btnAddSubject.Location = new System.Drawing.Point(271, 43);
-            this.btnAddSubject.Name = "btnAddSubject";
-            this.btnAddSubject.Size = new System.Drawing.Size(225, 29);
-            this.btnAddSubject.TabIndex = 2;
-            this.btnAddSubject.Text = "Ajouter un sujet";
-            this.btnAddSubject.UseVisualStyleBackColor = true;
-            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
-            // 
             // DevelopmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -362,6 +394,8 @@ namespace ClientWinforms
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnswers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
@@ -402,5 +436,8 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtSubjectName;
         private System.Windows.Forms.Button btnAddSubject;
+        private System.Windows.Forms.TextBox txtModifySubjectDescription;
+        private System.Windows.Forms.TextBox TxtModifySubjectName;
+        private System.Windows.Forms.Button ModifySubject;
     }
 }
