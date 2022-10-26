@@ -178,6 +178,31 @@ namespace ClientWinforms
 
         }
 
+        internal async Task<Answer> createAnswerAsync(int subjectId, string addAnswerBody)
+        {
+            int writerId = getUserId();
+            CreateAnswerRequestDTO DTONewAnswer = new()
+            {
+                Body = addAnswerBody,
+                CreationDate = DateTime.Now,
+                subjectId = subjectId,
+                writerId = writerId
+            };
+
+            var jsonBodyParameter = new StringContent(JsonSerializer.Serialize(DTONewAnswer), Encoding.UTF8, "application/json");
+
+            var res = await _client.PostAsync($"{Settings1.Default.ConnectionStringLocal}/forum/answers", jsonBodyParameter);
+
+            if (res.IsSuccessStatusCode)
+            {
+                string content = await res.Content.ReadAsStringAsync();
+                var DTOAnswer = JsonSerializer.Deserialize<AnswerResponseDTO>(content);
+                return new Answer() { Id = DTOAnswer.Id, Body = DTOAnswer.Body, CreationDate = DTOAnswer.CreationDate, writerId = DTOAnswer.WriterId, subjectId = DTOAnswer.SubjectId };
+
+            }
+            else return null;
+        }
+
         internal async Task<Subject> createSubjectAsync(string subjectName, string subjectDescription, int categoryId)
         {
             int writerId = getUserId();

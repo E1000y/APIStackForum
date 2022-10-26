@@ -42,7 +42,11 @@ namespace ClientWinforms
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnAddAnswer = new System.Windows.Forms.Button();
+            this.txtAddAnswerBody = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnModifyAnswer = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -64,6 +68,8 @@ namespace ClientWinforms
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -186,37 +192,77 @@ namespace ClientWinforms
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Location = new System.Drawing.Point(27, 531);
+            this.tabControl2.Location = new System.Drawing.Point(27, 502);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(636, 100);
+            this.tabControl2.Size = new System.Drawing.Size(636, 156);
             this.tabControl2.TabIndex = 4;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnAddAnswer);
+            this.tabPage4.Controls.Add(this.txtAddAnswerBody);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(628, 72);
+            this.tabPage4.Size = new System.Drawing.Size(628, 128);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Ajouter";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnAddAnswer
+            // 
+            this.btnAddAnswer.Location = new System.Drawing.Point(280, 75);
+            this.btnAddAnswer.Name = "btnAddAnswer";
+            this.btnAddAnswer.Size = new System.Drawing.Size(122, 29);
+            this.btnAddAnswer.TabIndex = 2;
+            this.btnAddAnswer.Text = "Ajouter une réponse";
+            this.btnAddAnswer.UseVisualStyleBackColor = true;
+            this.btnAddAnswer.Click += new System.EventHandler(this.btnAddAnswer_Click);
+            // 
+            // txtAddAnswerBody
+            // 
+            this.txtAddAnswerBody.Location = new System.Drawing.Point(15, 6);
+            this.txtAddAnswerBody.Multiline = true;
+            this.txtAddAnswerBody.Name = "txtAddAnswerBody";
+            this.txtAddAnswerBody.Size = new System.Drawing.Size(224, 111);
+            this.txtAddAnswerBody.TabIndex = 1;
+            // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btnModifyAnswer);
+            this.tabPage5.Controls.Add(this.textBox2);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(628, 72);
+            this.tabPage5.Size = new System.Drawing.Size(628, 128);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Modifier";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnModifyAnswer
+            // 
+            this.btnModifyAnswer.Location = new System.Drawing.Point(280, 67);
+            this.btnModifyAnswer.Name = "btnModifyAnswer";
+            this.btnModifyAnswer.Size = new System.Drawing.Size(122, 29);
+            this.btnModifyAnswer.TabIndex = 2;
+            this.btnModifyAnswer.Text = "Modifier la réponse";
+            this.btnModifyAnswer.UseVisualStyleBackColor = true;
+            this.btnModifyAnswer.Click += new System.EventHandler(this.btnModifyAnswer_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(10, 6);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(209, 105);
+            this.textBox2.TabIndex = 1;
             // 
             // tabPage6
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(628, 72);
+            this.tabPage6.Size = new System.Drawing.Size(628, 128);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Supprimer";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -247,9 +293,9 @@ namespace ClientWinforms
             // 
             // btnAddSubject
             // 
-            this.btnAddSubject.Location = new System.Drawing.Point(271, 43);
+            this.btnAddSubject.Location = new System.Drawing.Point(280, 43);
             this.btnAddSubject.Name = "btnAddSubject";
-            this.btnAddSubject.Size = new System.Drawing.Size(225, 29);
+            this.btnAddSubject.Size = new System.Drawing.Size(122, 29);
             this.btnAddSubject.TabIndex = 2;
             this.btnAddSubject.Text = "Ajouter un sujet";
             this.btnAddSubject.UseVisualStyleBackColor = true;
@@ -289,7 +335,7 @@ namespace ClientWinforms
             this.ModifySubject.Name = "ModifySubject";
             this.ModifySubject.Size = new System.Drawing.Size(122, 30);
             this.ModifySubject.TabIndex = 2;
-            this.ModifySubject.Text = "Modifier";
+            this.ModifySubject.Text = "Modifier un sujet";
             this.ModifySubject.UseVisualStyleBackColor = true;
             this.ModifySubject.Click += new System.EventHandler(this.ModifyButton_Click);
             // 
@@ -321,9 +367,9 @@ namespace ClientWinforms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(242, 31);
+            this.button1.Location = new System.Drawing.Point(280, 39);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 23);
+            this.button1.Size = new System.Drawing.Size(122, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "Supprimer le sujet";
             this.button1.UseVisualStyleBackColor = true;
@@ -359,7 +405,7 @@ namespace ClientWinforms
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
             this.dgvSubjects.RowTemplate.Height = 25;
-            this.dgvSubjects.Size = new System.Drawing.Size(658, 155);
+            this.dgvSubjects.Size = new System.Drawing.Size(658, 174);
             this.dgvSubjects.TabIndex = 0;
             this.dgvSubjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellClick);
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
@@ -391,6 +437,10 @@ namespace ClientWinforms
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -439,5 +489,10 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox txtModifySubjectDescription;
         private System.Windows.Forms.TextBox TxtModifySubjectName;
         private System.Windows.Forms.Button ModifySubject;
+        private System.Windows.Forms.Button btnAddAnswer;
+        private System.Windows.Forms.TextBox txtAddAnswerBody;
+        private System.Windows.Forms.Button btnModifyAnswer;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

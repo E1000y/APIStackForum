@@ -47,7 +47,7 @@ namespace ClientWinforms
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             activeCategory = 1;
-            RefreshAsync(activeCategory);
+            RefreshSubjectAsync(activeCategory);
          }
 
         private void initializeBindingSubjects()
@@ -60,7 +60,7 @@ namespace ClientWinforms
             }
         }
 
-        private async Task RefreshAsync(int id, int idsubject = 0)
+        private async Task RefreshSubjectAsync(int id, int idsubject = 0)
         {
             _lstSubjects = await _dal.GetSubjectsByCategoryId(id);
 
@@ -70,14 +70,15 @@ namespace ClientWinforms
                 bsSubjects.ResetBindings(false);
                 bsSubjects.Position = _lstSubjects.FindIndex(u => u.Id == idsubject);
             }
-        }
+
+          }
 
         private void btnEmploi_Click(object sender, EventArgs e)
         {
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             activeCategory = 2;
-            RefreshAsync(activeCategory);
+            RefreshSubjectAsync(activeCategory);
         }
 
         private void btnFormation_Click(object sender, EventArgs e)
@@ -85,7 +86,7 @@ namespace ClientWinforms
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             activeCategory = 3;
-            RefreshAsync(activeCategory);
+            RefreshSubjectAsync(activeCategory);
         }
 
         private void btnFun_Click(object sender, EventArgs e)
@@ -93,7 +94,7 @@ namespace ClientWinforms
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             activeCategory = 4;
-            RefreshAsync(activeCategory);
+            RefreshSubjectAsync(activeCategory);
         }
 
         private void btnDivers_Click(object sender, EventArgs e)
@@ -102,7 +103,7 @@ namespace ClientWinforms
             initializeBindingSubjects();
             activeCategory = 5;
 
-            RefreshAsync(activeCategory);
+            RefreshSubjectAsync(activeCategory);
         }
 
         private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -124,8 +125,8 @@ namespace ClientWinforms
             {
                 bsAnswers.DataSource = _lstAnswers;
                 dgvAnswers.DataSource = bsAnswers;
-               /* bsAnswers.ResetBindings(false);
-                bsAnswers.Position = _lstAnswers.FindIndex(u => u.Id == subject.Id);*/
+               bsAnswers.ResetBindings(false);
+                /*bsAnswers.Position = _lstAnswers.FindIndex(u => u.Id == subject.Id);*/
             }
         }
 
@@ -136,7 +137,7 @@ namespace ClientWinforms
             RefreshAnswersAsync(subject);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             //Delete pending subject
 
@@ -144,18 +145,22 @@ namespace ClientWinforms
 
             Subject subject = (Subject)bsSubjects.Current;
 
-            DeleteSubjectAsync(subject);
-
-            RefreshAsync(subject.categoryId);
-
-        }
-
-        private async void DeleteSubjectAsync(Subject subject)
-        {
-
             bool result = await _dal.deleteSubjectAsync(subject.Id);
-            
+
+            if (result)
+            {
+                MessageBox.Show("ligne supprimée");
+            }
+            else
+            {
+                MessageBox.Show("Erreur de suppression");
+            }
+
+            RefreshSubjectAsync(subject.categoryId);
+
         }
+
+        
 
         private void btnDev_MouseHover(object sender, EventArgs e)
         {
@@ -174,12 +179,13 @@ namespace ClientWinforms
         private async void CreateSubjectAsync(string subjectName, string subjectDescription, int categoryId)
         {
             await _dal.createSubjectAsync(subjectName, subjectDescription, categoryId);
-            RefreshAsync(categoryId);
+            RefreshSubjectAsync(categoryId);
         }
 
         private void ModifyButton_Click(object sender, EventArgs e)
         {
-            String modifiedSubjectName = TxtModifySubjectName.Text;
+            
+           String modifiedSubjectName = TxtModifySubjectName.Text;
             String modifiedSubjectDescription = txtModifySubjectDescription.Text;
             Subject subject = (Subject)bsSubjects.Current;
             ModifySubjectAsync(subject.Id,modifiedSubjectName, modifiedSubjectDescription, activeCategory);
@@ -189,6 +195,22 @@ namespace ClientWinforms
         {
             await _dal.modifySubjectAsync(subjectId, modifiedSubjectName, modifiedSubjectDescription, activeCategory);
             
+        }
+
+        private async void btnAddAnswer_Click(object sender, EventArgs e)
+        {
+
+            string addAnswerBody = txtAddAnswerBody.Text;
+            Subject subject = (Subject)bsSubjects.Current;
+            var res = await _dal.createAnswerAsync(subject.Id, addAnswerBody);
+            
+          
+            RefreshAnswersAsync(subject);
+        }
+
+        private void btnModifyAnswer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
