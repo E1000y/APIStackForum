@@ -222,5 +222,16 @@ namespace ClientWinforms
             var res = await _dal.modifyAnswerAsync(modifyAnswerBody, subject.Id, answer.Id);
             await RefreshAnswersAsync(subject);
         }
+
+        private async void btnDeleteAnswer_Click(object sender, EventArgs e)
+        {
+            Subject subject = (Subject)bsSubjects.Current;
+            Answer answer = (Answer)bsAnswers.Current;
+
+            bool result = await _dal.deleteAnswerAsync(answer.Id);
+
+            await RefreshAnswersAsync(subject);
+
+        }
     }
 }

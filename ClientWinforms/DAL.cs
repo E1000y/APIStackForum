@@ -211,6 +211,16 @@ namespace ClientWinforms
             else return null;
         }
 
+        internal async Task<bool> deleteAnswerAsync(int answerId)
+        {
+            var res = await _client.DeleteAsync($"{Settings1.Default.ConnectionStringLocal}/forum/answers/{answerId}");
+
+
+            if (res.IsSuccessStatusCode) return true;
+            else return false;
+
+        }
+
         internal async Task<Answer> createAnswerAsync(int subjectId, string addAnswerBody)
         {
             int writerId = getUserId();

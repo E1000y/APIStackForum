@@ -48,6 +48,7 @@ namespace ClientWinforms
             this.btnModifyAnswer = new System.Windows.Forms.Button();
             this.txtModifyAnswerBody = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnDeleteAnswer = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnAddSubject = new System.Windows.Forms.Button();
@@ -70,6 +71,7 @@ namespace ClientWinforms
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -260,12 +262,23 @@ namespace ClientWinforms
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.btnDeleteAnswer);
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(628, 128);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Supprimer";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteAnswer
+            // 
+            this.btnDeleteAnswer.Location = new System.Drawing.Point(268, 57);
+            this.btnDeleteAnswer.Name = "btnDeleteAnswer";
+            this.btnDeleteAnswer.Size = new System.Drawing.Size(147, 32);
+            this.btnDeleteAnswer.TabIndex = 0;
+            this.btnDeleteAnswer.Text = "Supprimer une réponse";
+            this.btnDeleteAnswer.UseVisualStyleBackColor = true;
+            this.btnDeleteAnswer.Click += new System.EventHandler(this.btnDeleteAnswer_Click);
             // 
             // tabControl1
             // 
@@ -441,6 +454,7 @@ namespace ClientWinforms
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -494,5 +508,6 @@ namespace ClientWinforms
         private System.Windows.Forms.Button btnModifyAnswer;
         private System.Windows.Forms.TextBox txtModifyAnswerBody;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnDeleteAnswer;
     }
 }
