@@ -406,6 +406,7 @@ namespace ClientWinforms
             this.dgvAnswers.Name = "dgvAnswers";
             this.dgvAnswers.ReadOnly = true;
             this.dgvAnswers.RowTemplate.Height = 25;
+            this.dgvAnswers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAnswers.Size = new System.Drawing.Size(657, 170);
             this.dgvAnswers.TabIndex = 1;
             // 
@@ -418,6 +419,7 @@ namespace ClientWinforms
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
             this.dgvSubjects.RowTemplate.Height = 25;
+            this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubjects.Size = new System.Drawing.Size(658, 174);
             this.dgvSubjects.TabIndex = 0;
             this.dgvSubjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellClick);

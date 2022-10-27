@@ -324,10 +324,18 @@ namespace APIStackForum.Controllers
 
         }
         [HttpDelete("answers/{id}")]
+        [Authorize(Roles = "MOD,USER")]
 
         public async Task<IActionResult> DeleteAnswerAsync([FromRoute] int id)
         {
+
+            int InTokenId = Int32.Parse((HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value));
+
+            Answer enquiredAnswer = await _forumService.GetAnswerByIdAsync(id);
+
+            if (!HttpContext.User.IsInRole("MOD") && enquiredAnswer.writerId != InTokenId) throw new InvalidUserRequestException();
             return (await _forumService.DeleteAnswerAsync(id)) ? NoContent() : NotFound();
+
 
         }
 

@@ -187,20 +187,17 @@ namespace ClientWinforms
            await RefreshSubjectAsync(categoryId);
         }
 
-        private void ModifyButton_Click(object sender, EventArgs e)
+        private async void ModifyButton_Click(object sender, EventArgs e)
         {
             
            String modifiedSubjectName = TxtModifySubjectName.Text;
             String modifiedSubjectDescription = txtModifySubjectDescription.Text;
             Subject subject = (Subject)bsSubjects.Current;
-            ModifySubjectAsync(subject.Id,modifiedSubjectName, modifiedSubjectDescription, activeCategory);
+            await _dal.modifySubjectAsync(subject.Id, modifiedSubjectName, modifiedSubjectDescription, activeCategory);
+            await RefreshSubjectAsync(activeCategory);
         }
 
-        private async void ModifySubjectAsync(int subjectId, string modifiedSubjectName, string modifiedSubjectDescription, int activeCategory)
-        {
-            await _dal.modifySubjectAsync(subjectId, modifiedSubjectName, modifiedSubjectDescription, activeCategory);
-            
-        }
+      
 
         private async void btnAddAnswer_Click(object sender, EventArgs e)
         {
