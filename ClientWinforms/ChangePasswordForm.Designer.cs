@@ -30,7 +30,6 @@ namespace ClientWinforms
         private void InitializeComponent()
         {
             this.btnChangePassword = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,23 +39,13 @@ namespace ClientWinforms
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(313, 210);
+            this.btnChangePassword.Location = new System.Drawing.Point(122, 213);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(145, 38);
             this.btnChangePassword.TabIndex = 0;
             this.btnChangePassword.Text = "Changer le mot de passe";
             this.btnChangePassword.UseVisualStyleBackColor = true;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
-            // 
-            // Cancel
-            // 
-            this.Cancel.Location = new System.Drawing.Point(96, 213);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(144, 35);
-            this.Cancel.TabIndex = 1;
-            this.Cancel.Text = "Annuler";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // txtOldPassword
             // 
@@ -110,7 +99,6 @@ namespace ClientWinforms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.txtOldPassword);
-            this.Controls.Add(this.Cancel);
             this.Controls.Add(this.btnChangePassword);
             this.Name = "ChangePasswordForm";
             this.Text = "Form2";
@@ -122,7 +110,6 @@ namespace ClientWinforms
         #endregion
 
         private System.Windows.Forms.Button btnChangePassword;
-        private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.TextBox txtNewPasswordVerif;

@@ -40,6 +40,7 @@ namespace ClientWinforms
             this.label2 = new System.Windows.Forms.Label();
             this.btnDev = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSignUp = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnAddAnswer = new System.Windows.Forms.Button();
@@ -180,6 +181,7 @@ namespace ClientWinforms
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSignUp);
             this.panel2.Controls.Add(this.tabControl2);
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Controls.Add(this.label4);
@@ -189,6 +191,16 @@ namespace ClientWinforms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(858, 661);
             this.panel2.TabIndex = 8;
+            // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Location = new System.Drawing.Point(694, 567);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(138, 62);
+            this.btnSignUp.TabIndex = 5;
+            this.btnSignUp.Text = "Simple visiteur? Enregistrez-vous";
+            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // tabControl2
             // 
@@ -524,5 +536,6 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnDeleteAnswer;
         private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Button btnSignUp;
     }
 }

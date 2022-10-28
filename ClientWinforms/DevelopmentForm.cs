@@ -30,6 +30,7 @@ namespace ClientWinforms
             btnChangePassword.Enabled = !isVisitor;
             tabControl1.Enabled = !isVisitor;
             tabControl2.Enabled = !isVisitor;
+            btnSignUp.Enabled = isVisitor;
             
         }
         void ButtonClickOneEvent(object sender, EventArgs e)
@@ -242,6 +243,13 @@ namespace ClientWinforms
             pwform.Show();
             this.Hide();
 
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            SignUp signUp = new SignUp();
+            signUp.Show();
+            this.Hide();
         }
     }
 }
