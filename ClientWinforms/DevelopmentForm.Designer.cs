@@ -66,6 +66,7 @@ namespace ClientWinforms
             this.bsSubjects = new System.Windows.Forms.BindingSource(this.components);
             this.bsAnswers = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -85,7 +86,7 @@ namespace ClientWinforms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(679, 14);
+            this.label1.Location = new System.Drawing.Point(644, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 15);
             this.label1.TabIndex = 0;
@@ -93,7 +94,7 @@ namespace ClientWinforms
             // 
             // TxtToken
             // 
-            this.TxtToken.Location = new System.Drawing.Point(727, 0);
+            this.TxtToken.Location = new System.Drawing.Point(715, 7);
             this.TxtToken.Multiline = true;
             this.TxtToken.Name = "TxtToken";
             this.TxtToken.ReadOnly = true;
@@ -434,11 +435,22 @@ namespace ClientWinforms
             this.label3.TabIndex = 9;
             this.label3.Text = "Sujets";
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Location = new System.Drawing.Point(922, 12);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(111, 45);
+            this.btnChangePassword.TabIndex = 10;
+            this.btnChangePassword.Text = "Changer de Mot de Passe";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // DevelopmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 732);
+            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -511,5 +523,6 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox txtModifyAnswerBody;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnDeleteAnswer;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace ClientWinforms
 {
-    partial class Form2
+    partial class ChangePasswordForm
     {
         /// <summary>
         /// Required designer variable.

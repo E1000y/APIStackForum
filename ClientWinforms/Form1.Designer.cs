@@ -36,6 +36,7 @@ namespace ClientWinforms
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
+            this.linkVisitor = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,11 +88,23 @@ namespace ClientWinforms
             // 
             this.bsUsers.CurrentChanged += new System.EventHandler(this.bsUsers_CurrentChanged);
             // 
+            // linkVisitor
+            // 
+            this.linkVisitor.AutoSize = true;
+            this.linkVisitor.Location = new System.Drawing.Point(180, 125);
+            this.linkVisitor.Name = "linkVisitor";
+            this.linkVisitor.Size = new System.Drawing.Size(89, 15);
+            this.linkVisitor.TabIndex = 5;
+            this.linkVisitor.TabStop = true;
+            this.linkVisitor.Text = "Simple visiteur?";
+            this.linkVisitor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkVisitor_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 169);
+            this.Controls.Add(this.linkVisitor);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
@@ -114,6 +127,7 @@ namespace ClientWinforms
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.BindingSource bsUsers;
+        private System.Windows.Forms.LinkLabel linkVisitor;
     }
 }
 

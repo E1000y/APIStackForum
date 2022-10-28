@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ClientWinforms
 {
-    public partial class Form2 : Form
+    public partial class ChangePasswordForm : Form
     {
-        public Form2()
+        public ChangePasswordForm()
         {
             InitializeComponent();
         }

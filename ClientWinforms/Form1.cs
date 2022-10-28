@@ -16,6 +16,8 @@ namespace ClientWinforms
     {
         DAL _dal = DAL.getDAL();
         List<Writer> _lstUtilisateurs;
+        bool IsVisitor = false;
+        string jwt = null;
 
         public Form1()
         {
@@ -48,13 +50,20 @@ namespace ClientWinforms
             {
                 
         
-                DevelopmentForm developmentForm = new DevelopmentForm(jwt);
+                DevelopmentForm developmentForm = new DevelopmentForm(jwt, IsVisitor);
                 developmentForm.Show();
                 this.Hide();
 
 
             }
         }
-        
+
+        private void linkVisitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            IsVisitor = true;
+            DevelopmentForm developmentForm = new DevelopmentForm(jwt, IsVisitor);
+            developmentForm.Show();
+            this.Hide();
+        }
     }
 }

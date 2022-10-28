@@ -19,12 +19,17 @@ namespace ClientWinforms
         List<Answer> _lstAnswers;
 
         int activeCategory = 0;
+        bool _isVisitor = false;
 
         string _jwt;
-        public DevelopmentForm(string jwt)
+        public DevelopmentForm(string jwt, bool isVisitor)
         {
             _jwt = jwt;
+            _isVisitor = isVisitor;
             InitializeComponent();
+            btnChangePassword.Enabled = !isVisitor;
+            tabControl1.Enabled = !isVisitor;
+            tabControl2.Enabled = !isVisitor;
             
         }
         void ButtonClickOneEvent(object sender, EventArgs e)
@@ -228,6 +233,11 @@ namespace ClientWinforms
             bool result = await _dal.deleteAnswerAsync(answer.Id);
 
             await RefreshAnswersAsync(subject);
+
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -23,9 +23,9 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.pdb
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.genruntimeconfig.cache
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.DevelopmentForm.resources
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.Form2.resources
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\bin\Debug\net5.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Logging.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\bin\Debug\net5.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.ChangePasswordForm.resources
