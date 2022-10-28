@@ -184,11 +184,13 @@ namespace APIStackForum.Controllers
 
         [HttpPut("password/{id}")]
 
-        public async Task<bool> ModifyPasswordAsync([FromRoute] int id, [FromBody] ModifyPasswordDTO modifyPasswordDTO)
+        public async Task<IActionResult> ModifyPasswordAsync([FromRoute] int id, [FromBody] ModifyPasswordDTO modifyPasswordDTO)
         {
             bool OkPasswordModified = await _securityService.ModifyPasswordAsync(id, modifyPasswordDTO.OldPassword, modifyPasswordDTO.NewPassword);
 
-            return OkPasswordModified;
+
+
+            return Ok(OkPasswordModified);
         }
 
     }

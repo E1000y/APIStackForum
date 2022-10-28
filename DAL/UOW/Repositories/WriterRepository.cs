@@ -49,6 +49,8 @@ namespace DAL.UOW.Repositories
             return nblinesaffected == 1;
         }
 
+        
+
         public async Task<IEnumerable<Writer>> GetAllAsync()
         {
             string query = @"SELECT * FROM Writer";

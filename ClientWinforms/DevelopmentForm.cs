@@ -238,6 +238,9 @@ namespace ClientWinforms
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
+            ChangePasswordForm pwform = new ChangePasswordForm();
+            pwform.Show();
+            this.Hide();
 
         }
     }

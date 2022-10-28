@@ -277,5 +277,25 @@ namespace ClientWinforms
             }
             else return false;
         }
+
+        public async Task<bool> ModifyPasswordAsync(string OldPwd, string NewPwd)
+        {
+            ModifyPasswordDTO modifPwd = new()
+            {
+                OldPassword = OldPwd,
+                NewPassword = NewPwd
+            };
+
+            var jsonBodyParameter = new StringContent(JsonSerializer.Serialize(modifPwd), Encoding.UTF8, "application/json");
+
+            var res = await _client.PutAsync($"{Settings1.Default.ConnectionStringLocal}/accounts/password/{userId}", jsonBodyParameter);
+
+            if (res.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else return false;
+
+        }
     }
 }
