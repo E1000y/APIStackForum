@@ -164,10 +164,11 @@ namespace ClientWinforms
             }
             else
             {
-                MessageBox.Show("Erreur de suppression");
+                MessageBox.Show("Erreur de suppression, l'utilisateur courant n'a pas les droits.");
             }
 
             await RefreshSubjectAsync(subject.categoryId);
+            await RefreshAnswersAsync(subject);
 
         }
 
