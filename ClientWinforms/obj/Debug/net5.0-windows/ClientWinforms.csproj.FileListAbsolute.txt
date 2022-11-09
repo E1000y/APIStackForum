@@ -30,3 +30,4 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\bin\Debug\net5.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.ChangePasswordForm.resources
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.SignUp.resources
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\ClientWinforms\obj\Debug\net5.0-windows\ClientWinforms.SignInForm.resources

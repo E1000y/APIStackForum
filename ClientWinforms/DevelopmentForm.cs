@@ -247,9 +247,35 @@ namespace ClientWinforms
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+           
             SignUp signUp = new SignUp();
-            signUp.Show();
-            this.Hide();
+           DialogResult dr = signUp.ShowDialog();
+
+           if(dr == DialogResult.OK)
+            {
+                btnChangePassword.Enabled = true;
+                tabControl1.Enabled = true;
+                tabControl2.Enabled = true;
+                btnSignUp.Enabled = false;
+            }
+            
+        }
+
+        private async void btnSignIn_Click(object sender, EventArgs e)
+        {
+
+            SignInForm signIn = new SignInForm();
+            DialogResult dr = signIn.ShowDialog();
+
+            if (dr == DialogResult.OK)
+            {
+                btnChangePassword.Enabled = true;
+                tabControl1.Enabled = true;
+                tabControl2.Enabled = true;
+                btnSignUp.Enabled = false;
+            }
+            
+
         }
     }
 }

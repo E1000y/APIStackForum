@@ -40,6 +40,7 @@ namespace ClientWinforms
             this.label2 = new System.Windows.Forms.Label();
             this.btnDev = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -181,6 +182,7 @@ namespace ClientWinforms
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSignIn);
             this.panel2.Controls.Add(this.btnSignUp);
             this.panel2.Controls.Add(this.tabControl2);
             this.panel2.Controls.Add(this.tabControl1);
@@ -191,6 +193,16 @@ namespace ClientWinforms
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(858, 661);
             this.panel2.TabIndex = 8;
+            // 
+            // btnSignIn
+            // 
+            this.btnSignIn.Location = new System.Drawing.Point(692, 479);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(139, 65);
+            this.btnSignIn.TabIndex = 6;
+            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnSignUp
             // 
@@ -468,6 +480,8 @@ namespace ClientWinforms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TxtToken);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(1073, 771);
+            this.MinimumSize = new System.Drawing.Size(1073, 771);
             this.Name = "DevelopmentForm";
             this.Text = "DevelopmentForm";
             this.Load += new System.EventHandler(this.DevelopmentForm_Load);
@@ -537,5 +551,6 @@ namespace ClientWinforms
         private System.Windows.Forms.Button btnDeleteAnswer;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnSignUp;
+        private System.Windows.Forms.Button btnSignIn;
     }
 }

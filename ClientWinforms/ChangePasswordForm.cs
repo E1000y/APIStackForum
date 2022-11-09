@@ -21,7 +21,7 @@ namespace ClientWinforms
 
         private async void btnChangePassword_Click(object sender, EventArgs e)
         {
-            bool IsOldPwdOk = false;
+            
 
             var result = await _dal.ModifyPasswordAsync(txtOldPassword.Text, txtNewPassword.Text);
 

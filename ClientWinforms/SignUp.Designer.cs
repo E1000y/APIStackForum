@@ -86,6 +86,7 @@ namespace ClientWinforms
             this.btnCreateUser.TabIndex = 5;
             this.btnCreateUser.Text = "Créer l\'utilisateur";
             this.btnCreateUser.UseVisualStyleBackColor = true;
+            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
             // 
             // SignUp
             // 

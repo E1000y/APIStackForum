@@ -16,5 +16,10 @@ namespace ClientWinforms
         {
             InitializeComponent();
         }
+
+        private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
