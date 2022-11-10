@@ -43,10 +43,11 @@ namespace ClientWinforms
             }
         }
 
-        private void DevelopmentForm_Load(object sender, EventArgs e)
+        private async void DevelopmentForm_Load(object sender, EventArgs e)
         {
-            TxtToken.Text = _jwt;
+            await RefreshSubjectAsync(1);
             btnDev_Click(sender, e);
+            
         }
 
         private async void btnDev_Click(object sender, EventArgs e)
@@ -301,5 +302,7 @@ namespace ClientWinforms
             btnLogOut.Enabled = false;
 
         }
+
+  
     }
 }

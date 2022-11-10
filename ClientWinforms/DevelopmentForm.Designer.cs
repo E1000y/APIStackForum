@@ -30,8 +30,6 @@ namespace ClientWinforms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtToken = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDivers = new System.Windows.Forms.Button();
             this.btnFun = new System.Windows.Forms.Button();
@@ -85,24 +83,6 @@ namespace ClientWinforms
             ((System.ComponentModel.ISupportInitialize)(this.bsSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsAnswers)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(644, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Role";
-            // 
-            // TxtToken
-            // 
-            this.TxtToken.Location = new System.Drawing.Point(715, 7);
-            this.TxtToken.Multiline = true;
-            this.TxtToken.Name = "TxtToken";
-            this.TxtToken.ReadOnly = true;
-            this.TxtToken.Size = new System.Drawing.Size(153, 58);
-            this.TxtToken.TabIndex = 6;
             // 
             // panel1
             // 
@@ -490,8 +470,6 @@ namespace ClientWinforms
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.TxtToken);
-            this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(1073, 771);
             this.MinimumSize = new System.Drawing.Size(1073, 771);
             this.Name = "DevelopmentForm";
@@ -525,7 +503,6 @@ namespace ClientWinforms
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtToken;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDev;
