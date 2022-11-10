@@ -297,5 +297,31 @@ namespace ClientWinforms
             else return false;
 
         }
+
+        public async Task<bool> CreateWriterAsync(string FirstName, string Lastname, string Login, string Password)
+        {
+            CreateWriterRequestDTO createWriter = new()
+            {
+                FirstName = FirstName,
+                LastName = Lastname,
+                isModerator = false,
+                Login = Login,
+                Password = Password
+            };
+
+            var jsonBodyParameter = new StringContent(JsonSerializer.Serialize(createWriter), Encoding.UTF8, "application/json");
+
+            var res = await _client.PostAsync($"{Settings1.Default.ConnectionStringLocal}/accounts", jsonBodyParameter);
+
+            if (res.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
     }
 }
