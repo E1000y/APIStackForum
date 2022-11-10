@@ -274,8 +274,22 @@ namespace ClientWinforms
                 tabControl1.Enabled = true;
                 tabControl2.Enabled = true;
                 btnSignUp.Enabled = false;
+                btnLogOut.Enabled = true;
             }
             
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            _jwt = null;
+
+            btnChangePassword.Enabled = false;
+            tabControl1.Enabled = false;
+            tabControl2.Enabled = false;
+            btnSignUp.Enabled = true;
+            btnSignIn.Enabled = true;
+            btnLogOut.Enabled = false;
 
         }
     }

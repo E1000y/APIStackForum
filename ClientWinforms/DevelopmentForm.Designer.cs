@@ -40,6 +40,7 @@ namespace ClientWinforms
             this.label2 = new System.Windows.Forms.Label();
             this.btnDev = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -182,6 +183,7 @@ namespace ClientWinforms
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnLogOut);
             this.panel2.Controls.Add(this.btnSignIn);
             this.panel2.Controls.Add(this.btnSignUp);
             this.panel2.Controls.Add(this.tabControl2);
@@ -194,13 +196,23 @@ namespace ClientWinforms
             this.panel2.Size = new System.Drawing.Size(858, 661);
             this.panel2.TabIndex = 8;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(692, 492);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(140, 59);
+            this.btnLogOut.TabIndex = 7;
+            this.btnLogOut.Text = "Se Déconnecter";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // btnSignIn
             // 
-            this.btnSignIn.Location = new System.Drawing.Point(692, 479);
+            this.btnSignIn.Location = new System.Drawing.Point(692, 410);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(139, 65);
             this.btnSignIn.TabIndex = 6;
-            this.btnSignIn.Text = "Sign In";
+            this.btnSignIn.Text = "Se Connecter / Changer d\'Utilisateur";
             this.btnSignIn.UseVisualStyleBackColor = true;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
@@ -552,5 +564,6 @@ namespace ClientWinforms
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnSignIn;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

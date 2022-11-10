@@ -35,6 +35,10 @@ namespace ClientWinforms
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
             this.btnCreateUser = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +53,7 @@ namespace ClientWinforms
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(196, 105);
+            this.lblUserName.Location = new System.Drawing.Point(208, 197);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(99, 15);
             this.lblUserName.TabIndex = 1;
@@ -57,7 +61,7 @@ namespace ClientWinforms
             // 
             // txtboxUserName
             // 
-            this.txtboxUserName.Location = new System.Drawing.Point(312, 102);
+            this.txtboxUserName.Location = new System.Drawing.Point(326, 194);
             this.txtboxUserName.Name = "txtboxUserName";
             this.txtboxUserName.Size = new System.Drawing.Size(215, 23);
             this.txtboxUserName.TabIndex = 2;
@@ -65,7 +69,7 @@ namespace ClientWinforms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(194, 153);
+            this.label3.Location = new System.Drawing.Point(230, 245);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 15);
             this.label3.TabIndex = 3;
@@ -73,14 +77,14 @@ namespace ClientWinforms
             // 
             // txtBoxPassword
             // 
-            this.txtBoxPassword.Location = new System.Drawing.Point(312, 153);
+            this.txtBoxPassword.Location = new System.Drawing.Point(326, 242);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.Size = new System.Drawing.Size(215, 23);
             this.txtBoxPassword.TabIndex = 4;
             // 
             // btnCreateUser
             // 
-            this.btnCreateUser.Location = new System.Drawing.Point(414, 240);
+            this.btnCreateUser.Location = new System.Drawing.Point(428, 329);
             this.btnCreateUser.Name = "btnCreateUser";
             this.btnCreateUser.Size = new System.Drawing.Size(152, 40);
             this.btnCreateUser.TabIndex = 5;
@@ -88,11 +92,47 @@ namespace ClientWinforms
             this.btnCreateUser.UseVisualStyleBackColor = true;
             this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(326, 91);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(215, 23);
+            this.textBox1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(326, 145);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(215, 23);
+            this.textBox2.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(273, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Nom";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(258, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Prénom";
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnCreateUser);
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.label3);
@@ -114,5 +154,9 @@ namespace ClientWinforms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxPassword;
         private System.Windows.Forms.Button btnCreateUser;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }
