@@ -13,6 +13,7 @@ namespace ClientWinforms
     public partial class SignUp : Form
     {
         DAL _dal = DAL.getDAL();
+  
 
         public SignUp()
         {
@@ -29,10 +30,26 @@ namespace ClientWinforms
             if (res)
             {
                 MessageBox.Show("Utilisateur créé");
+                string jwt = await _dal.Login(txtLogin.Text, txtPassword.Text);
+                if (jwt != null)
+                {
+
+
+                    DialogResult = DialogResult.OK;
+                   
+                    this.Close();
+
+                }
+                else
+                {
+                    MessageBox.Show("Erreur de login");
+                }
+
             }
             else
             {
                 MessageBox.Show("Erreur dans la création de l'utilisateur");
+              
             }
             
         }

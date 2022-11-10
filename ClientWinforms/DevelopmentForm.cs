@@ -30,6 +30,7 @@ namespace ClientWinforms
             btnChangePassword.Enabled = !isVisitor;
             tabControl1.Enabled = !isVisitor;
             tabControl2.Enabled = !isVisitor;
+            btnLogOut.Enabled = !isVisitor;
             btnSignUp.Enabled = isVisitor;
             
         }
@@ -233,7 +234,14 @@ namespace ClientWinforms
             Answer answer = (Answer)bsAnswers.Current;
 
             bool result = await _dal.deleteAnswerAsync(answer.Id);
-
+            if (result)
+            {
+                MessageBox.Show("ligne supprimée");
+            }
+            else
+            {
+                MessageBox.Show("Erreur de suppression, l'utilisateur courant n'a pas les droits.");
+            }
             await RefreshAnswersAsync(subject);
 
         }
@@ -258,6 +266,7 @@ namespace ClientWinforms
                 tabControl1.Enabled = true;
                 tabControl2.Enabled = true;
                 btnSignUp.Enabled = false;
+                btnLogOut.Enabled = true;
             }
             
         }
