@@ -16,5 +16,16 @@ namespace Domain.DTO.Responses
         public int CategoryId { get; set; }
 
         public DateTime CreationDate { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is SubjectResponseDTO dTO &&
+                   Id == dTO.Id &&
+                   Name == dTO.Name &&
+                   Description == dTO.Description &&
+                   WriterId == dTO.WriterId &&
+                   CategoryId == dTO.CategoryId &&
+                   CreationDate == dTO.CreationDate;
+        }
     }
 }

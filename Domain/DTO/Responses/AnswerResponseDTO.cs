@@ -14,5 +14,14 @@ namespace Domain.DTO.Responses
         public DateTime CreationDate { get; set; }
         public int WriterId { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            return obj is AnswerResponseDTO dTO &&
+                   Id == dTO.Id &&
+                   SubjectId == dTO.SubjectId &&
+                   Body == dTO.Body &&
+                   CreationDate == dTO.CreationDate &&
+                   WriterId == dTO.WriterId;
+        }
     }
 }

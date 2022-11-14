@@ -13,7 +13,13 @@ namespace Domain.DTO.Responses
         public string Description { get; set; }
         public int WriterId { get; set; }
 
-
-
+        public override bool Equals(object obj)
+        {
+            return obj is ModifySubjectResponseDTO dTO &&
+                   Id == dTO.Id &&
+                   Name == dTO.Name &&
+                   Description == dTO.Description &&
+                   WriterId == dTO.WriterId;
+        }
     }
 }

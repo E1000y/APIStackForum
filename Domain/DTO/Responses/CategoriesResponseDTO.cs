@@ -10,5 +10,12 @@ namespace Domain.DTO.Responses
     {
         public int Id { get; set; }
         public string Title { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is CategoriesResponseDTO dTO &&
+                   Id == dTO.Id &&
+                   Title == dTO.Title;
+        }
     }
 }
