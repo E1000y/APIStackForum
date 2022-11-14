@@ -16,6 +16,15 @@ namespace Domain.DTO.Requests
         public string Login { get; set; }
         public string Password { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            return obj is CreateWriterRequestDTO dTO &&
+                   FirstName == dTO.FirstName &&
+                   LastName == dTO.LastName &&
+                   isModerator == dTO.isModerator &&
+                   Login == dTO.Login &&
+                   Password == dTO.Password;
+        }
     }
 
     public class CreateWriterRequestDTOValidator : AbstractValidator<CreateWriterRequestDTO>

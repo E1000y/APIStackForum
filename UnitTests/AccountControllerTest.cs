@@ -206,6 +206,7 @@ namespace UnitTests
         [Fact]
         public async void ModifyWriterAsyncShouldBeOk()
         {
+            //Arrange
             IAccountService accountService = Mock.Of<IAccountService>();
             ISecurityService securityService = Mock.Of<ISecurityService>();
 
@@ -249,6 +250,112 @@ namespace UnitTests
                 IsModerator = true,
                 Login = "login"
             });
+
+        }
+
+        [Fact]
+        public async void CreateWriterShouldBeBadRequest()
+        {
+            //Arrange
+            IAccountService accountService = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
+
+            CreateWriterRequestDTO cwdto = new CreateWriterRequestDTO()
+            {
+                FirstName = "",
+                LastName = "lastname",
+                isModerator = true,
+                Login = "login",
+                Password = "password"
+            };
+
+            Writer writer = new Writer()
+            {
+                Id = 5,
+                FirstName = "",
+                LastName = "machin",
+                IsModerator = true,
+                Login = "login"
+            };
+
+            AccountsController accountsController = new AccountsController(accountService, securityService);
+
+            Mock.Get(securityService)
+               .Setup(a => a.CreateWriterAsync(writer))
+               .ReturnsAsync(null as Writer);
+
+            //Act
+            IActionResult result = await accountsController.CreateWriterAsync(cwdto);
+
+
+            //Assert
+            BadRequestResult badResult = result as BadRequestResult;
+            Assert.NotNull(badResult);
+
+
+
+        }
+        [Fact]
+
+        public async void CreateWriterShouldBeOk()
+        {
+
+            //Arrange
+            IAccountService accountService = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
+
+            CreateWriterRequestDTO cwdto = new CreateWriterRequestDTO()
+            {
+                FirstName = "Toto",
+                LastName = "machin",
+                isModerator = true,
+                Login = "login",
+                Password = "password"
+            };
+
+            Writer writer = new Writer()
+            {
+                FirstName = "Toto",
+                LastName = "machin",
+                IsModerator = true,
+                Login = "login", 
+                Password="password"
+            };
+            Writer writerOut = new Writer()
+            {
+                Id = 5,
+                FirstName = "Toto",
+                LastName = "machin",
+                IsModerator = true,
+                Login = "login"
+            };
+
+
+            AccountsController accountsController = new AccountsController(accountService, securityService);
+
+            Mock.Get(securityService)
+               .Setup(a => a.CreateWriterAsync(writer))
+               .ReturnsAsync(writerOut);
+
+            //Act
+
+            IActionResult result = await accountsController.CreateWriterAsync(cwdto);
+
+
+            //Assert
+            CreatedAtActionResult okResult = result as CreatedAtActionResult;
+
+            Assert.NotNull(result);
+            Assert.Equal(okResult.Value as WriterResponseDTO, new WriterResponseDTO
+            {
+                Id = 5,
+                FirstName = "Toto",
+                LastName = "machin",
+                IsModerator = true,
+                Login = "login",
+                
+            });
+
 
         }
     }

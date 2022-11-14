@@ -150,11 +150,16 @@ namespace APIStackForum.Controllers
 
             // Délègue à la couche inférieure la création de l'auteur
 
-            var writer = await _securityService.CreateWriterAsync(newWriter);
+            Writer writer = await _securityService.CreateWriterAsync(newWriter);
 
 
             //Renvoie la réponse sous forme de DTO de réponse
-            if (writer != null)
+            if (writer is null)
+            {
+                return BadRequest();
+                
+            }
+            else
             {
                 return CreatedAtAction(nameof(GetWriterByIdAsync), new { id = writer.Id }, new WriterResponseDTO()
                 {
@@ -164,10 +169,6 @@ namespace APIStackForum.Controllers
                     IsModerator = writer.IsModerator,
                     Login = writer.Login
                 });
-            }
-            else
-            {
-                return BadRequest();
             }
 
         }
