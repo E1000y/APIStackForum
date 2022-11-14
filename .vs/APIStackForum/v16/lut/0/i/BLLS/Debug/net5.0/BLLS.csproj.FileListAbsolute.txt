@@ -1,0 +1,10 @@
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\BLLS\Debug\net5.0\BLLS.deps.json
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\BLLS\Debug\net5.0\BLLS.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\BLLS\Debug\net5.0\ref\BLLS.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\BLLS\Debug\net5.0\BLLS.csproj.AssemblyReference.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\BLLS\Debug\net5.0\BLLS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\BLLS\Debug\net5.0\BLLS.AssemblyInfoInputs.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\BLLS\Debug\net5.0\BLLS.AssemblyInfo.cs
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\BLLS\Debug\net5.0\BLLS.csproj.CopyComplete
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\BLLS\Debug\net5.0\BLLS.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\BLLS\Debug\net5.0\ref\BLLS.dll

@@ -219,7 +219,6 @@ namespace UnitTests
             };
 
 
-
             Writer writer = new Writer()
             {
                 Id = 5,

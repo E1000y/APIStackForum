@@ -18,5 +18,18 @@ namespace Domain.Entities
 
         public string Password { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Writer writer &&
+                   Id == writer.Id &&
+                   FirstName == writer.FirstName &&
+                   LastName == writer.LastName &&
+                   IsModerator == writer.IsModerator &&
+                   Login == writer.Login &&
+                   Password == writer.Password;
+        }
     }
+
+
+
 }
