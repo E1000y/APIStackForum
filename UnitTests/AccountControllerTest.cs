@@ -8,6 +8,7 @@ using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using Xunit;
 
 namespace UnitTests
@@ -111,7 +112,7 @@ namespace UnitTests
             //Assert : comparer les valeurs
             NotFoundResult notFoundResult = okResult as NotFoundResult;
             Assert.NotNull(notFoundResult);
-
+           
 
         }
 
@@ -358,5 +359,88 @@ namespace UnitTests
 
 
         }
+
+        [Fact]
+        public async void DeleteWriterShouldBeNotFound()
+        {
+            //Arrange
+            IAccountService accountService = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
+
+
+            AccountsController accountsController = new AccountsController(accountService, securityService);
+
+            Mock.Get(accountService)
+               .Setup(a => a.DeleteWriterAsync(It.IsAny<int>()))
+               .ReturnsAsync(false);
+
+            //Act
+            IActionResult result = await accountsController.DeleteWriterAsync(5);
+
+            NotFoundResult nfResult = result as NotFoundResult;
+
+            //Assert
+            Assert.NotNull(nfResult);
+            Assert.IsType<NotFoundResult>(nfResult);
+            
+
+
+        }
+
+        [Fact]
+
+        public async void DeleteWriterShouldBeNoContent()
+        {
+            //Arrange
+            IAccountService accountService = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
+
+
+            AccountsController accountsController = new AccountsController(accountService, securityService);
+
+            Mock.Get(accountService)
+               .Setup(a => a.DeleteWriterAsync(It.IsAny<int>()))
+               .ReturnsAsync(true);
+
+            //Act
+            IActionResult result = await accountsController.DeleteWriterAsync(5);
+
+            NoContentResult nfResult = result as NoContentResult;
+
+            //Assert
+            Assert.NotNull(nfResult);
+            Assert.IsType<NoContentResult>(nfResult);
+
+        }
+        [Fact]
+
+        public async void ModifyPasswordShouldBeOk()
+        {
+            //Arrange
+            IAccountService accountService = Mock.Of<IAccountService>();
+            ISecurityService securityService = Mock.Of<ISecurityService>();
+
+
+            AccountsController accountsController = new AccountsController(accountService, securityService);
+
+            ModifyPasswordDTO mpwdto = new ModifyPasswordDTO
+            {
+                OldPassword = "oldpwd",
+                NewPassword = "newpwd"
+            };
+
+            Mock.Get(securityService)
+                .Setup(s => s.ModifyPasswordAsync(It.IsAny<int>(), mpwdto.OldPassword, mpwdto.NewPassword))
+                .ReturnsAsync(true);
+
+            //Act
+            IActionResult OkPasswordModified = await accountsController.ModifyPasswordAsync(1,  mpwdto);
+
+            //Assert
+            OkObjectResult Okpwd = OkPasswordModified as OkObjectResult;
+
+            Assert.IsType<OkObjectResult>(Okpwd);
+
+          }
     }
 }
