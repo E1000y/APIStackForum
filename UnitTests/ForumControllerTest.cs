@@ -11,6 +11,7 @@ using APIStackForum.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Domain.DTO.Responses;
 using System.Net;
+using Domain.DTO.Requests;
 
 namespace UnitTests
 {
@@ -153,9 +154,274 @@ namespace UnitTests
             //Assert
             Assert.NotNull(notFoundResult);
 
+        }
+
+        [Fact]
+        public async void GetAnswersBySubjectIdShouldBeOk()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+
+            DateTime dttime = DateTime.Now;
+
+            Answer answer1 = new Answer()
+            {
+                Id = 1,
+                CreationDate = dttime,
+                Body = "Lorem",
+                subjectId = 1,
+                writerId = 1
+
+            };
+            Answer answer2 = new Answer()
+            {
+                Id = 2,
+                CreationDate = dttime,
+                Body = "Ipsum",
+                subjectId = 1,
+                writerId = 2
+
+            };
+
+            List<Answer> answers = new List<Answer>();
+            answers.Add(answer1);
+            answers.Add(answer2);
+
+            Mock.Get(forumService)
+                .Setup(f => f.GetAnswersBySubjectIdAsync(It.IsAny<int>()))
+                .ReturnsAsync(answers);
+
+            ForumController fc = new ForumController(forumService);
+            //Act
+
+            IActionResult result = await fc.GetAnswersBySubjectIdAsync(1);
+
+            //Assert
+
+            OkObjectResult Okresult = result as OkObjectResult;
+            Assert.NotNull(Okresult);
+
+        }
+
+        [Fact]
+        public async void GetSubjectsByCategoryIdShouldBeNotFound()
+        {
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+
+            Mock.Get(forumService)
+                .Setup(f => f.GetSubjectsByCategoryId(It.IsAny<int>()))
+                .ReturnsAsync(null as IEnumerable<Subject>);
+
+            ForumController fc = new ForumController(forumService);
+
+            //Act
+            IActionResult nf = await fc.GetSubjectsByCategoryIdAsync(1);
+
+            //Assert
+            NotFoundResult notfoundres = nf as NotFoundResult;
+            Assert.NotNull(notfoundres);
+
+        }
+
+        [Fact]
+        public async void GetSubjectByCategoryIdShouldBeOk()
+        {
+            // Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            DateTime dttime = DateTime.Now;
+
+            List<Subject> subjects = new List<Subject>();
+
+            Subject subject1 = new Subject()
+            {
+                Id = 1,
+                Name = "Lorem",
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Ipsum",
+                writerId = 1
+
+            };
+
+             Subject subject2 = new Subject()
+             {
+                 Id = 1,
+                 Name = "Lorem2",
+                 categoryId = 1,
+                 CreationDate = dttime,
+                 Description = "Ipsum2",
+                 writerId = 2
+
+             };
+
+             subjects.Add(subject1);
+            subjects.Add(subject2);
+
+
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.GetSubjectsByCategoryId(It.IsAny<int>()))
+                .ReturnsAsync(subjects);
+
+            ForumController fc = new ForumController(forumService);
+
+            //Act
+            IActionResult foundresult = await fc.GetSubjectsByCategoryIdAsync(1);
+
+            //Assert
+            OkObjectResult foundres = foundresult as OkObjectResult;
+            Assert.NotNull(foundres);
 
 
         }
 
+        [Fact]
+        public async void CreateSubjectShouldBeBadRequest()
+        {
+            // Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            DateTime dttime = DateTime.Now;
+
+            Subject subject1 = new Subject()
+            {
+                Id = 1,
+                Name = "Lorem",
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Ipsum",
+                writerId = 1
+
+            };
+
+            CreateSubjectRequestDTO csbjrdto = new CreateSubjectRequestDTO()
+            {
+                CategoryId = 1,
+                Name = "Loremdr",
+                Description = "Ipsumdr",
+                WriterId = 1
+
+            }; 
+
+            
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.CreateSubjectAsync(subject1))
+                .ReturnsAsync(null as Subject);
+
+            ForumController fc = new ForumController(forumService);
+
+            //Act
+
+            IActionResult badrequest = await fc.CreateSubjectAsync(csbjrdto);
+
+            //Assert
+            BadRequestResult badr = badrequest as BadRequestResult;
+            Assert.NotNull(badr);
+        }
+
+        [Fact]
+
+        public async void CreateSubjectShouldBeOk()
+        {
+
+            //Arrange 
+
+            IForumService forumService = Mock.Of<IForumService>();
+
+            ForumController fc = new ForumController(forumService);
+
+            DateTime dttime = DateTime.Now;
+
+            Subject subject1 = new Subject()
+            {
+                Id =0,
+                Name = "Lorem",
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Ipsum",
+                writerId = 1
+
+            };
+
+            CreateSubjectRequestDTO csbjrdto = new CreateSubjectRequestDTO()
+            {
+                CategoryId = 1,
+                Name = "Loremdr",
+                Description = "Ipsumdr",
+                WriterId = 1
+
+            };
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.CreateSubjectAsync(subject1))
+                .ReturnsAsync(subject1);
+
+            //Act
+
+            IActionResult Okresult = await fc.CreateSubjectAsync(csbjrdto);
+
+            //Assert
+
+            CreatedAtActionResult Okres = Okresult as CreatedAtActionResult;
+
+            Assert.NotNull(Okres);
+
+
+        }
+
+        [Fact]
+
+        public async void ModifySubjectShouldBeBadRequest()
+        {
+
+            IForumService forumService = Mock.Of<IForumService>();
+            DateTime dttime = DateTime.Now;
+
+            Subject subject1 = new Subject()
+            {
+                Id = 1,
+                Name = "Lorem",
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Ipsum",
+                writerId = 1
+
+            };
+
+            ModifySubjectRequestDTO msbjrdto = new ModifySubjectRequestDTO()
+            {
+                Id = 1,
+                CategoryId = 1,
+                Name = "Loremdr",
+                Description = "Ipsumdr",
+                
+            };
+
+
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.ModifySubjectAsync(subject1))
+                .ReturnsAsync(null as Subject);
+
+            ForumController fc = new ForumController(forumService);
+
+            //Act
+
+            IActionResult badrequest = await fc.ModifySubjectAsync(1,msbjrdto);
+
+            //Assert
+            BadRequestResult badr = badrequest as BadRequestResult;
+            Assert.NotNull(badr);
+        }
+
+
+
+    }
     }
 }

@@ -140,7 +140,12 @@ namespace APIStackForum.Controllers
 
             //Renvoie la réponse sous forme de DTO de réponse
 
-            if (subject != null)
+            if (createdsubject == null)
+            {
+                return BadRequest();
+
+            }
+            else
             {
                 return CreatedAtAction(nameof(GetSubjectByIdAsync), new { Id = createdsubject.Id }, new SubjectResponseDTO()
                 {
@@ -148,14 +153,9 @@ namespace APIStackForum.Controllers
                     Name = createdsubject.Name,
                     Description = createdsubject.Description,
                     CreationDate = createdsubject.CreationDate,
-                    WriterId = createdsubject.writerId, 
+                    WriterId = createdsubject.writerId,
                     CategoryId = createdsubject.categoryId
                 });
-
-            }
-            else
-            {
-                return BadRequest();
             }
         }
         [HttpPut("subjects/{id}")]
