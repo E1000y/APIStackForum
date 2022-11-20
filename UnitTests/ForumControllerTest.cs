@@ -399,7 +399,7 @@ namespace UnitTests
                 CategoryId = 1,
                 Name = "Loremdr",
                 Description = "Ipsumdr",
-                
+                writerId = 1
             };
 
 
@@ -413,7 +413,7 @@ namespace UnitTests
 
             //Act
 
-            IActionResult badrequest = await fc.ModifySubjectAsync(1,msbjrdto);
+            IActionResult badrequest = await fc.ModifySubjectAsync(2,msbjrdto);
 
             //Assert
             BadRequestResult badr = badrequest as BadRequestResult;
@@ -422,6 +422,6 @@ namespace UnitTests
 
 
 
-    }
+    
     }
 }
