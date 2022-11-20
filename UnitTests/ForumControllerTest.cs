@@ -420,7 +420,99 @@ namespace UnitTests
             Assert.NotNull(badr);
         }
 
+        [Fact]
 
+        public async void ModifySubjectShouldBeNotFound()
+        {
+
+
+            IForumService forumService = Mock.Of<IForumService>();
+            DateTime dttime = DateTime.Now;
+
+            Subject subject1 = new Subject()
+            {
+                Id = 1,
+                Name = "Lorem",
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Ipsum",
+                writerId = 1
+
+            };
+
+            ModifySubjectRequestDTO msbjrdto = new ModifySubjectRequestDTO()
+            {
+                Id = 1,
+                CategoryId = 1,
+                Name = "Loremdr",
+                Description = "Ipsumdr",
+                writerId = 1
+            };
+
+
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.ModifySubjectAsync(subject1))
+                .ReturnsAsync(null as Subject);
+
+            ForumController fc = new ForumController(forumService);
+
+            //Act
+
+            IActionResult notFoundResult = await fc.ModifySubjectAsync(1, msbjrdto);
+
+            //Assert
+            NotFoundResult Notf = notFoundResult as NotFoundResult;
+            Assert.NotNull(Notf);
+
+        }
+
+        [Fact]
+
+        public async void ModifySubjectShouldBeOk()
+        {
+
+            IForumService forumService = Mock.Of<IForumService>();
+            DateTime dttime = DateTime.Now;
+
+            Subject subject1 = new Subject()
+            {
+                Id = 1,
+                Name = "Lorem",
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Ipsum",
+                writerId = 1
+
+            };
+
+            ModifySubjectRequestDTO msbjrdto = new ModifySubjectRequestDTO()
+            {
+                Id = 1,
+                CategoryId = 1,
+                Name = "Loremdr",
+                Description = "Ipsumdr",
+                writerId = 1
+            };
+
+
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.ModifySubjectAsync(subject1))
+                .ReturnsAsync(subject1);
+
+            ForumController fc = new ForumController(forumService);
+
+            //Act
+
+            IActionResult OKresult = await fc.ModifySubjectAsync(1, msbjrdto);
+
+            //Assert
+            OkObjectResult okres = OKresult as OkObjectResult;
+            Assert.NotNull(okres);
+        }
 
     
     }

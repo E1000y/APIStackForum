@@ -182,7 +182,7 @@ namespace APIStackForum.Controllers
 
             //Création de la réponse
 
-            if (subject is null) NotFound();
+            if (subject== null) return NotFound();
 
             var response = new SubjectResponseDTO()
             {
