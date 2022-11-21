@@ -19,11 +19,19 @@ namespace APIStackForum.Controllers
     {
 
         public static IForumService _forumService ;
+        public static IUserUtils _userUtils;
 
         public ForumController(IForumService forumService)
         {
             _forumService = forumService;
         }
+
+        public ForumController(IForumService forumService, IUserUtils userUtils)
+        {
+            _forumService = forumService;
+            _userUtils = userUtils;
+        }
+
 
         [HttpGet("subjects")]
 
@@ -204,15 +212,19 @@ namespace APIStackForum.Controllers
 
         public async Task<IActionResult> DeleteSubjectAsync([FromRoute] int id)
         {
-            int InTokenId = Int32.Parse((HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value));
+            int InTokenId = _userUtils.GetCurrentUserTokenId();
 
             Subject enquiredSubject = await _forumService.GetSubjectByIdAsync(id);
 
-            if (!HttpContext.User.IsInRole("MOD") && enquiredSubject.writerId != InTokenId) throw new InvalidUserRequestException();
+            if (!_userUtils.IsMOD() && enquiredSubject.writerId != InTokenId) throw new InvalidUserRequestException();
 
             return (await _forumService.DeleteSubjectAsync(id)) ? NoContent() : NotFound();
         }
 
+        //private int GetCurrentUserTokenId()
+        //{
+        //    return Int32.Parse((HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value));
+        //}
 
         [HttpGet("answers")]
 
@@ -329,11 +341,11 @@ namespace APIStackForum.Controllers
         public async Task<IActionResult> DeleteAnswerAsync([FromRoute] int id)
         {
 
-            int InTokenId = Int32.Parse((HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value));
+            int InTokenId = _userUtils.GetCurrentUserTokenId();
 
             Answer enquiredAnswer = await _forumService.GetAnswerByIdAsync(id);
 
-            if (!HttpContext.User.IsInRole("MOD") && enquiredAnswer.writerId != InTokenId) throw new InvalidUserRequestException();
+            if (!_userUtils.IsMOD() && enquiredAnswer.writerId != InTokenId) throw new InvalidUserRequestException();
             return (await _forumService.DeleteAnswerAsync(id)) ? NoContent() : NotFound();
 
 

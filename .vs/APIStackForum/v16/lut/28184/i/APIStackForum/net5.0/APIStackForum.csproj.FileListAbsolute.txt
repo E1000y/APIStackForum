@@ -6,7 +6,6 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\APIStackForum\bin\Debug\net5.0\APIStackForum.runtimeconfig.dev.json
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\APIStackForum\bin\Debug\net5.0\APIStackForum.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\b\APIStackForum\bin\Debug\net5.0\ref\APIStackForum.dll
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\APIStackForum\net5.0\APIStackForum.csproj.AssemblyReference.cache
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\APIStackForum\net5.0\APIStackForum.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\APIStackForum\net5.0\APIStackForum.AssemblyInfoInputs.cache
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\APIStackForum\net5.0\APIStackForum.AssemblyInfo.cs

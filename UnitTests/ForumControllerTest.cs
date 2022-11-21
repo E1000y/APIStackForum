@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Domain.DTO.Responses;
 using System.Net;
 using Domain.DTO.Requests;
+using APIStackForum;
+using Domain.Exceptions;
 
 namespace UnitTests
 {
@@ -513,7 +515,468 @@ namespace UnitTests
             OkObjectResult okres = OKresult as OkObjectResult;
             Assert.NotNull(okres);
         }
+        
+    [Fact]
+    public async void DeleteSubjectShouldThrowInvalidUserRequestException()
+        {
+           
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            IUserUtils userUtils = Mock.Of<IUserUtils>();
+            ForumController fc = new ForumController(forumService, userUtils);
+            DateTime dttime = DateTime.Now;
 
-    
+
+            Subject enquiredSubject = new Subject()
+            {
+                Id = 1,
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Description1",
+                Name = "Name1",
+                writerId = 1
+
+            };
+
+
+            Mock.Get(forumService)
+             .Setup(f => f.GetSubjectByIdAsync(It.IsAny<int>()))
+             .ReturnsAsync(enquiredSubject);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.GetCurrentUserTokenId())
+                .Returns(2);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.IsMOD())
+                .Returns(false);
+
+
+            //Asserts et Act
+
+            await Assert.ThrowsAsync<InvalidUserRequestException>(() => fc.DeleteSubjectAsync(1));
+
+
+
+        }
+
+
+     [Fact]
+     public async void DeleteSubjectShouldBeNoContent()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            IUserUtils userUtils = Mock.Of<IUserUtils>();
+            ForumController fc = new ForumController(forumService, userUtils);
+            DateTime dttime = DateTime.Now;
+
+
+            Subject enquiredSubject = new Subject()
+            {
+                Id = 1,
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Description1",
+                Name = "Name1",
+                writerId = 1
+
+            };
+
+
+            Mock.Get(forumService)
+             .Setup(f => f.GetSubjectByIdAsync(1))
+             .ReturnsAsync(enquiredSubject);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.GetCurrentUserTokenId())
+                .Returns(1);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.IsMOD())
+                .Returns(true);
+
+            Mock.Get(forumService)
+                .Setup(f => f.DeleteSubjectAsync(1))
+                .ReturnsAsync(true);
+
+
+            //Act
+
+            IActionResult NoContentRes = await fc.DeleteSubjectAsync(1);
+
+            //Assert
+
+            NoContentResult nocontent = NoContentRes as NoContentResult;
+            Assert.NotNull(nocontent);
+            
+            
+            
+ 
+
+        }
+
+        [Fact]
+        public async void DeleteSubjectShouldBeNotFound()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            IUserUtils userUtils = Mock.Of<IUserUtils>();
+            ForumController fc = new ForumController(forumService, userUtils);
+            DateTime dttime = DateTime.Now;
+
+
+            Subject enquiredSubject = new Subject()
+            {
+                Id = 1,
+                categoryId = 1,
+                CreationDate = dttime,
+                Description = "Description1",
+                Name = "Name1",
+                writerId = 1
+
+            };
+
+
+            Mock.Get(forumService)
+             .Setup(f => f.GetSubjectByIdAsync(1))
+             .ReturnsAsync(null as Subject);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.GetCurrentUserTokenId())
+                .Returns(1);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.IsMOD())
+                .Returns(true);
+
+            Mock.Get(forumService)
+                .Setup(f => f.DeleteSubjectAsync(1))
+                .ReturnsAsync(false);
+
+
+            //Act
+
+            IActionResult notfoundres = await fc.DeleteSubjectAsync(1);
+
+            //Assert
+
+            NotFoundResult notf = notfoundres as NotFoundResult;
+            Assert.NotNull(notf);
+
+
+
+
+
+        }
+
+        [Fact]
+
+     public async void GetAnswersShouldBeOk()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+
+            DateTime dttime = DateTime.Now;
+
+            List<Answer> answers = new List<Answer>();
+
+            answers.Add(new Answer { Id = 1, Body = "body1", CreationDate = dttime, subjectId = 1, writerId = 1 });
+            answers.Add(new Answer { Id = 2, Body = "body2", CreationDate = dttime, subjectId = 1, writerId = 2 });
+            answers.Add(new Answer { Id = 3, Body = "body3", CreationDate = dttime, subjectId = 1, writerId = 1 });
+
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.GetAnswersAsync())
+                .ReturnsAsync(answers);
+
+            //Act
+
+            IActionResult Okres = await fc.GetAnswersAsync();
+
+            //Assert
+            OkObjectResult okr = Okres as OkObjectResult;
+            Assert.NotNull(okr);
+        
+        
+        }
+
+        [Fact]
+        public async void GetAnswersByIdShouldBeOk()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+
+            DateTime dttime = DateTime.Now;
+
+            Answer answer = new Answer() { Id = 1, Body = "Answer1", CreationDate = dttime, subjectId = 1, writerId = 1 };
+
+            Mock.Get(forumService)
+                .Setup(f => f.GetAnswerByIdAsync(It.IsAny<int>()))
+                .ReturnsAsync(answer);
+
+            //Act
+
+            IActionResult Okres = await fc.GetAnswerByIdAsync(1);
+
+            //Assert
+
+            OkObjectResult okr = Okres as OkObjectResult;
+            Assert.NotNull(okr);
+        }
+
+        [Fact]
+        public async void CreateAnswerShouldBeOk()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+
+            DateTime dttime = DateTime.Now;
+
+            CreateAnswerRequestDTO cardto = new CreateAnswerRequestDTO
+            {
+                Body = "Answer1",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+            Answer answer = new Answer() { Id = 0, Body = "Answer1", CreationDate = dttime, subjectId = 1, writerId = 1 };
+
+            Mock.Get(forumService)
+                .Setup(f => f.CreateAnswerAsync(answer))
+                .ReturnsAsync(answer);
+
+            //Act
+
+            IActionResult Okresult = await fc.CreateAnswer(cardto);
+
+            //Assert
+            CreatedAtActionResult okres = Okresult as CreatedAtActionResult;
+            Assert.NotNull(okres);
+
+        }
+
+        [Fact]
+        public async void CreateAnswerShouldBeBadRequest()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+
+            DateTime dttime = DateTime.Now;
+
+            CreateAnswerRequestDTO cardto = new CreateAnswerRequestDTO
+            {
+                Body = "Answer1",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+            Answer answer = new Answer() { Id = 1, Body = "Answer1", CreationDate = dttime, subjectId = 1, writerId = 1 };
+
+            Mock.Get(forumService)
+                .Setup(f => f.CreateAnswerAsync(answer))
+                .ReturnsAsync(answer);
+
+            //Act
+
+            IActionResult Okresult = await fc.CreateAnswer(cardto);
+
+            //Assert
+            BadRequestResult okres = Okresult as BadRequestResult;
+            Assert.NotNull(okres);
+
+        }
+
+
+        [Fact]
+
+        public async void ModifyAnswerShouldBeBadRequest()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+            DateTime dttime = DateTime.Now;
+
+            Answer answer = new Answer()
+            {
+                Id = 0,
+                Body = "Body",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+
+            ModifyAnswerRequestDTO mardto = new ModifyAnswerRequestDTO()
+            {
+                Id = 0,
+                Body = "Body",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.ModifyAnswerAsync(answer))
+                .ReturnsAsync(null as Answer);
+
+            //Act
+            IActionResult badr = await fc.ModifyAnswer(1, mardto);
+
+            //Assert
+
+            BadRequestResult badreqres = badr as BadRequestResult;
+            Assert.NotNull(badreqres);
+        }
+
+        [Fact]
+
+        public async void ModifyAnswerShouldBeNotFound()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+            DateTime dttime = DateTime.Now;
+
+
+            ModifyAnswerRequestDTO mardto = new ModifyAnswerRequestDTO()
+            {
+                Id = 0,
+                Body = "Body",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+            Answer answer = new Answer()
+            {
+                Id = 0,
+                Body = "Body",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.ModifyAnswerAsync(answer))
+                .ReturnsAsync(null as Answer);
+
+
+            //Act
+            IActionResult notf = await fc.ModifyAnswer(0, mardto);
+
+            //Assert
+
+            NotFoundResult notfoundres = notf as NotFoundResult;
+            Assert.NotNull(notfoundres);
+
+
+        }
+
+        [Fact]
+        public async void ModifyAnswerShouldBeOk()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+            DateTime dttime = DateTime.Now;
+
+
+            ModifyAnswerRequestDTO mardto = new ModifyAnswerRequestDTO()
+            {
+                Id = 0,
+                Body = "Body",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+            Answer answer = new Answer()
+            {
+                Id = 0,
+                Body = "Body",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+            };
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.ModifyAnswerAsync(answer))
+                .ReturnsAsync(answer);
+
+
+            //Act
+            IActionResult okr = await fc.ModifyAnswer(0, mardto);
+
+            //Assert
+
+            OkObjectResult okres = okr as OkObjectResult;
+            Assert.NotNull(okres);
+
+        }
+
+        [Fact]
+
+        public async void DeleteAnswerShouldThrowInvalidUserRequestException()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            IUserUtils userUtils = Mock.Of<IUserUtils>();
+            ForumController fc = new ForumController(forumService, userUtils);
+            DateTime dttime = DateTime.Now;
+
+
+            Answer answer = new Answer()
+            {
+                Id = 1,
+                Body = "Answer1",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+
+            };
+
+
+            Mock.Get(forumService)
+             .Setup(f => f.GetAnswerByIdAsync(It.IsAny<int>()))
+             .ReturnsAsync(null as Answer);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.GetCurrentUserTokenId())
+                .Returns(2);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.IsMOD())
+                .Returns(true);
+
+
+            //Asserts et Act
+
+            await Assert.ThrowsAsync<InvalidUserRequestException>(() => fc.DeleteAnswerAsync(1));
+
+
+
+
+        }
+
     }
 }
