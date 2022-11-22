@@ -1080,8 +1080,72 @@ namespace UnitTests
 
         public async void GetCategoriesShouldBeOk()
         {
+            //Arrange
             IForumService forumService = Mock.Of<IForumService>();
             ForumController fc = new ForumController(forumService);
+
+    
+            Category category1 = new Category()
+            {
+                Id = 1,
+                Title = "Dev"
+            };
+
+            Category category2 = new Category()
+            {
+                Id = 2,
+                Title = "Emploi"
+            };
+
+            List<Category> categories = new List<Category>();
+
+            categories.Add(category1);
+            categories.Add(category2);
+
+
+            Mock.Get(forumService)
+                .Setup(f => f.GetCategories())
+                .ReturnsAsync(categories);
+
+            //Act
+
+            IActionResult okres = await fc.GetCategoriesAsync();
+
+            //Assert
+
+            OkObjectResult okr = okres as OkObjectResult;
+            Assert.NotNull(okr);
+
+
+        }
+
+
+        [Fact]
+        public async void GetCategoryByIdShouldBeOk()
+        {
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+
+
+            Category category1 = new Category()
+            {
+                Id = 1,
+                Title = "Dev"
+            };
+
+            Mock.Get(forumService)
+                .Setup(f => f.GetCategoryById(1))
+                .ReturnsAsync(category1);
+
+            //Act
+
+            IActionResult OkRes = await fc.GetCategoryByIdAsync(1);
+
+            //Assert
+
+            OkObjectResult okr = OkRes as OkObjectResult;
+            Assert.NotNull(okr);
 
 
 
