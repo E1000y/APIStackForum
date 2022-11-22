@@ -958,7 +958,7 @@ namespace UnitTests
 
             Mock.Get(forumService)
              .Setup(f => f.GetAnswerByIdAsync(It.IsAny<int>()))
-             .ReturnsAsync(null as Answer);
+             .ReturnsAsync(answer);
 
             Mock.Get(userUtils)
                 .Setup(u => u.GetCurrentUserTokenId())
@@ -966,7 +966,7 @@ namespace UnitTests
 
             Mock.Get(userUtils)
                 .Setup(u => u.IsMOD())
-                .Returns(true);
+                .Returns(false);
 
 
             //Asserts et Act
@@ -977,6 +977,116 @@ namespace UnitTests
 
 
         }
+
+        [Fact]
+        public async void DeleteAnswerAsyncShouldBeNotFound()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            IUserUtils userUtils = Mock.Of<IUserUtils>();
+            ForumController fc = new ForumController(forumService, userUtils);
+            DateTime dttime = DateTime.Now;
+
+
+            Answer answer = new Answer()
+            {
+                Id = 1,
+                Body = "Answer1",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+
+            };
+
+
+            Mock.Get(forumService)
+             .Setup(f => f.GetAnswerByIdAsync(It.IsAny<int>()))
+             .ReturnsAsync(answer);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.GetCurrentUserTokenId())
+                .Returns(2);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.IsMOD())
+                .Returns(true);
+
+
+            //Act
+
+            IActionResult notfoundres = await fc.DeleteAnswerAsync(1);
+
+            //Assert
+
+            NotFoundResult notfres = notfoundres as NotFoundResult;
+            Assert.NotNull(notfres);
+
+
+        }
+
+        [Fact]
+        public async void DeleteAnswerAsyncShouldBeNoContent()
+        {
+
+            //Arrange
+            IForumService forumService = Mock.Of<IForumService>();
+            IUserUtils userUtils = Mock.Of<IUserUtils>();
+            ForumController fc = new ForumController(forumService, userUtils);
+            DateTime dttime = DateTime.Now;
+
+
+            Answer answer = new Answer()
+            {
+                Id = 1,
+                Body = "Answer1",
+                CreationDate = dttime,
+                subjectId = 1,
+                writerId = 1
+
+            };
+
+
+            Mock.Get(forumService)
+             .Setup(f => f.GetAnswerByIdAsync(It.IsAny<int>()))
+             .ReturnsAsync(answer);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.GetCurrentUserTokenId())
+                .Returns(1);
+
+            Mock.Get(userUtils)
+                .Setup(u => u.IsMOD())
+                .Returns(true);
+
+            Mock.Get(forumService)
+                .Setup(f => f.DeleteAnswerAsync(1))
+                .ReturnsAsync(true);
+
+
+            //Act
+
+            IActionResult noContentres = await fc.DeleteAnswerAsync(1);
+
+            //Assert
+
+            NoContentResult nocres = noContentres as NoContentResult;
+            Assert.NotNull(nocres);
+
+
+        }
+
+        [Fact]
+
+        public async void GetCategoriesShouldBeOk()
+        {
+            IForumService forumService = Mock.Of<IForumService>();
+            ForumController fc = new ForumController(forumService);
+
+
+
+        }
+
 
     }
 }
