@@ -11,60 +11,13 @@ namespace BLLS
 {
     public class ForumService : IForumService
     {
-        /*
-        public List<Subject> subjects = new List<Subject>()
-        {
-          
-            new Subject(){ Id = 1, Name = "Subject1", Description = "Description1", CreationDate = DateTime.Now, writerId = 1, categoryId = 1 },
-            new Subject(){ Id = 2, Name = "Subject2", Description = "Description2", CreationDate = DateTime.Now, writerId = 2, categoryId = 1 },
-            new Subject(){ Id = 3, Name = "Subject3", Description = "Description3", CreationDate = DateTime.Now, writerId = 1, categoryId = 2},
-            new Subject(){ Id = 4, Name = "Subject4", Description = "Description4", CreationDate = DateTime.Now, writerId = 2,  categoryId = 3},
-            new Subject(){ Id = 5, Name = "Subject5", Description = "Description5", CreationDate = DateTime.Now, writerId = 1,  categoryId = 4},
-            new Subject(){ Id = 6, Name = "Subject6", Description = "Description6", CreationDate = DateTime.Now, writerId = 2,  categoryId = 5},
-            new Subject(){ Id = 7, Name = "Subject7", Description = "Description7", CreationDate = DateTime.Now, writerId = 1,  categoryId = 1 },
-            new Subject(){ Id = 8, Name = "Subject8", Description = "Description8", CreationDate = DateTime.Now, writerId = 2,  categoryId = 2},
-        };*/
+      
 
-/*
-        public List<Answer> answers = new List<Answer>()
-        {
-            new Answer(){ Id = 1, Body = "BodyAnswer1", CreationDate = DateTime.Now, writerId = 1, subjectId = 1},
-            new Answer(){ Id = 2, Body = "BodyAnswer2", CreationDate = DateTime.Now, writerId = 1, subjectId = 1},
-            new Answer(){ Id = 3, Body = "BodyAnswer3", CreationDate = DateTime.Now, writerId = 1, subjectId = 2},
-            new Answer(){ Id = 4, Body = "BodyAnswer4", CreationDate = DateTime.Now, writerId = 2, subjectId = 1},
-            new Answer(){ Id = 5, Body = "BodyAnswer5", CreationDate = DateTime.Now, writerId = 2, subjectId = 2}
-        };
-*/
-/*
-        public List<Category> categories = new List<Category>()
-        {
-            new Category()
-            {
-                Id = 1, Title = "Category1"
-            },
-            new Category()
-            {
-                Id = 2, Title = "Category2"
-            },
-            new Category()
-            {
-                Id = 3, Title = "Category3"
-            },
-            new Category()
-            {
-                Id = 4, Title = "Category4"
-            },
-            new Category()
-            {
-                Id = 5, Title = "Category5"
-            },
-        };
-*/
 
         private readonly IUnitOfWork _uow;
         private readonly IConfiguration _config;
 
-        
+
         public ForumService(IUnitOfWork uow, IConfiguration config)
         {
             _uow = uow;

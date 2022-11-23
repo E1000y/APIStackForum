@@ -34,7 +34,7 @@ namespace APIStackForum
             //Singleton => toute la durée de vie du serveur
             //Scoped => toute la durée de vie de la requête d'un client
             //Transient => A chaque fois que je demande le service, j'ai une nouvelle instance.
-
+            services.AddTransient<IUserUtils, UserUtils>();
             // API REST
             services.AddControllers().AddJsonOptions(options =>
             {

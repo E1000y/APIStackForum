@@ -29,7 +29,7 @@ namespace IntegrationTest.Fixture
                 Id = 1,
                 Name = "subject999",
                 CategoryId = 1,
-                CreationDate = new DateTime(638010141990000000),
+                CreationDate = new DateTime(638010141992570000),
                 Description = "description999",
                 WriterId = 6
             };
@@ -44,5 +44,20 @@ namespace IntegrationTest.Fixture
 
             Assert.Equal(srdtoexpected, srdto);
         }
+
+        [Fact]
+
+        public async void GetSubjectByIdShouldBeNotFound()
+        {
+            string uri = "api/forum/subjects/999999999";
+
+            
+            //Act
+            HttpResponseMessage response = await _client.GetAsync(uri);
+
+            //Assert
+            Assert.True(response.StatusCode == System.Net.HttpStatusCode.NotFound);
+        }
+
     }
 }

@@ -523,7 +523,7 @@ namespace UnitTests
             //Arrange
             IForumService forumService = Mock.Of<IForumService>();
             IUserUtils userUtils = Mock.Of<IUserUtils>();
-            ForumController fc = new ForumController(forumService, userUtils);
+            ForumController fc = new ForumController(forumService);
             DateTime dttime = DateTime.Now;
 
 
@@ -554,7 +554,7 @@ namespace UnitTests
 
             //Asserts et Act
 
-            await Assert.ThrowsAsync<InvalidUserRequestException>(() => fc.DeleteSubjectAsync(1));
+            await Assert.ThrowsAsync<InvalidUserRequestException>(() => fc.DeleteSubjectAsync(1, userUtils));
 
 
 
@@ -568,7 +568,7 @@ namespace UnitTests
             //Arrange
             IForumService forumService = Mock.Of<IForumService>();
             IUserUtils userUtils = Mock.Of<IUserUtils>();
-            ForumController fc = new ForumController(forumService, userUtils);
+            ForumController fc = new ForumController(forumService);
             DateTime dttime = DateTime.Now;
 
 
@@ -603,7 +603,7 @@ namespace UnitTests
 
             //Act
 
-            IActionResult NoContentRes = await fc.DeleteSubjectAsync(1);
+            IActionResult NoContentRes = await fc.DeleteSubjectAsync(1, userUtils);
 
             //Assert
 
@@ -623,7 +623,7 @@ namespace UnitTests
             //Arrange
             IForumService forumService = Mock.Of<IForumService>();
             IUserUtils userUtils = Mock.Of<IUserUtils>();
-            ForumController fc = new ForumController(forumService, userUtils);
+            ForumController fc = new ForumController(forumService);
             DateTime dttime = DateTime.Now;
 
 
@@ -658,7 +658,7 @@ namespace UnitTests
 
             //Act
 
-            IActionResult notfoundres = await fc.DeleteSubjectAsync(1);
+            IActionResult notfoundres = await fc.DeleteSubjectAsync(1, userUtils);
 
             //Assert
 
@@ -941,7 +941,7 @@ namespace UnitTests
             //Arrange
             IForumService forumService = Mock.Of<IForumService>();
             IUserUtils userUtils = Mock.Of<IUserUtils>();
-            ForumController fc = new ForumController(forumService, userUtils);
+            ForumController fc = new ForumController(forumService);
             DateTime dttime = DateTime.Now;
 
 
@@ -971,7 +971,7 @@ namespace UnitTests
 
             //Asserts et Act
 
-            await Assert.ThrowsAsync<InvalidUserRequestException>(() => fc.DeleteAnswerAsync(1));
+            await Assert.ThrowsAsync<InvalidUserRequestException>(() => fc.DeleteAnswerAsync(1, userUtils));
 
 
 
@@ -985,7 +985,7 @@ namespace UnitTests
             //Arrange
             IForumService forumService = Mock.Of<IForumService>();
             IUserUtils userUtils = Mock.Of<IUserUtils>();
-            ForumController fc = new ForumController(forumService, userUtils);
+            ForumController fc = new ForumController(forumService);
             DateTime dttime = DateTime.Now;
 
 
@@ -1015,7 +1015,7 @@ namespace UnitTests
 
             //Act
 
-            IActionResult notfoundres = await fc.DeleteAnswerAsync(1);
+            IActionResult notfoundres = await fc.DeleteAnswerAsync(1, userUtils);
 
             //Assert
 
@@ -1032,7 +1032,7 @@ namespace UnitTests
             //Arrange
             IForumService forumService = Mock.Of<IForumService>();
             IUserUtils userUtils = Mock.Of<IUserUtils>();
-            ForumController fc = new ForumController(forumService, userUtils);
+            ForumController fc = new ForumController(forumService);
             DateTime dttime = DateTime.Now;
 
 
@@ -1066,7 +1066,7 @@ namespace UnitTests
 
             //Act
 
-            IActionResult noContentres = await fc.DeleteAnswerAsync(1);
+            IActionResult noContentres = await fc.DeleteAnswerAsync(1, userUtils);
 
             //Assert
 
