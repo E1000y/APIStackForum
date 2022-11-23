@@ -25,13 +25,13 @@ namespace APIStackForum.Controllers
         {
             _forumService = forumService;
         }
-
+/*
         public ForumController(IForumService forumService, IUserUtils userUtils)
         {
             _forumService = forumService;
             _userUtils = userUtils;
         }
-
+*/
 
         [HttpGet("subjects")]
 
@@ -56,7 +56,7 @@ namespace APIStackForum.Controllers
 
             return Ok(listResponse);
         }
-
+        
 
         [HttpGet("subjects/{id}")]
 
@@ -385,5 +385,7 @@ namespace APIStackForum.Controllers
 
             return Ok(response);
         }
+        
     }
 }
+        

@@ -1,0 +1,406 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\IntegrationTest\\IntegrationTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\APIStackForum\\APIStackForum.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\APIStackForum\\APIStackForum.csproj",
+        "projectName": "APIStackForum",
+        "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\APIStackForum\\APIStackForum.csproj",
+        "packagesPath": "C:\\Users\\cda5pani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\APIStackForum\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cda5pani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\BLLS\\BLLS.csproj": {
+                "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\BLLS\\BLLS.csproj"
+              },
+              "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\BLLS\\BLLS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\BLLS\\BLLS.csproj",
+        "projectName": "BLLS",
+        "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\BLLS\\BLLS.csproj",
+        "packagesPath": "C:\\Users\\cda5pani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\BLLS\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cda5pani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\DAL\\DAL.csproj"
+              },
+              "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\cda5pani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cda5pani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\cda5pani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cda5pani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\IntegrationTest\\IntegrationTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\IntegrationTest\\IntegrationTest.csproj",
+        "projectName": "IntegrationTest",
+        "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\IntegrationTest\\IntegrationTest.csproj",
+        "packagesPath": "C:\\Users\\cda5pani\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\IntegrationTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cda5pani\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\APIStackForum\\APIStackForum.csproj": {
+                "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\APIStackForum\\APIStackForum.csproj"
+              },
+              "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\cda5pani\\Documents\\Fil rouge jalon 4 - Projet StackForum\\StackForum\\APIStackForum\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
