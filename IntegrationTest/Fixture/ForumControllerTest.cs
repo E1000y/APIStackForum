@@ -57,6 +57,101 @@ namespace IntegrationTest.Fixture
 
             //Assert
             Assert.True(response.StatusCode == System.Net.HttpStatusCode.NotFound);
+
+
+        }
+
+
+        [Fact]
+
+        public async void GetAnswersBySubjectIdShouldBeOk()
+        {
+            //Arrange
+            string uri = "api/forum/subjects/1/answers";
+
+            AnswerResponseDTO ardto = new AnswerResponseDTO() {
+                Id = 49,
+                SubjectId = 1,
+                Body = "ajout",
+                CreationDate = new DateTime(2022,11,10,11,33,16),
+                WriterId = 22
+            };
+            AnswerResponseDTO ardto2 = new AnswerResponseDTO()
+            {
+                Id = 50,
+                SubjectId = 1,
+                Body = "answer",
+                CreationDate = new DateTime(2022,11,10,11,41,16),
+                WriterId = 23
+            };
+
+            List<AnswerResponseDTO> listanswers = new List<AnswerResponseDTO>();
+
+            listanswers.Add(ardto);
+            listanswers.Add(ardto2);
+
+
+
+            //Act
+            HttpResponseMessage response = await _client.GetAsync(uri);
+
+            //Assert
+            Assert.True(response.StatusCode == System.Net.HttpStatusCode.OK);
+            List<AnswerResponseDTO> listanswerresponse = await response.Content.ReadFromJsonAsync<List<AnswerResponseDTO>>();
+
+            Assert.Equal(listanswers, listanswerresponse);
+
+        }
+
+        [Fact]
+
+        public async void GetAnswersBySubjectIdShouldBeNotFound()
+        {
+            //Arrange
+            string uri = "api/forum/subjects/99999999/answers";
+
+
+            //Act
+            HttpResponseMessage response = await _client.GetAsync(uri);
+
+            //Assert
+            Assert.True(response.StatusCode == System.Net.HttpStatusCode.NotFound);
+
+
+
+        }
+
+        [Fact]
+
+        public async void GetSubjectsByCategoryShouldBeOk()
+        {
+            //Arrange
+
+            string uri = "api/forum/categories/1/subjects";
+
+            SubjectResponseDTO srdto = new SubjectResponseDTO()
+            {
+                Id = 1,
+                Name = "subject999",
+                Description = "description999",
+                WriterId = 6,
+                CategoryId = 1,
+                CreationDate = new DateTime(2022, 10, 10, 15, 56, 39,257)//"2022-10-10T15:56:39.257"
+            };
+
+            List<SubjectResponseDTO> listsrdto = new List<SubjectResponseDTO>();
+            listsrdto.Add(srdto);
+
+
+            //Act
+            HttpResponseMessage response = await _client.GetAsync(uri);
+
+            //Assert
+            Assert.True(response.StatusCode == System.Net.HttpStatusCode.OK);
+            List<SubjectResponseDTO> listsrdtoexpected = await response.Content.ReadFromJsonAsync<List<SubjectResponseDTO>>();
+
+            Assert.Equal(listsrdtoexpected, listsrdto);
+
         }
 
     }

@@ -302,4 +302,3 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\IntegrationTest\Debug\net5.0\IntegrationTest.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\IntegrationTest\Debug\net5.0\ref\IntegrationTest.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\IntegrationTest\Debug\net5.0\IntegrationTest.genruntimeconfig.cache
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\.vs\APIStackForum\v16\lut\0\i\IntegrationTest\Debug\net5.0\IntegrationTest.csproj.AssemblyReference.cache

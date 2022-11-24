@@ -25,13 +25,7 @@ namespace APIStackForum.Controllers
             _forumService = forumService;
         }
 
-        /*
-        public ForumController(IForumService forumService, IUserUtils userUtils)
-        {
-            _forumService = forumService;
-            _userUtils = userUtils;
-        }
-        */
+     
 
         [HttpGet("subjects")]
 
@@ -82,7 +76,7 @@ namespace APIStackForum.Controllers
         public async Task<IActionResult> GetAnswersBySubjectIdAsync([FromRoute] int SubjectId)
         {
             var answers = await _forumService.GetAnswersBySubjectIdAsync(SubjectId);
-            if (answers == null) return NotFound();
+            if (answers.Count() == 0) return NotFound();
 
             List<AnswerResponseDTO> response = new List<AnswerResponseDTO>();
 

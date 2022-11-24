@@ -141,9 +141,11 @@ namespace UnitTests
             //Arrange
             IForumService forumService = Mock.Of<IForumService>();
 
+            List<Answer> answers = new List<Answer>();
+
             Mock.Get(forumService)
                 .Setup(f => f.GetAnswersBySubjectIdAsync(It.IsAny<int>()))
-                .ReturnsAsync(null as IEnumerable<Answer>);
+                .ReturnsAsync(answers);
 
             ForumController fc = new ForumController(forumService);
 
