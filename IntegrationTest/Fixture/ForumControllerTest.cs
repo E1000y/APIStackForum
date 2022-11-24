@@ -1,4 +1,5 @@
-﻿using Domain.DTO.Responses;
+﻿using Domain.DTO.Requests;
+using Domain.DTO.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -127,16 +128,16 @@ namespace IntegrationTest.Fixture
         {
             //Arrange
 
-            string uri = "api/forum/categories/1/subjects";
+            string uri = "api/forum/categories/2/subjects";
 
             SubjectResponseDTO srdto = new SubjectResponseDTO()
             {
-                Id = 1,
-                Name = "subject999",
-                Description = "description999",
-                WriterId = 6,
-                CategoryId = 1,
-                CreationDate = new DateTime(2022, 10, 10, 15, 56, 39,257)//"2022-10-10T15:56:39.257"
+                Id = 15,
+                Name = "modified",
+                Description = "I modified the description of the subject",
+                WriterId = 9,
+                CategoryId = 2,
+                CreationDate = new DateTime(2022, 10, 26, 08, 48, 20,563)//"26/10/2022 08:48:20"
             };
 
             List<SubjectResponseDTO> listsrdto = new List<SubjectResponseDTO>();
@@ -154,5 +155,57 @@ namespace IntegrationTest.Fixture
 
         }
 
+        [Fact]
+
+        public async void GetSubjectsByCategoryShouldBeNotFound()
+        {
+            string uri = "api/forum/categories/999999999/subjects";
+
+            HttpResponseMessage response = await _client.GetAsync(uri);
+
+            Assert.True(response.StatusCode == System.Net.HttpStatusCode.NotFound);
+
+
+        }
+
+        [Fact]
+
+        public async void CreateSubjectShouldBeOk()
+        {
+            //Arrange
+
+            string uri = "api/forum/subjects";
+            CreateSubjectRequestDTO csrdto = new CreateSubjectRequestDTO()
+            { 
+                WriterId = 6,
+                CategoryId = 1,
+                Name = "Integration Test Name",
+                Description = "Integration Test Description"
+            };
+
+            SubjectResponseDTO resultexpected = new SubjectResponseDTO()
+            {
+                WriterId = 6,
+                CategoryId = 1,
+                Name = "Integration Test Name",
+                Description = "Integration Test Description"
+            };
+
+            //Act
+
+            HttpResponseMessage response = await _client.PostAsJsonAsync<CreateSubjectRequestDTO>(uri, csrdto);
+
+            //Assert
+            Assert.True(response.StatusCode == System.Net.HttpStatusCode.Created);
+
+            SubjectResponseDTO obtainedresponse = await response.Content.ReadFromJsonAsync<SubjectResponseDTO>();
+
+            Assert.True(obtainedresponse.Id > 0);
+            Assert.True(obtainedresponse.WriterId == resultexpected.WriterId);
+            Assert.True(obtainedresponse.CategoryId == resultexpected.CategoryId);
+            Assert.True(obtainedresponse.Name == resultexpected.Name);
+            Assert.True(obtainedresponse.Description == resultexpected.Description);
+
+        }
     }
 }

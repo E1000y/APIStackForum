@@ -94,13 +94,13 @@ namespace APIStackForum.Controllers
             return Ok(response);
         }
 
-        [HttpGet("Categories/{CategoryId}/subjects")]
+        [HttpGet("categories/{CategoryId}/subjects")]
 
         public async Task<IActionResult> GetSubjectsByCategoryIdAsync([FromRoute] int CategoryId)
         {
              var subjects = await _forumService.GetSubjectsByCategoryId(CategoryId);
 
-            if (subjects == null) return NotFound();
+            if (subjects.Count() == 0) return NotFound();
 
             List<SubjectResponseDTO> response = new List<SubjectResponseDTO>() ;
 
