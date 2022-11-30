@@ -38,10 +38,11 @@ namespace InterfaceUWP
         public async Task<bool> GetAnswers(int SubjectId)
         {
             var answers = await DataM.Instance.GetAnswer(SubjectId);
+            Answers.Clear();
 
             if (answers != null)
             {
-                Answers.Clear();
+                
                 answers.ForEach(x => Answers.Add(x));
                 return true;
             }

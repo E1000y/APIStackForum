@@ -50,3 +50,4 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\obj\x86\Debug\MVVM\Views\PageDev.g.cs
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\obj\x86\Debug\MVVM\Views\PageDev.xaml
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\obj\x86\Debug\MVVM\Views\PageDev.xbf
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\obj\x86\Debug\InterfaceUWP.csproj.AssemblyReference.cache

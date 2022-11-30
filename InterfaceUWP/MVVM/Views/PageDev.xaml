@@ -50,12 +50,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <SymbolIcon Symbol="OtherUser" Margin="0,0,20,0" Foreground="Yellow" RenderTransformOrigin="0.5,0.5">
+                        <SymbolIcon Symbol="OtherUser" Margin="0,0,20,0" Foreground="LightSkyBlue" RenderTransformOrigin="0.5,0.5">
                             <SymbolIcon.RenderTransform>
                                 <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
                             </SymbolIcon.RenderTransform>
                             <ToolTipService.ToolTip>
-                                <ToolTip Content="{Binding Name}" HorizontalOffset="10" VerticalOffset="10"/>
+                                <ToolTip Content="{Binding Body}" HorizontalOffset="10" VerticalOffset="10"/>
                             </ToolTipService.ToolTip>
                         </SymbolIcon>
                         <TextBlock Text="{Binding Body}"/>
@@ -65,7 +65,7 @@
             </ListView.ItemTemplate>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <Setter Property="Background" Value="LightSkyBlue"/>
+                    <Setter Property="Background" Value="Yellow"/>
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 </Style>
             </ListView.ItemContainerStyle>

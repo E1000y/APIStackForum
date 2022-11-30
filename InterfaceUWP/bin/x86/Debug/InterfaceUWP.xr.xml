@@ -4,9 +4,9 @@
     <RootPropertyPathName Name="Answers" />
     <RootPropertyPathName Name="CreationDate" />
     <RootPropertyPathName Name="Body" />
-    <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Subjects" />
     <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Name" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
