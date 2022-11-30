@@ -24,10 +24,12 @@ namespace InterfaceUWP
     /// </summary>
     public sealed partial class PageDev : Page
     {
+        public int catId = 1;
 
         private DataVM dataVM = new DataVM();
         public PageDev()
         {
+           
             this.InitializeComponent();
 
             //liaison entre la View et le viewModel
@@ -38,7 +40,7 @@ namespace InterfaceUWP
 
         private async void getSubject()
         {
-            await dataVM.GetSubjects(1);
+            await dataVM.GetSubjects(catId);
         }
 
 
@@ -47,6 +49,50 @@ namespace InterfaceUWP
             SubjectBO sbo = e.ClickedItem as SubjectBO;
 
             await dataVM.GetAnswers(sbo.id);
+        }
+
+        private void Dev_Click(object sender, RoutedEventArgs e)
+        {
+            dataVM.RefreshSubject();
+            dataVM.RefreshAnswers();
+            catId = 1;
+            getSubject();
+            
+        }
+
+        private void Emploi_Click(object sender, RoutedEventArgs e)
+        {
+            dataVM.RefreshSubject();
+            dataVM.RefreshAnswers();
+            catId = 2;
+            getSubject();
+
+        }
+
+        private void Formation_Click(object sender, RoutedEventArgs e)
+        {
+            dataVM.RefreshSubject();
+            dataVM.RefreshAnswers();
+            catId = 3;
+            getSubject();
+
+        }
+
+        private void Fun_Click(object sender, RoutedEventArgs e)
+        {
+            dataVM.RefreshSubject();
+            dataVM.RefreshAnswers();
+            catId = 4;
+            getSubject();
+        }
+
+        private void Etc_Click(object sender, RoutedEventArgs e)
+        {
+            dataVM.RefreshSubject();
+            dataVM.RefreshAnswers();
+            catId = 5;
+            getSubject();
+
         }
     }
 }

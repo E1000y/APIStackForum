@@ -50,6 +50,15 @@ namespace InterfaceUWP
             return false;
         }
 
+        public void RefreshAnswers()
+        {
+            Answers.Clear();
+        }
+
+        public void RefreshSubject()
+        {
+            Subjects.Clear();
+        }
     }
 
 }

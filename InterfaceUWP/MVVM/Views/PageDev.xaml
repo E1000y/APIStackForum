@@ -11,7 +11,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -21,6 +21,15 @@
             <ColumnDefinition Width ="6*"/>
             
         </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Button x:Name="Dev" Content="Dev" Click="Dev_Click"></Button>
+            <Button x:Name="Emploi" Content="Emploi" Click="Emploi_Click"></Button>
+            <Button x:Name="Formation" Content="Formation" Click="Formation_Click"></Button>
+            <Button x:Name="Fun" Content="Fun" Click="Fun_Click"></Button>
+            <Button x:Name="Etc" Content="Ect" Click="Etc_Click"></Button>
+        </StackPanel>
+        
 
         <ListView x:Name="lstSubjects" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Subjects}" IsItemClickEnabled="True" ItemClick="lstSubjects_ItemClick">
             <ListView.ItemTemplate>
@@ -34,7 +43,8 @@
                                 <ToolTip Content="{Binding Name}" HorizontalOffset="10" VerticalOffset="10"/>
                             </ToolTipService.ToolTip>
                         </SymbolIcon>
-                        <TextBlock Text="{Binding Description}"/>
+                        <TextBlock Text="{Binding Name}" Margin="0,0,20,0" />
+                        <TextBlock Text="{Binding Description}" Margin="0,0,20,0" />
                         <TextBlock Text="{Binding CreationDate}" />
                     </StackPanel>
                 </DataTemplate>
