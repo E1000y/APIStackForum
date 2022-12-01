@@ -23,11 +23,11 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0">
-            <Button x:Name="Dev" Content="Dev" Click="Dev_Click"></Button>
-            <Button x:Name="Emploi" Content="Emploi" Click="Emploi_Click"></Button>
-            <Button x:Name="Formation" Content="Formation" Click="Formation_Click"></Button>
-            <Button x:Name="Fun" Content="Fun" Click="Fun_Click"></Button>
-            <Button x:Name="Etc" Content="Ect" Click="Etc_Click"></Button>
+            <Button x:Name="Dev" Content="Dev" Click="Dev_Click" Width="100" Height="50"></Button>
+            <Button x:Name="Emploi" Content="Emploi" Click="Emploi_Click" Width="100" Height="50"></Button>
+            <Button x:Name="Formation" Content="Formation" Click="Formation_Click" Width="100" Height="50"></Button>
+            <Button x:Name="Fun" Content="Fun" Click="Fun_Click" Width="100" Height="50"></Button>
+            <Button x:Name="Etc" Content="Ect" Click="Etc_Click" Width="100" Height="50"></Button>
         </StackPanel>
         
 
