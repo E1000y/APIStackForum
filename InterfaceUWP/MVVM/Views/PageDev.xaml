@@ -18,20 +18,51 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width ="*"/>
             <ColumnDefinition Width ="4*"/>
-            <ColumnDefinition Width ="6*"/>
-            
+            <ColumnDefinition Width ="4*"/>
+            <ColumnDefinition Width="*"/>
+
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <Button x:Name="Dev" Content="Dev" Click="Dev_Click" Width="100" Height="50"></Button>
-            <Button x:Name="Emploi" Content="Emploi" Click="Emploi_Click" Width="100" Height="50"></Button>
-            <Button x:Name="Formation" Content="Formation" Click="Formation_Click" Width="100" Height="50"></Button>
-            <Button x:Name="Fun" Content="Fun" Click="Fun_Click" Width="100" Height="50"></Button>
-            <Button x:Name="Etc" Content="Ect" Click="Etc_Click" Width="100" Height="50"></Button>
-        </StackPanel>
-        
+        <!--<SplitView >
+            <ListView Grid.Column="0" IsItemClickEnabled="True">
 
-        <ListView x:Name="lstSubjects" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Subjects}" IsItemClickEnabled="True" ItemClick="lstSubjects_ItemClick">
+
+                <Button x:Name="Dev" Content="Dev" Click="Dev_Click" Width="100" Height="50" ></Button>
+                <Button x:Name="Emploi" Content="Emploi" Click="Emploi_Click" Width="100" Height="50"></Button>
+                <Button x:Name="Formation" Content="Formation" Click="Formation_Click" Width="100" Height="50"></Button>
+                <Button x:Name="Fun" Content="Fun" Click="Fun_Click" Width="100" Height="50"></Button>
+                <Button x:Name="Etc" Content="Ect" Click="Etc_Click" Width="100" Height="50"></Button>
+                
+
+            </ListView>
+        </SplitView>-->
+
+        <SplitView>
+            <ListView Grid.Column="0" IsItemClickEnabled="True">
+
+                <ListBox x:Name="Menu" SelectionChanged="Menu_SelectionChanged" >
+                    <ListBoxItem x:Name="Dev">
+                        <TextBlock Text="Dev"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="Emploi">
+                        <TextBlock Text="Emploi"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="Formation">
+                        <TextBlock Text="Formation"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="Fun">
+                        <TextBlock Text="Fun"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="Etc">
+                        <TextBlock Text="Etc"></TextBlock>
+                    </ListBoxItem>
+                </ListBox>
+                
+            </ListView>
+
+        </SplitView>
+
+        <ListView x:Name="lstSubjects" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Subjects}" IsItemClickEnabled="True"  ItemClick="lstSubjects_ItemClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -43,9 +74,9 @@
                                 <ToolTip Content="{Binding Name}" HorizontalOffset="10" VerticalOffset="10"/>
                             </ToolTipService.ToolTip>
                         </SymbolIcon>
-                        <TextBlock Text="{Binding Name}" Margin="0,0,20,0" />
-                        <TextBlock Text="{Binding Description}" Margin="0,0,20,0" />
-                        <TextBlock Text="{Binding CreationDate}" />
+                        <TextBox Text="{Binding Name}" Margin="0,0,20,0" VerticalAlignment="Center" Height="Auto" Width="200" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" Background="White"/>
+                        <TextBox Text="{Binding Description}" Margin="0,0,20,0" Height="Auto" Width="300" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding CreationDate}" VerticalAlignment="Center" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -56,7 +87,7 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <ListView x:Name="lstAnswers" Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Answers}">
+        <ListView x:Name="lstAnswers" Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Answers}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -68,7 +99,7 @@
                                 <ToolTip Content="{Binding Body}" HorizontalOffset="10" VerticalOffset="10"/>
                             </ToolTipService.ToolTip>
                         </SymbolIcon>
-                        <TextBlock Text="{Binding Body}"/>
+                        <TextBox Text="{Binding Body}" TextWrapping="Wrap" IsReadOnly="True"  Height="auto" Width="500" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="Transparent"/>
                         <TextBlock Text="{Binding CreationDate}" />
                     </StackPanel>
                 </DataTemplate>

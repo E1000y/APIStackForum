@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-01T12:58:22.125</Modified>
+      <Modified>2022-12-02T11:03:29.430</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\InterfaceUWP.exe">
       <PackagePath>entrypoint\InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-01T12:58:21.632</Modified>
+      <Modified>2022-12-02T11:03:28.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\.nuget\packages\microsoft.bcl.asyncinterfaces\7.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -318,15 +318,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\InterfaceUWP.xr.xml">
       <PackagePath>InterfaceUWP.xr.xml</PackagePath>
-      <Modified>2022-12-01T08:22:30.512</Modified>
+      <Modified>2022-12-02T10:59:45.849</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-12-01T12:56:38.950</Modified>
+      <Modified>2022-12-02T11:03:28.826</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\MVVM\Views\PageDev.xbf">
       <PackagePath>MVVM\Views\PageDev.xbf</PackagePath>
-      <Modified>2022-12-01T12:58:21.572</Modified>
+      <Modified>2022-12-02T11:03:28.826</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -338,7 +338,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\InterfaceUWP.exe">
       <PackagePath>InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-01T12:58:22.123</Modified>
+      <Modified>2022-12-02T11:03:29.428</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

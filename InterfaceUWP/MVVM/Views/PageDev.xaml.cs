@@ -57,6 +57,7 @@ namespace InterfaceUWP
             dataVM.RefreshAnswers();
             catId = 1;
             getSubject();
+           
             
         }
 
@@ -92,6 +93,27 @@ namespace InterfaceUWP
             dataVM.RefreshAnswers();
             catId = 5;
             getSubject();
+
+        }
+
+        private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Dev.IsSelected)
+            {
+                dataVM.RefreshSubject();
+                dataVM.RefreshAnswers();
+                catId = 1;
+                getSubject();
+
+            }
+            else if (Emploi.IsSelected)
+            {
+                dataVM.RefreshSubject();
+                dataVM.RefreshAnswers();
+                catId = 2;
+                getSubject();
+            }
+
 
         }
     }
