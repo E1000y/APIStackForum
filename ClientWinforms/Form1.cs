@@ -56,6 +56,10 @@ namespace ClientWinforms
 
 
             }
+            else
+            {
+                MessageBox.Show("Erreur Login ou Mot de Passe erroné");
+            }
         }
 
         private void linkVisitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

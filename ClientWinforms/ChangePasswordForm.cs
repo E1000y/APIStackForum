@@ -39,5 +39,9 @@ namespace ClientWinforms
 
         }
 
+        private void ChangePasswordForm_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

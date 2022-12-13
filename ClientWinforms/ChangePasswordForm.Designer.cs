@@ -102,6 +102,7 @@ namespace ClientWinforms
             this.Controls.Add(this.btnChangePassword);
             this.Name = "ChangePasswordForm";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

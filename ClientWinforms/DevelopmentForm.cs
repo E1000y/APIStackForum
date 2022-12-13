@@ -290,7 +290,7 @@ namespace ClientWinforms
         {
             ChangePasswordForm pwform = new ChangePasswordForm();
             pwform.Show();
-            this.Hide();
+          
 
         }
 
