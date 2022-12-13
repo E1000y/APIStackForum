@@ -548,11 +548,11 @@ namespace UnitTests
              .ReturnsAsync(enquiredSubject);
 
             Mock.Get(userUtils)
-                .Setup(u => u.GetCurrentUserTokenId())
+                .Setup(u => u.GetCurrentUserTokenId(It.IsAny<ControllerBase>()))
                 .Returns(2);
 
             Mock.Get(userUtils)
-                .Setup(u => u.IsMOD())
+                .Setup(u => u.IsMOD(It.IsAny<ControllerBase>()))
                 .Returns(false);
 
 
@@ -593,11 +593,11 @@ namespace UnitTests
              .ReturnsAsync(enquiredSubject);
 
             Mock.Get(userUtils)
-                .Setup(u => u.GetCurrentUserTokenId())
+                .Setup(u => u.GetCurrentUserTokenId(It.IsAny<ControllerBase>()))
                 .Returns(1);
 
             Mock.Get(userUtils)
-                .Setup(u => u.IsMOD())
+                .Setup(u => u.IsMOD(It.IsAny<ControllerBase>()))
                 .Returns(true);
 
             Mock.Get(forumService)
@@ -648,11 +648,11 @@ namespace UnitTests
              .ReturnsAsync(null as Subject);
 
             Mock.Get(userUtils)
-                .Setup(u => u.GetCurrentUserTokenId())
+                .Setup(u => u.GetCurrentUserTokenId(It.IsAny<ControllerBase>()))
                 .Returns(1);
 
             Mock.Get(userUtils)
-                .Setup(u => u.IsMOD())
+                .Setup(u => u.IsMOD(It.IsAny<ControllerBase>()))
                 .Returns(true);
 
             Mock.Get(forumService)
@@ -965,11 +965,11 @@ namespace UnitTests
              .ReturnsAsync(answer);
 
             Mock.Get(userUtils)
-                .Setup(u => u.GetCurrentUserTokenId())
+                .Setup(u => u.GetCurrentUserTokenId(It.IsAny<ControllerBase>()))
                 .Returns(2);
 
             Mock.Get(userUtils)
-                .Setup(u => u.IsMOD())
+                .Setup(u => u.IsMOD(It.IsAny<ControllerBase>()))
                 .Returns(false);
 
 
@@ -1009,11 +1009,11 @@ namespace UnitTests
              .ReturnsAsync(answer);
 
             Mock.Get(userUtils)
-                .Setup(u => u.GetCurrentUserTokenId())
+                .Setup(u => u.GetCurrentUserTokenId(It.IsAny<ControllerBase>()))
                 .Returns(2);
 
             Mock.Get(userUtils)
-                .Setup(u => u.IsMOD())
+                .Setup(u => u.IsMOD(It.IsAny<ControllerBase>()))
                 .Returns(true);
 
 
@@ -1056,11 +1056,11 @@ namespace UnitTests
              .ReturnsAsync(answer);
 
             Mock.Get(userUtils)
-                .Setup(u => u.GetCurrentUserTokenId())
+                .Setup(u => u.GetCurrentUserTokenId(It.IsAny<ControllerBase>()))
                 .Returns(1);
 
             Mock.Get(userUtils)
-                .Setup(u => u.IsMOD())
+                .Setup(u => u.IsMOD(It.IsAny<ControllerBase>()))
                 .Returns(true);
 
             Mock.Get(forumService)

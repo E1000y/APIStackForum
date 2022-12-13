@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace APIStackForum
 {
-    internal class UserUtils : ControllerBase, IUserUtils
+    internal class UserUtils : IUserUtils
     {
-        public int GetCurrentUserTokenId()
+        public int GetCurrentUserTokenId(ControllerBase cb)
         {
-            return Int32.Parse(HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value);
+            return Int32.Parse(cb.HttpContext.User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier)?.Value) ;
         }
 
-        public bool IsMOD()
+        public bool IsMOD(ControllerBase cb)
         {
-            return HttpContext.User.IsInRole("MOD");
+            return cb.HttpContext.User.IsInRole("MOD");
         }
 
     }

@@ -206,11 +206,11 @@ namespace APIStackForum.Controllers
 
         public async Task<IActionResult> DeleteSubjectAsync([FromRoute] int id, [FromServices] IUserUtils userUtils)
         {
-            int InTokenId = userUtils.GetCurrentUserTokenId();
+            int InTokenId = userUtils.GetCurrentUserTokenId(this);
 
             Subject enquiredSubject = await _forumService.GetSubjectByIdAsync(id);
 
-            if (!userUtils.IsMOD() && enquiredSubject.writerId != InTokenId) throw new InvalidUserRequestException();
+            if (!userUtils.IsMOD(this) && enquiredSubject.writerId != InTokenId) throw new InvalidUserRequestException();
 
             return (await _forumService.DeleteSubjectAsync(id)) ? NoContent() : NotFound();
         }
@@ -335,11 +335,11 @@ namespace APIStackForum.Controllers
         public async Task<IActionResult> DeleteAnswerAsync([FromRoute] int id, [FromServices] IUserUtils userUtils)
         {
 
-            int InTokenId = userUtils.GetCurrentUserTokenId();
+            int InTokenId = userUtils.GetCurrentUserTokenId(this);
 
             Answer enquiredAnswer = await _forumService.GetAnswerByIdAsync(id);
 
-            if (!userUtils.IsMOD() && enquiredAnswer.writerId != InTokenId) throw new InvalidUserRequestException();
+            if (!userUtils.IsMOD(this) && enquiredAnswer.writerId != InTokenId) throw new InvalidUserRequestException();
             return (await _forumService.DeleteAnswerAsync(id)) ? NoContent() : NotFound();
 
 

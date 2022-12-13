@@ -165,7 +165,7 @@ namespace ClientWinforms
         {
             //Delete pending subject
 
-            //throw new NotImplementedException();
+ 
 
             Subject subject = (Subject)bsSubjects.Current;
 

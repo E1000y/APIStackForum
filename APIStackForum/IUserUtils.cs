@@ -1,10 +1,12 @@
-﻿namespace APIStackForum
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace APIStackForum
 {
     public interface IUserUtils
     {
-        int GetCurrentUserTokenId();
+        int GetCurrentUserTokenId(ControllerBase cb);
 
-        bool IsMOD();
+        bool IsMOD(ControllerBase cb);
     }
 
 
