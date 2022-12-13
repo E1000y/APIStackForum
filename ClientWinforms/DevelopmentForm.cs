@@ -74,10 +74,17 @@ namespace ClientWinforms
 
             if (_lstSubjects != null)
             {
+                if (!tabControl2.Controls.Contains(tabPage4))
+                {
+                tabControl2.Controls.Add(tabPage4);
+                }
+
+
                 if (!tabControl1.Controls.Contains(tabPage2))
                 {
                 tabControl1.Controls.Add(tabPage2);
                 tabControl1.Controls.Add(tabPage3);
+
                 }
                 bsSubjects.DataSource = _lstSubjects;
                 bsSubjects.ResetBindings(false);
@@ -85,6 +92,9 @@ namespace ClientWinforms
             }
             else
             {
+                tabControl2.Controls.Remove(tabPage4);
+                tabControl2.Controls.Remove(tabPage5);
+                tabControl2.Controls.Remove(tabPage6);
                 bsSubjects.DataSource = null;
                 tabControl1.Controls.Remove(tabPage2);
                 tabControl1.Controls.Remove(tabPage3);
@@ -97,7 +107,7 @@ namespace ClientWinforms
             dgvAnswers.DataSource = null;
             initializeBindingSubjects();
             activeCategory = 2;
-            await RefreshSubjectAsync (activeCategory);
+            await RefreshSubjectAsync(activeCategory);
         }
 
         private async void btnFormation_Click(object sender, EventArgs e)
@@ -147,10 +157,22 @@ namespace ClientWinforms
 
             if (_lstAnswers != null)
             {
+
+                if (!tabControl2.Controls.Contains(tabPage5))
+                {
+                tabControl2.Controls.Add(tabPage5);
+                tabControl2.Controls.Add(tabPage6);
+                }
                 bsAnswers.DataSource = _lstAnswers;
                 dgvAnswers.DataSource = bsAnswers;
                bsAnswers.ResetBindings(false);
                 /*bsAnswers.Position = _lstAnswers.FindIndex(u => u.Id == subject.Id);*/
+            }
+            else
+            {
+                dgvAnswers.DataSource = null;
+                tabControl2.Controls.Remove(tabPage5);
+                tabControl2.Controls.Remove(tabPage6);
             }
         }
 
@@ -229,6 +251,7 @@ namespace ClientWinforms
 
             string addAnswerBody = txtAddAnswerBody.Text;
             Subject subject = (Subject)bsSubjects.Current;
+            
             var res = await _dal.createAnswerAsync(subject.Id, addAnswerBody);
             
           
