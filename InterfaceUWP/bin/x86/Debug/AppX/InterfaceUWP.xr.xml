@@ -103,7 +103,9 @@
       <RootProperty Name="Items" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
+      <RootProperty Name="Content" />
+    </RootType>
     <RootType FullName="InterfaceUWP.PageDev" />
   </Roots.RootTypes>
 </Roots>

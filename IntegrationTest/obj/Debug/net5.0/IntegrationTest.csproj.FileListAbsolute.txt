@@ -1,9 +1,4 @@
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\CoverletSourceRootsMapping
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.csproj.AssemblyReference.cache
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.AssemblyInfoInputs.cache
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.AssemblyInfo.cs
-C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.csproj.CoreCompileInputs.cache
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\testhost.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\APIStackForum.deps.json
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\APIStackForum.runtimeconfig.json
@@ -426,6 +421,11 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\Domain.pdb
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\BLLS.pdb
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\DAL.pdb
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.csproj.AssemblyReference.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.AssemblyInfoInputs.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.AssemblyInfo.cs
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.csproj.CoreCompileInputs.cache
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.csproj.CopyComplete
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\ref\IntegrationTest.dll

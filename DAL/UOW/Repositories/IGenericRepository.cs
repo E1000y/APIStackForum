@@ -10,7 +10,7 @@ namespace DAL.UOW.Repositories
     public interface IGenericRepository<T> where T : Entity
     {
         /// <summary>
-        /// Permets de récupérer toutes les entités
+        /// Permet de récupérer toutes les entités
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<T>> GetAllAsync();

@@ -74,9 +74,20 @@ namespace ClientWinforms
 
             if (_lstSubjects != null)
             {
+                if (!tabControl1.Controls.Contains(tabPage2))
+                {
+                tabControl1.Controls.Add(tabPage2);
+                tabControl1.Controls.Add(tabPage3);
+                }
                 bsSubjects.DataSource = _lstSubjects;
                 bsSubjects.ResetBindings(false);
                 bsSubjects.Position = _lstSubjects.FindIndex(u => u.Id == idsubject);
+            }
+            else
+            {
+                bsSubjects.DataSource = null;
+                tabControl1.Controls.Remove(tabPage2);
+                tabControl1.Controls.Remove(tabPage3);
             }
 
           }
@@ -202,8 +213,13 @@ namespace ClientWinforms
            String modifiedSubjectName = TxtModifySubjectName.Text;
             String modifiedSubjectDescription = txtModifySubjectDescription.Text;
             Subject subject = (Subject)bsSubjects.Current;
+            if (subject != null)
+            {
             await _dal.modifySubjectAsync(subject.Id, modifiedSubjectName, modifiedSubjectDescription, activeCategory);
             await RefreshSubjectAsync(activeCategory);
+
+            }
+            
         }
 
       

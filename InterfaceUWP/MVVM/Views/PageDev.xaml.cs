@@ -113,7 +113,29 @@ namespace InterfaceUWP
                 catId = 2;
                 getSubject();
             }
+            else if (Formation.IsSelected)
+            {
+                dataVM.RefreshSubject();
+                dataVM.RefreshAnswers();
+                catId = 3;
+                getSubject();
 
+            }
+            else if (Fun.IsSelected)
+            {
+                dataVM.RefreshSubject();
+                dataVM.RefreshAnswers();
+                catId = 4;
+                getSubject();
+            }
+            else if (Etc.IsSelected)
+            {
+                dataVM.RefreshSubject();
+                dataVM.RefreshAnswers();
+                catId = 5;
+                getSubject();
+
+            }
 
         }
     }

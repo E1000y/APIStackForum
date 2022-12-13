@@ -41,11 +41,21 @@
             <ListView Grid.Column="0" IsItemClickEnabled="True">
 
                 <ListBox x:ConnectionId='6' x:Name="Menu"                                          >
-                    <ListBoxItem x:ConnectionId='7' x:Name="Dev"></ListBoxItem>
-                    <ListBoxItem x:ConnectionId='8' x:Name="Emploi"></ListBoxItem>
-                    <ListBoxItem x:ConnectionId='9' x:Name="Formation"></ListBoxItem>
-                    <ListBoxItem x:ConnectionId='10' x:Name="Fun"></ListBoxItem>
-                    <ListBoxItem x:ConnectionId='11' x:Name="Etc"></ListBoxItem>
+                    <ListBoxItem x:ConnectionId='7' x:Name="Dev">
+                        <TextBlock Text="Dev"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='8' x:Name="Emploi">
+                        <TextBlock Text="Emploi"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='9' x:Name="Formation">
+                        <TextBlock Text="Formation"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='10' x:Name="Fun">
+                        <TextBlock Text="Fun"></TextBlock>
+                    </ListBoxItem>
+                    <ListBoxItem x:ConnectionId='11' x:Name="Etc">
+                        <TextBlock Text="Etc"></TextBlock>
+                    </ListBoxItem>
                 </ListBox>
                 
             </ListView>
