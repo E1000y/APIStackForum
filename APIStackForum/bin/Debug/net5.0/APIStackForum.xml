@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APIStackForum</name>
+    </assembly>
+    <members>
+        <member name="M:API.Filters.ApiExceptionFilterAttribute.HandleException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Handle the good exception for the context
+            </summary>
+            <param name="context">Context of exception</param>
+        </member>
+        <member name="M:API.Filters.ApiExceptionFilterAttribute.HandleInvalidModelStateException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Handle Invalid Model State exception 
+            </summary>
+            <param name="context">Context of exception</param>
+        </member>
+        <member name="M:API.Filters.ApiExceptionFilterAttribute.HandleNotFoundException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Handle a not found ressource exception 
+            </summary>
+            <param name="context">Context of exception</param>
+        </member>
+        <member name="M:API.Filters.ApiExceptionFilterAttribute.HandleUnauthorizedAccessException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Handle for Unauthorized Access Exception
+            </summary>
+            <param name="context">Context of the exception</param>
+        </member>
+        <member name="M:API.Filters.ApiExceptionFilterAttribute.HandleForbiddenAccessException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Handle a forbidden Access excception
+            </summary>
+            <param name="context">Context of the exception</param>
+        </member>
+        <member name="M:API.Filters.ApiExceptionFilterAttribute.HandleUnknownException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            Handle for an Unknow Exception
+            </summary>
+            <param name="context">Context of the exception</param>
+        </member>
+    </members>
+</doc>

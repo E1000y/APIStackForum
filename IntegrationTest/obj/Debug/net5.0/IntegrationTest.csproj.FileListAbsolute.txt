@@ -431,3 +431,13 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\ref\IntegrationTest.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.pdb
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\obj\Debug\net5.0\IntegrationTest.genruntimeconfig.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\Namotion.Reflection.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NJsonSchema.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NJsonSchema.Yaml.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.Annotations.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.AspNetCore.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.Core.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.Core.Yaml.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.Generation.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.Generation.AspNetCore.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\YamlDotNet.dll

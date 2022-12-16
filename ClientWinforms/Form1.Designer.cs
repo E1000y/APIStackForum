@@ -93,10 +93,10 @@ namespace ClientWinforms
             this.linkVisitor.AutoSize = true;
             this.linkVisitor.Location = new System.Drawing.Point(180, 125);
             this.linkVisitor.Name = "linkVisitor";
-            this.linkVisitor.Size = new System.Drawing.Size(89, 15);
+            this.linkVisitor.Size = new System.Drawing.Size(146, 15);
             this.linkVisitor.TabIndex = 5;
             this.linkVisitor.TabStop = true;
-            this.linkVisitor.Text = "Simple visiteur?";
+            this.linkVisitor.Text = "Simple visiteur? Cliquez ici";
             this.linkVisitor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkVisitor_LinkClicked);
             // 
             // Form1

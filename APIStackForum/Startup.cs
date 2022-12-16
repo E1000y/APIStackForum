@@ -73,6 +73,10 @@ namespace APIStackForum
      };
             });
 
+            // Documentation Swagger
+
+            services.AddSwaggerDocument();
+
 
 
         }
@@ -84,6 +88,12 @@ namespace APIStackForum
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //Génération du JSON
+            app.UseOpenApi();
+
+            //Interface Utilisateur de la documentation
+            app.UseSwaggerUi3();
 
             app.UseRouting();
             app.UseAuthentication();
