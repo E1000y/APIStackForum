@@ -14,7 +14,7 @@ namespace Domain.DTO.Responses
         public DateTime CreationDate { get; set; }
         public int SubjectId { get; set; }
 
-        public WriterWOloginResponseDTO WriterResponseDTO { get; set; }
+        public WriterWOloginResponseDTO WriterWOloginResponseDTO { get; set; }
 
         public override bool Equals(object obj)
         {
@@ -23,7 +23,7 @@ namespace Domain.DTO.Responses
                    Body == dTO.Body &&
                    CreationDate == dTO.CreationDate &&
                    SubjectId == dTO.SubjectId &&
-                   EqualityComparer<WriterWOloginResponseDTO>.Default.Equals(WriterResponseDTO, dTO.WriterResponseDTO);
+                   EqualityComparer<WriterWOloginResponseDTO>.Default.Equals(WriterWOloginResponseDTO, dTO.WriterWOloginResponseDTO);
         }
     }
 }

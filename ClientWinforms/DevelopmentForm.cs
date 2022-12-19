@@ -17,7 +17,7 @@ namespace ClientWinforms
         DAL _dal = DAL.getDAL();
 
         List<SubjectDetailWriterNameResponseDTO> _lstSubjects;
-        List<Answer> _lstAnswers;
+        List<AnswerDetailWriterNameResponseDTO> _lstAnswers;
 
         int activeCategory = 0;
         bool _isVisitor = false;
@@ -49,6 +49,8 @@ namespace ClientWinforms
             await RefreshSubjectAsync(1);
             btnDev_Click(sender, e);
             
+
+
         }
 
         private async void btnDev_Click(object sender, EventArgs e)
@@ -71,10 +73,26 @@ namespace ClientWinforms
                 dgvSubjects.Columns["CreationDate"].HeaderText = "Date de création";
 
             }
+         //   initializeBindingAnswers();
+        }
+
+        private void initializeBindingAnswers()
+        {
+            if (_lstAnswers != null && _lstAnswers.Count > 0)
+            {
+                dgvAnswers.DataSource = bsAnswers;
+                dgvAnswers.Columns["Id"].Visible = false;
+                dgvAnswers.Columns["Body"].HeaderText = "Corps de la réponse";
+                dgvAnswers.Columns["WriterName"].HeaderText = "Nom de l'auteur";
+                dgvAnswers.Columns["SubjectId"].Visible = false;
+                dgvAnswers.Columns["CreationDate"].HeaderText = "Date de création";
+            }
         }
 
         private async Task RefreshSubjectAsync(int id, int idsubject = 0)
         {
+           
+
             _lstSubjects = await _dal.GetSubjectsByCategoryId(id);
 
             if (_lstSubjects != null)
@@ -146,7 +164,7 @@ namespace ClientWinforms
 
 
             SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
-            Answer answer = (Answer)bsAnswers.Current;
+            AnswerDetailWriterNameResponseDTO answer = (AnswerDetailWriterNameResponseDTO)bsAnswers.Current;
           await  RefreshAnswersAsync(subject.Id);
 
             TxtModifySubjectName.Text = subject.Name;
@@ -162,7 +180,7 @@ namespace ClientWinforms
         private async  Task RefreshAnswersAsync(int SubjectId)
         {
             _lstAnswers = await _dal.GetAnswersBySubjectIdAsync(SubjectId);
-
+          
             if (_lstAnswers != null)
             {
 
@@ -182,6 +200,8 @@ namespace ClientWinforms
                 tabControl2.Controls.Remove(tabPage5);
                 tabControl2.Controls.Remove(tabPage6);
             }
+
+            initializeBindingAnswers();
         }
 
         private async void dgvSubjects_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -198,7 +218,8 @@ namespace ClientWinforms
 
             };
 
-          await  RefreshAnswersAsync(subject.Id);
+            initializeBindingAnswers();
+            await  RefreshAnswersAsync(subject.Id);
         }
 
         private async void btnDeleteSubject_Click(object sender, EventArgs e)
@@ -279,8 +300,8 @@ namespace ClientWinforms
         private async void btnModifyAnswer_Click(object sender, EventArgs e)
         {
             SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
-            Answer answer = (Answer)bsAnswers.Current;
-           
+            AnswerDetailWriterNameResponseDTO answer = (AnswerDetailWriterNameResponseDTO)bsAnswers.Current;
+
             string modifyAnswerBody = txtModifyAnswerBody.Text;
             var res = await _dal.modifyAnswerAsync(modifyAnswerBody, subject.Id, answer.Id);
             await RefreshAnswersAsync(subject.Id);
@@ -289,7 +310,7 @@ namespace ClientWinforms
         private async void btnDeleteAnswer_Click(object sender, EventArgs e)
         {
             SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
-            Answer answer = (Answer)bsAnswers.Current;
+            AnswerDetailWriterNameResponseDTO answer = (AnswerDetailWriterNameResponseDTO)bsAnswers.Current;
 
             bool result = await _dal.deleteAnswerAsync(answer.Id);
             if (result)

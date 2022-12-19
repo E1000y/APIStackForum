@@ -112,15 +112,15 @@ namespace ClientWinforms
             else return null;
         }
 
-        public async Task<List<Answer>> GetAnswersBySubjectIdAsync(int id)
+        public async Task<List<AnswerDetailWriterNameResponseDTO>> GetAnswersBySubjectIdAsync(int id)
         {
             var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/Forum/Subjects/{id}/Answers");
             
             if (res.IsSuccessStatusCode)
             {
                 string content = await res.Content.ReadAsStringAsync();
-                List<AnswerResponseDTO> lstDTO = JsonSerializer.Deserialize<List<AnswerResponseDTO>>(content);
-                var ConvertedLstDTO = lstDTO.ConvertAll(a => new Answer { Id = a.Id, CreationDate = a.CreationDate, writerId = a.WriterId, Body = a.Body, subjectId = a.SubjectId});
+                List<AnswerDetailResponseDTO> lstDTO = JsonSerializer.Deserialize<List<AnswerDetailResponseDTO>>(content);
+                var ConvertedLstDTO = lstDTO.ConvertAll(a => new AnswerDetailWriterNameResponseDTO { Id = a.Id, CreationDate = a.CreationDate, WriterName = a.WriterWOloginResponseDTO.FirstName + " " + a.WriterWOloginResponseDTO.LastName, Body = a.Body, SubjectId = a.SubjectId});
 
                 return ConvertedLstDTO;
 

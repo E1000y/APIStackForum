@@ -73,24 +73,32 @@ namespace APIStackForum.Controllers
             return Ok(response);
         }
 
-        [HttpGet("subjects/{SubjectId}/Answers")]
+        [HttpGet("subjects/{SubjectId}/answers")]
 
         public async Task<IActionResult> GetAnswersBySubjectIdAsync([FromRoute] int SubjectId)
         {
             var answers = await _forumService.GetAnswersBySubjectIdAsync(SubjectId);
             if (answers.Count() == 0) return NotFound();
 
-            List<AnswerResponseDTO> response = new List<AnswerResponseDTO>();
+            List<AnswerDetailResponseDTO> response = new List<AnswerDetailResponseDTO>();
 
             foreach (Answer ans in answers)
             {
-                response.Add(new AnswerResponseDTO
+                var writerIdentified = await _accountService.GetWriterByIdAsync(ans.writerId);
+
+                response.Add(new AnswerDetailResponseDTO
                 {
                     Id = ans.Id,
                     Body = ans.Body,
                     CreationDate = ans.CreationDate,
                     SubjectId = ans.subjectId,
-                    WriterId = ans.writerId
+                    WriterWOloginResponseDTO = new WriterWOloginResponseDTO
+                    {
+                        Id = writerIdentified.Id,
+                        FirstName = writerIdentified.FirstName,
+                        LastName = writerIdentified.LastName,
+                        IsModerator = writerIdentified.IsModerator
+                    }
                 });
             }
             return Ok(response);
@@ -317,7 +325,7 @@ namespace APIStackForum.Controllers
             Id = answer.Id,
             Body = answer.Body,
             SubjectId = answer.subjectId,
-            WriterResponseDTO = writerWOloginResponse,
+            WriterWOloginResponseDTO = writerWOloginResponse,
             CreationDate = answer.CreationDate
         };
         return Ok(response);

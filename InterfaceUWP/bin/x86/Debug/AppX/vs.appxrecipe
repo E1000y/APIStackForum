@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-09T11:05:28.647</Modified>
+      <Modified>2022-12-19T15:06:16.948</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\InterfaceUWP.exe">
       <PackagePath>entrypoint\InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-09T11:05:27.677</Modified>
+      <Modified>2022-12-19T15:06:15.996</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\.nuget\packages\microsoft.bcl.asyncinterfaces\7.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -326,7 +326,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\MVVM\Views\PageDev.xbf">
       <PackagePath>MVVM\Views\PageDev.xbf</PackagePath>
-      <Modified>2022-12-09T11:05:27.614</Modified>
+      <Modified>2022-12-19T15:06:15.924</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -338,7 +338,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\InterfaceUWP.exe">
       <PackagePath>InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-09T11:05:28.645</Modified>
+      <Modified>2022-12-19T15:06:16.946</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

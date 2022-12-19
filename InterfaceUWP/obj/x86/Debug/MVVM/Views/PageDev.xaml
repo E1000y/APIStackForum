@@ -77,6 +77,7 @@
                         <TextBox Text="{Binding Name}" Margin="0,0,20,0" VerticalAlignment="Center" Height="Auto" Width="200" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" Background="White"/>
                         <TextBox Text="{Binding Description}" Margin="0,0,20,0" Height="Auto" Width="300" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center"/>
                         <TextBlock Text="{Binding CreationDate}" VerticalAlignment="Center" />
+                        
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
