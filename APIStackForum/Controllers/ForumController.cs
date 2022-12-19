@@ -155,7 +155,7 @@ namespace APIStackForum.Controllers
                          FirstName = writerIdentified.FirstName,
                          IsModerator = writerIdentified.IsModerator,
                          LastName = writerIdentified.LastName,
-                         Login = writerIdentified.Login
+         
                      };
                 response.Add(new SubjectDetailResponseDTO
                 {
@@ -298,15 +298,26 @@ namespace APIStackForum.Controllers
     [HttpGet("answers/{id}")]
     public async Task<IActionResult> GetAnswerByIdAsync([FromRoute] int id)
     {
-        var answer = await _forumService.GetAnswerByIdAsync(id);
+        Answer answer = await _forumService.GetAnswerByIdAsync(id);
         if (answer == null) return NotFound();
 
-        var response = new AnswerResponseDTO()
+        Writer writer = await _accountService.GetWriterByIdAsync(answer.writerId);
+
+            WriterWOloginResponseDTO writerWOloginResponse = new WriterWOloginResponseDTO
+            {
+                Id = writer.Id,
+                FirstName = writer.FirstName,
+                LastName = writer.LastName,
+                IsModerator = writer.IsModerator
+            };
+
+
+        var response = new AnswerDetailResponseDTO()
         {
             Id = answer.Id,
             Body = answer.Body,
             SubjectId = answer.subjectId,
-            WriterId = answer.subjectId,
+            WriterResponseDTO = writerWOloginResponse,
             CreationDate = answer.CreationDate
         };
         return Ok(response);
