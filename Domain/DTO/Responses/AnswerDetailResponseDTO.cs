@@ -12,6 +12,9 @@ namespace Domain.DTO.Responses
         public int Id { get; set; }
         public string Body { get; set; }
         public DateTime CreationDate { get; set; }
+
+        public int SubjectId { get; set; }
+
         public WriterResponseDTO WriterResponseDTO { get; set; }
 
         public override bool Equals(object obj)

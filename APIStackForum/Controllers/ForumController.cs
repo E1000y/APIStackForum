@@ -162,9 +162,9 @@ namespace APIStackForum.Controllers
                     Id = subject.Id,
                     Name = subject.Name,
                     Description = subject.Description,
-                    
-
-                WriterResponseDTO = WriterRewritten,
+                    CategoryId = subject.categoryId,
+                    CreationDate = subject.CreationDate,
+                    WriterResponseDTO = WriterRewritten,
 
                 }) ;
 

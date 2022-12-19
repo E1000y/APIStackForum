@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.DTO.Responses;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace ClientWinforms
     {
         DAL _dal = DAL.getDAL();
 
-        List<Subject> _lstSubjects;
+        List<SubjectDetailWriterNameResponseDTO> _lstSubjects;
         List<Answer> _lstAnswers;
 
         int activeCategory = 0;
@@ -64,6 +65,10 @@ namespace ClientWinforms
             {
             dgvSubjects.DataSource = bsSubjects;
                 dgvSubjects.Columns["id"].Visible = false;
+                dgvSubjects.Columns["name"].HeaderText = "Nom du sujet";
+                dgvSubjects.Columns["WriterName"].HeaderText = "Nom de l'auteur";
+                dgvSubjects.Columns["CategoryId"].Visible = false;
+                dgvSubjects.Columns["CreationDate"].HeaderText = "Date de création";
 
             }
         }
@@ -137,9 +142,12 @@ namespace ClientWinforms
 
         private async void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Subject subject = (Subject)bsSubjects.Current;
+
+
+
+            SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
             Answer answer = (Answer)bsAnswers.Current;
-          await  RefreshAnswersAsync(subject);
+          await  RefreshAnswersAsync(subject.Id);
 
             TxtModifySubjectName.Text = subject.Name;
             txtModifySubjectDescription.Text = subject.Description;
@@ -151,9 +159,9 @@ namespace ClientWinforms
 
         }
 
-        private async  Task RefreshAnswersAsync(Subject subject)
+        private async  Task RefreshAnswersAsync(int SubjectId)
         {
-            _lstAnswers = await _dal.GetAnswersBySubjectIdAsync(subject.Id);
+            _lstAnswers = await _dal.GetAnswersBySubjectIdAsync(SubjectId);
 
             if (_lstAnswers != null)
             {
@@ -178,9 +186,19 @@ namespace ClientWinforms
 
         private async void dgvSubjects_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Subject subject = (Subject)bsSubjects.Current;
+            SubjectDetailWriterNameResponseDTO subjectDetail = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
 
-          await  RefreshAnswersAsync(subject);
+            Subject subject = new Subject
+            {
+                Id = subjectDetail.Id,
+                categoryId = subjectDetail.CategoryId,
+                Name = subjectDetail.Name,
+                CreationDate = subjectDetail.CreationDate
+
+
+            };
+
+          await  RefreshAnswersAsync(subject.Id);
         }
 
         private async void btnDeleteSubject_Click(object sender, EventArgs e)
@@ -189,7 +207,7 @@ namespace ClientWinforms
 
  
 
-            Subject subject = (Subject)bsSubjects.Current;
+            SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
 
             bool result = await _dal.deleteSubjectAsync(subject.Id);
 
@@ -202,8 +220,8 @@ namespace ClientWinforms
                 MessageBox.Show("Erreur de suppression, l'utilisateur courant n'a pas les droits.");
             }
 
-            await RefreshSubjectAsync(subject.categoryId);
-            await RefreshAnswersAsync(subject);
+            await RefreshSubjectAsync(subject.CategoryId);
+            await RefreshAnswersAsync(subject.Id);
 
         }
 
@@ -234,7 +252,7 @@ namespace ClientWinforms
             
            String modifiedSubjectName = TxtModifySubjectName.Text;
             String modifiedSubjectDescription = txtModifySubjectDescription.Text;
-            Subject subject = (Subject)bsSubjects.Current;
+            SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
             if (subject != null)
             {
             await _dal.modifySubjectAsync(subject.Id, modifiedSubjectName, modifiedSubjectDescription, activeCategory);
@@ -250,27 +268,27 @@ namespace ClientWinforms
         {
 
             string addAnswerBody = txtAddAnswerBody.Text;
-            Subject subject = (Subject)bsSubjects.Current;
+            SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
             
             var res = await _dal.createAnswerAsync(subject.Id, addAnswerBody);
             
           
-            await RefreshAnswersAsync(subject);
+            await RefreshAnswersAsync(subject.Id);
         }
 
         private async void btnModifyAnswer_Click(object sender, EventArgs e)
         {
-            Subject subject = (Subject)bsSubjects.Current;
+            SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
             Answer answer = (Answer)bsAnswers.Current;
            
             string modifyAnswerBody = txtModifyAnswerBody.Text;
             var res = await _dal.modifyAnswerAsync(modifyAnswerBody, subject.Id, answer.Id);
-            await RefreshAnswersAsync(subject);
+            await RefreshAnswersAsync(subject.Id);
         }
 
         private async void btnDeleteAnswer_Click(object sender, EventArgs e)
         {
-            Subject subject = (Subject)bsSubjects.Current;
+            SubjectDetailWriterNameResponseDTO subject = (SubjectDetailWriterNameResponseDTO)bsSubjects.Current;
             Answer answer = (Answer)bsAnswers.Current;
 
             bool result = await _dal.deleteAnswerAsync(answer.Id);
@@ -282,7 +300,7 @@ namespace ClientWinforms
             {
                 MessageBox.Show("Erreur de suppression, l'utilisateur courant n'a pas les droits.");
             }
-            await RefreshAnswersAsync(subject);
+            await RefreshAnswersAsync(subject.Id);
 
         }
 

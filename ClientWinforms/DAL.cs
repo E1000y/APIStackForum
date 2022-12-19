@@ -129,7 +129,7 @@ namespace ClientWinforms
 
         }
 
-        public async Task<List<Subject>> GetSubjectsByCategoryId(int id)
+        public async Task<List<SubjectDetailWriterNameResponseDTO>> GetSubjectsByCategoryId(int id)
         {
             /*var res = await _client.GetAsync($"{Settings1.Default.ConnectionStringLocal}/Forum/Subjects");
             if (res.IsSuccessStatusCode)
@@ -148,8 +148,10 @@ namespace ClientWinforms
             if (res.IsSuccessStatusCode)
             {
                 string content = await res.Content.ReadAsStringAsync();
-                List<SubjectResponseDTO> lstDTO = JsonSerializer.Deserialize<List<SubjectResponseDTO>>(content);
-                var ConvertedLstDTO = lstDTO.ConvertAll(s => new Subject { Id = s.Id, Name = s.Name, Description = s.Description, categoryId = s.CategoryId, CreationDate = s.CreationDate, writerId = s.WriterId });
+                List<SubjectDetailResponseDTO> lstDTO = JsonSerializer.Deserialize<List<SubjectDetailResponseDTO>>(content);
+                var ConvertedLstDTO = lstDTO.ConvertAll(s => new SubjectDetailWriterNameResponseDTO { Id = s.Id, Name = s.Name, Description = s.Description, CategoryId = s.CategoryId,  CreationDate = s.CreationDate,  WriterName = s.WriterResponseDTO.FirstName +" "+ s.WriterResponseDTO.LastName
+                
+                });
 
                 return ConvertedLstDTO;
 
