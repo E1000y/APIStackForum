@@ -51,51 +51,6 @@ namespace InterfaceUWP
             await dataVM.GetAnswers(sbo.id);
         }
 
-        private void Dev_Click(object sender, RoutedEventArgs e)
-        {
-            dataVM.RefreshSubject();
-            dataVM.RefreshAnswers();
-            catId = 1;
-            getSubject();
-           
-            
-        }
-
-        private void Emploi_Click(object sender, RoutedEventArgs e)
-        {
-            dataVM.RefreshSubject();
-            dataVM.RefreshAnswers();
-            catId = 2;
-            getSubject();
-
-        }
-
-        private void Formation_Click(object sender, RoutedEventArgs e)
-        {
-            dataVM.RefreshSubject();
-            dataVM.RefreshAnswers();
-            catId = 3;
-            getSubject();
-
-        }
-
-        private void Fun_Click(object sender, RoutedEventArgs e)
-        {
-            dataVM.RefreshSubject();
-            dataVM.RefreshAnswers();
-            catId = 4;
-            getSubject();
-        }
-
-        private void Etc_Click(object sender, RoutedEventArgs e)
-        {
-            dataVM.RefreshSubject();
-            dataVM.RefreshAnswers();
-            catId = 5;
-            getSubject();
-
-        }
-
         private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Dev.IsSelected)

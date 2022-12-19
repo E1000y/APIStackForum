@@ -2,6 +2,7 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="Answers" />
+    <RootPropertyPathName Name="WriterName" />
     <RootPropertyPathName Name="CreationDate" />
     <RootPropertyPathName Name="Body" />
     <RootPropertyPathName Name="Subjects" />

@@ -441,3 +441,4 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.Generation.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\NSwag.Generation.AspNetCore.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\YamlDotNet.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\IntegrationTest\bin\Debug\net5.0\APIStackForum.xml

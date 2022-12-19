@@ -131,6 +131,8 @@
     <Compile Include="MVVM\ViewsModels\ViewModelBase.cs" />
     <Compile Include="SubjectBO.cs" />
     <Compile Include="SubjectDTO.cs" />
+    <Compile Include="WriterResponseDTO.cs" />
+    <Compile Include="WriterWOloginResponseDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

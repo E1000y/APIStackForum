@@ -76,7 +76,10 @@
                         </SymbolIcon>
                         <TextBox Text="{Binding Name}" Margin="0,0,20,0" VerticalAlignment="Center" Height="Auto" Width="200" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" Background="White"/>
                         <TextBox Text="{Binding Description}" Margin="0,0,20,0" Height="Auto" Width="300" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center"/>
-                        <TextBlock Text="{Binding CreationDate}" VerticalAlignment="Center" />
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding CreationDate}" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding WriterName}" VerticalAlignment="Center" />
+                        </StackPanel>
                         
                     </StackPanel>
                 </DataTemplate>
@@ -101,7 +104,10 @@
                             </ToolTipService.ToolTip>
                         </SymbolIcon>
                         <TextBox Text="{Binding Body}" TextWrapping="Wrap" IsReadOnly="True"  Height="auto" Width="500" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderBrush="Transparent"/>
-                        <TextBlock Text="{Binding CreationDate}" />
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding CreationDate}" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding WriterName}" VerticalAlignment="Center" />
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

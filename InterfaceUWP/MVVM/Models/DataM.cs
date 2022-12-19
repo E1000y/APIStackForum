@@ -47,7 +47,7 @@ namespace InterfaceUWP
                 {
                     var res = await response.Content.ReadAsStringAsync();
                     var dtoSubject = JsonSerializer.Deserialize<List<SubjectDTO>>(res);
-                    return dtoSubject.Select(u => new SubjectBO() { id = u.Id, categoryId = u.CategoryId, CreationDate = u.CreationDate, Description = u.Description, Name = u.Name, writerId = u.WriterId}).ToList();
+                    return dtoSubject.Select(u => new SubjectBO() { id = u.Id, categoryId = u.CategoryId, CreationDate = u.CreationDate, Description = u.Description, Name = u.Name, WriterName = u.WriterResponseDTO.FirstName + " " + u.WriterResponseDTO.LastName } ).ToList();
                 }
             }
 
@@ -64,7 +64,7 @@ namespace InterfaceUWP
                 {
                     var res = await response.Content.ReadAsStringAsync();
                     var dtoAnswer = JsonSerializer.Deserialize<List<AnswerDTO>>(res);
-                    return dtoAnswer.Select(u => new AnswerBO() { id = u.Id, subjectId = u.SubjectId, CreationDate = u.CreationDate, writerId = u.WriterId, Body = u.Body}).ToList();
+                    return dtoAnswer.Select(u => new AnswerBO() { id = u.Id, subjectId = u.SubjectId, CreationDate = u.CreationDate, WriterName = u.WriterWOloginResponseDTO.FirstName + " " + u.WriterWOloginResponseDTO.LastName, Body = u.Body}).ToList();
                 }
             }
 

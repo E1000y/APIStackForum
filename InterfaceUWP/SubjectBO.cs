@@ -14,7 +14,7 @@ namespace InterfaceUWP
 
         public DateTime CreationDate { get; set; }
 
-        public int writerId { get; set; }
+        public String WriterName {get; set; }
 
         public int categoryId { get; set; }
 

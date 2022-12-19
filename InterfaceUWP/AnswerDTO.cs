@@ -13,7 +13,7 @@ namespace InterfaceUWP
         public int SubjectId { get; set; }
         public string Body { get; set; }
         public DateTime CreationDate { get; set; }
-        public int WriterId { get; set; }
+        public WriterWOloginResponseDTO WriterWOloginResponseDTO { get; set; }
 
     }
 }

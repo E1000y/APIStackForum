@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>59AD381F03B939544224608F29461FF54485FFAA3989892F45D6469416925C66</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>25DD627345EF6E466EB845BF75603B4D8E1ADF06B7130668DC77FBA461BE5253</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>405d0196-7543-4715-9b56-4665f66c313b_1.0.0.0_x86__h81zjtagprz5a</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>405d0196-7543-4715-9b56-4665f66c313b_h81zjtagprz5a!App</RegisteredUserModeAppID>
     <RegisteredPackageID>405d0196-7543-4715-9b56-4665f66c313b</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-19T15:06:16.948</Modified>
+      <Modified>2022-12-19T20:28:44.027</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\InterfaceUWP.exe">
       <PackagePath>entrypoint\InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-19T15:06:15.996</Modified>
+      <Modified>2022-12-19T20:28:42.841</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\.nuget\packages\microsoft.bcl.asyncinterfaces\7.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -318,15 +318,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\InterfaceUWP.xr.xml">
       <PackagePath>InterfaceUWP.xr.xml</PackagePath>
-      <Modified>2022-12-02T11:22:18.254</Modified>
+      <Modified>2022-12-19T20:19:51.875</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-12-09T11:05:27.614</Modified>
+      <Modified>2022-12-19T20:28:42.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\MVVM\Views\PageDev.xbf">
       <PackagePath>MVVM\Views\PageDev.xbf</PackagePath>
-      <Modified>2022-12-19T15:06:15.924</Modified>
+      <Modified>2022-12-19T20:28:42.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -334,11 +334,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-12-09T11:05:27.932</Modified>
+      <Modified>2022-12-19T20:28:43.144</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\InterfaceUWP.exe">
       <PackagePath>InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-19T15:06:16.946</Modified>
+      <Modified>2022-12-19T20:28:44.024</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
