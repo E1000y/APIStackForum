@@ -1,0 +1,15 @@
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\ClientWinforms.exe
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\ClientWinforms.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\ClientWinforms.deps.json
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\ClientWinforms.runtimeconfig.json
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\ClientWinforms.pdb
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\FluentValidation.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\FluentValidation.DependencyInjectionExtensions.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\Microsoft.IdentityModel.Abstractions.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\Microsoft.IdentityModel.JsonWebTokens.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\Microsoft.IdentityModel.Logging.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\Microsoft.IdentityModel.Tokens.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\System.IdentityModel.Tokens.Jwt.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\Domain.dll
+\\2isanas6\Dossierstagiair\cda5\docproduite\EP\Forum\Winforms\Domain.pdb

@@ -7,24 +7,24 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA81bVPQJUp0mfwBfOkPpBuAAAAAACAAAAAAADZgAAwAAAABAAAAAwtj2AuPYNmu5M1EHLrDwwAAAAAASAAACgAAAAEAAAADmnaXVlQju8kraigg1X0H0YAAAAMlegOjXV19+23hhHyp6QbAhgrxc1colFFAAAAPc6x+Df1dFT4wgX/5/DAqwygMOA</EncryptedPassword>
-    <History>True|2022-12-09T11:06:22.6957611Z;False|2022-12-09T12:01:56.1094644+01:00;</History>
+    <History>True|2022-12-20T09:33:31.0789681Z;True|2022-12-09T12:06:22.6957611+01:00;False|2022-12-09T12:01:56.1094644+01:00;</History>
     <_PublishTargetUrl>ftp://user40.2isa.org</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="APIStackForum.deps.json">
-      <publishTime>12/09/2022 12:05:46</publishTime>
+      <publishTime>12/20/2022 10:32:46</publishTime>
     </File>
     <File Include="APIStackForum.dll">
-      <publishTime>12/09/2022 12:05:45</publishTime>
+      <publishTime>12/20/2022 10:32:46</publishTime>
     </File>
     <File Include="APIStackForum.exe">
-      <publishTime>12/09/2022 12:05:45</publishTime>
+      <publishTime>12/20/2022 10:32:46</publishTime>
     </File>
     <File Include="APIStackForum.pdb">
-      <publishTime>12/09/2022 12:05:45</publishTime>
+      <publishTime>12/20/2022 10:32:46</publishTime>
     </File>
     <File Include="APIStackForum.runtimeconfig.json">
-      <publishTime>12/09/2022 11:53:22</publishTime>
+      <publishTime>12/20/2022 10:32:47</publishTime>
     </File>
     <File Include="appsettings.Development.json">
       <publishTime>09/29/2022 18:04:46</publishTime>
@@ -39,25 +39,25 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>04/05/2022 22:26:00</publishTime>
     </File>
     <File Include="BLLS.dll">
-      <publishTime>12/09/2022 11:53:20</publishTime>
+      <publishTime>12/20/2022 10:32:45</publishTime>
     </File>
     <File Include="BLLS.pdb">
-      <publishTime>12/09/2022 11:53:20</publishTime>
+      <publishTime>12/20/2022 10:32:45</publishTime>
     </File>
     <File Include="DAL.dll">
-      <publishTime>12/09/2022 11:53:20</publishTime>
+      <publishTime>12/20/2022 10:32:44</publishTime>
     </File>
     <File Include="DAL.pdb">
-      <publishTime>12/09/2022 11:53:20</publishTime>
+      <publishTime>12/20/2022 10:32:44</publishTime>
     </File>
     <File Include="Dapper.dll">
       <publishTime>11/03/2021 15:07:40</publishTime>
     </File>
     <File Include="Domain.dll">
-      <publishTime>12/09/2022 11:53:18</publishTime>
+      <publishTime>12/20/2022 10:32:44</publishTime>
     </File>
     <File Include="Domain.pdb">
-      <publishTime>12/09/2022 11:53:18</publishTime>
+      <publishTime>12/20/2022 10:32:44</publishTime>
     </File>
     <File Include="FluentValidation.AspNetCore.dll">
       <publishTime>09/08/2022 10:43:50</publishTime>
@@ -113,6 +113,36 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
     <File Include="Microsoft.SqlServer.Server.dll">
       <publishTime>01/27/2022 18:19:08</publishTime>
     </File>
+    <File Include="Namotion.Reflection.dll">
+      <publishTime>09/16/2022 16:58:24</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>03/20/2017 21:03:18</publishTime>
+    </File>
+    <File Include="NJsonSchema.dll">
+      <publishTime>09/16/2022 18:14:46</publishTime>
+    </File>
+    <File Include="NJsonSchema.Yaml.dll">
+      <publishTime>09/16/2022 18:14:48</publishTime>
+    </File>
+    <File Include="NSwag.Annotations.dll">
+      <publishTime>11/17/2022 17:46:18</publishTime>
+    </File>
+    <File Include="NSwag.AspNetCore.dll">
+      <publishTime>11/17/2022 17:46:32</publishTime>
+    </File>
+    <File Include="NSwag.Core.dll">
+      <publishTime>11/17/2022 17:46:30</publishTime>
+    </File>
+    <File Include="NSwag.Core.Yaml.dll">
+      <publishTime>11/17/2022 17:46:30</publishTime>
+    </File>
+    <File Include="NSwag.Generation.AspNetCore.dll">
+      <publishTime>11/17/2022 17:46:30</publishTime>
+    </File>
+    <File Include="NSwag.Generation.dll">
+      <publishTime>11/17/2022 17:46:30</publishTime>
+    </File>
     <File Include="runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll">
       <publishTime>08/05/2022 20:32:30</publishTime>
     </File>
@@ -156,7 +186,10 @@ en modifiant ce fichier MSBuild. Pour en savoir plus à ce sujet, visitez https:
       <publishTime>10/19/2020 20:52:26</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>12/09/2022 12:05:47</publishTime>
+      <publishTime>12/20/2022 10:32:48</publishTime>
+    </File>
+    <File Include="YamlDotNet.dll">
+      <publishTime>06/28/2021 23:35:48</publishTime>
     </File>
   </ItemGroup>
 </Project>

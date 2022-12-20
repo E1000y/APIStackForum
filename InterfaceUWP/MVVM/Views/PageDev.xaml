@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" MinWidth="2500">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -18,8 +18,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width ="*"/>
             <ColumnDefinition Width ="4*"/>
-            <ColumnDefinition Width ="4*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width ="10*"/>
+            
 
         </Grid.ColumnDefinitions>
 
@@ -57,12 +57,12 @@
                         <TextBlock Text="Etc"></TextBlock>
                     </ListBoxItem>
                 </ListBox>
-                
+
             </ListView>
 
         </SplitView>
 
-        <ListView x:Name="lstSubjects" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Subjects}" IsItemClickEnabled="True"  ItemClick="lstSubjects_ItemClick">
+        <ListView x:Name="lstSubjects" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Subjects}" IsItemClickEnabled="True"  ItemClick="lstSubjects_ItemClick"  Margin="10,0,0,10">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -76,11 +76,11 @@
                         </SymbolIcon>
                         <TextBox Text="{Binding Name}" Margin="0,0,20,0" VerticalAlignment="Center" Height="Auto" Width="200" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" Background="White"/>
                         <TextBox Text="{Binding Description}" Margin="0,0,20,0" Height="Auto" Width="300" TextWrapping="Wrap" IsReadOnly="True" BorderBrush="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Auto" VerticalAlignment="Center"/>
-                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical"  >
                             <TextBlock Text="{Binding CreationDate}" VerticalAlignment="Center" />
-                            <TextBlock Text="{Binding WriterName}" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding WriterName}" VerticalAlignment="Center"  />
                         </StackPanel>
-                        
+
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -91,7 +91,7 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <ListView x:Name="lstAnswers" Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Answers}" >
+        <ListView x:Name="lstAnswers" Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Answers}" Grid.ColumnSpan="2" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

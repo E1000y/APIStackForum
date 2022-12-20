@@ -19,24 +19,24 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>25DD627345EF6E466EB845BF75603B4D8E1ADF06B7130668DC77FBA461BE5253</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>405d0196-7543-4715-9b56-4665f66c313b_1.0.0.0_x86__h81zjtagprz5a</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>A6AEF361F683674D3390C80F62EC3AB214BAECA699DA6FF4E6AD2494BE0D2A39</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>405d0196-7543-4715-9b56-4665f66c313b_1.0.3.0_x86__h81zjtagprz5a</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>405d0196-7543-4715-9b56-4665f66c313b_h81zjtagprz5a!App</RegisteredUserModeAppID>
     <RegisteredPackageID>405d0196-7543-4715-9b56-4665f66c313b</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=cda5pani</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>1.0.3.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-19T20:28:44.027</Modified>
+      <Modified>2022-12-20T10:24:58.108</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\InterfaceUWP.exe">
       <PackagePath>entrypoint\InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-19T20:28:42.841</Modified>
+      <Modified>2022-12-20T10:24:57.639</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\.nuget\packages\microsoft.bcl.asyncinterfaces\7.0.0\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll">
       <PackagePath>Microsoft.Bcl.AsyncInterfaces.dll</PackagePath>
@@ -61,6 +61,31 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.19041.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2020-12-02T03:52:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\BadgeLogo.scale-100.png">
+      <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2022-12-20T09:48:11.633</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\BadgeLogo.scale-125.png">
+      <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2022-12-20T09:48:11.669</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\BadgeLogo.scale-150.png">
+      <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2022-12-20T09:48:11.696</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\BadgeLogo.scale-200.png">
+      <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2022-12-20T09:48:11.724</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\BadgeLogo.scale-400.png">
+      <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2022-12-20T09:48:11.755</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -112,25 +137,10 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-01T12:54:21.747</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\SplashScreen.scale-100.png">
-      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
-      <Modified>2022-12-01T12:54:23.054</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\SplashScreen.scale-125.png">
-      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
-      <Modified>2022-12-01T12:54:23.102</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\SplashScreen.scale-150.png">
-      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
-      <Modified>2022-12-01T12:54:23.165</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <Modified>2022-12-01T12:54:23.246</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\SplashScreen.scale-400.png">
-      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
-      <Modified>2022-12-01T12:44:05.385</Modified>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2022-12-20T09:58:35.469</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
@@ -307,26 +317,21 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2022-12-01T12:54:22.132</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Assets\SplashScreen.scale-200.jpg">
-      <PackagePath>Assets\SplashScreen.scale-200.jpg</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-01T12:44:11.219</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2022-11-28T09:43:43.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\InterfaceUWP.xr.xml">
       <PackagePath>InterfaceUWP.xr.xml</PackagePath>
-      <Modified>2022-12-19T20:19:51.875</Modified>
+      <Modified>2022-12-20T10:24:57.570</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-12-19T20:28:42.779</Modified>
+      <Modified>2022-12-20T10:07:00.783</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\MVVM\Views\PageDev.xbf">
       <PackagePath>MVVM\Views\PageDev.xbf</PackagePath>
-      <Modified>2022-12-19T20:28:42.779</Modified>
+      <Modified>2022-12-20T10:24:57.575</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -334,11 +339,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-12-19T20:28:43.144</Modified>
+      <Modified>2022-12-20T10:07:01.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\InterfaceUWP\bin\x86\Debug\Core\InterfaceUWP.exe">
       <PackagePath>InterfaceUWP.exe</PackagePath>
-      <Modified>2022-12-19T20:28:44.024</Modified>
+      <Modified>2022-12-20T10:24:58.104</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

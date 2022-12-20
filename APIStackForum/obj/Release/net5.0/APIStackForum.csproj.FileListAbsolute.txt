@@ -64,3 +64,14 @@ C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\API
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\obj\Release\net5.0\ref\APIStackForum.dll
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\obj\Release\net5.0\APIStackForum.pdb
 C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\obj\Release\net5.0\APIStackForum.genruntimeconfig.cache
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\Namotion.Reflection.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\Newtonsoft.Json.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NJsonSchema.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NJsonSchema.Yaml.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NSwag.Annotations.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NSwag.AspNetCore.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NSwag.Core.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NSwag.Core.Yaml.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NSwag.Generation.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\NSwag.Generation.AspNetCore.dll
+C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\APIStackForum\bin\Release\net5.0\YamlDotNet.dll

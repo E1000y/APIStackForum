@@ -10,5 +10,9 @@
     <SplashScreenSource>C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\LogoStack.png</SplashScreenSource>
     <PackageLogoSource>C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\LogoStack.png</PackageLogoSource>
     <BadgeLogoSource>C:\Users\cda5pani\Documents\Fil rouge jalon 4 - Projet StackForum\StackForum\APIStackForum\LogoStack.png</BadgeLogoSource>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
   </PropertyGroup>
 </Project>

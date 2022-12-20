@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionStringLocal" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://localhost:5000/api</Value>
+      <Value Profile="(Default)">http://user40.2isa.org/api</Value>
     </Setting>
   </Settings>
 </SettingsFile>

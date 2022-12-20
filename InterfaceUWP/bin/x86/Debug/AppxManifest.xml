@@ -7,7 +7,7 @@
 
     Pour plus d'informations sur les fichiers manifeste, consultez http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="405d0196-7543-4715-9b56-4665f66c313b" Publisher="CN=cda5pani" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="405d0196-7543-4715-9b56-4665f66c313b" Publisher="CN=cda5pani" Version="1.0.3.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="405d0196-7543-4715-9b56-4665f66c313b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>InterfaceUWP</DisplayName>
@@ -32,7 +32,7 @@
           <uap:Rotation Preference="portrait" />
         </uap:InitialRotationPreference>
         <uap:LockScreen BadgeLogo="Assets\BadgeLogo.png" Notification="badge" />
-        <uap:SplashScreen Image="Assets\SplashScreen.jpg" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
     </Application>
   </Applications>

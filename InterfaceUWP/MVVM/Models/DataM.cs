@@ -14,7 +14,7 @@ namespace InterfaceUWP
         private static volatile DataM _instance;
         private static readonly object _syncRoot = new Object();
         private readonly HttpClient _httpClient = new HttpClient();
-        private const string ConnectionString = "http://localhost:5000/api/forum/";
+        private const string ConnectionString = "http://user40.2isa.org/api/forum/";
 
         private DataM() { } // Singleton = constructeur privé
 
